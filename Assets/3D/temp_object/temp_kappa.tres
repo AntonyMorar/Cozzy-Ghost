@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="KappaModel" load_steps=2 format=3 uid="uid://cww5msh2rdsij"]
+
+[ext_resource type="Script" path="res://Resources/KappaModel.gd" id="1_g3axp"]
+
+[resource]
+script = ExtResource("1_g3axp")
+Titulo = "TempKappa"
+ModelPath = "D:/piezas/kappa/media-vis/Assets/3D/temp_object/temp_kappa.gltf"
+TextoPath = "res://Assets/3D/temp_object/temp_kappa.md"

@@ -1,0 +1,4 @@
+[gd_resource type="SystemFont" format=3 uid="uid://rvtdmvuld33r"]
+
+[resource]
+font_names = PackedStringArray("Hershey-Noailles-Futura Noailles-Futura-Triplex")

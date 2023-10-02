@@ -1,0 +1,28 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://3nbbatxb2vn6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nfhnc"]
+
+[sub_resource type="Sky" id="Sky_7cc8u"]
+sky_material = SubResource("ProceduralSkyMaterial_nfhnc")
+
+[resource]
+background_mode = 1
+background_color = Color(0.596078, 0.647059, 0.682353, 1)
+background_energy_multiplier = 0.8
+sky = SubResource("Sky_7cc8u")
+ambient_light_energy = 0.4
+tonemap_mode = 2
+tonemap_exposure = 1.23
+tonemap_white = 0.69
+ssr_enabled = true
+ssao_enabled = true
+ssao_intensity = 2.81
+ssil_radius = 1.22
+ssil_intensity = 1.76
+ssil_sharpness = 0.0
+ssil_normal_rejection = 0.42
+sdfgi_bounce_feedback = 0.46
+sdfgi_min_cell_size = 0.0015625
+sdfgi_cascade0_distance = 0.1
+sdfgi_max_distance = 1.6
+sdfgi_energy = -0.18

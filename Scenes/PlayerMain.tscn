@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://du2t4rey7k7ks"]
+
+[ext_resource type="Script" path="res://Scripts/Personaje.gd" id="2_ikx0b"]
+[ext_resource type="Material" uid="uid://blaobgak4eu57" path="res://Assets/Materials/ghost.tres" id="3_nvie7"]
+[ext_resource type="PackedScene" uid="uid://2udx6k6yqkiw" path="res://models/gobot/gobot_skin.tscn" id="12_3tvs5"]
+[ext_resource type="Texture2D" uid="uid://dq675fmt1rg8c" path="res://models/gobot/textures/open_eye.png" id="12_8oyl7"]
+[ext_resource type="Script" path="res://Scripts/SpringArm3D.gd" id="13_sqmhu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0s8le"]
+radius = 0.481102
+height = 1.31647
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_768o0"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("12_8oyl7")
+roughness = 0.6
+uv1_offset = Vector3(0.1, 0, 0)
+texture_repeat = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ko1hr"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("12_8oyl7")
+roughness = 0.6
+uv1_offset = Vector3(0.1, 0, 0)
+texture_repeat = false
+
+[node name="PlayerMain" type="CharacterBody3D" node_paths=PackedStringArray("particles_preload", "cam", "character")]
+collision_layer = 6
+collision_mask = 7
+script = ExtResource("2_ikx0b")
+speed = 5.0
+ghostMat = ExtResource("3_nvie7")
+particles_preload = NodePath("GobotSkin/gobot/Armature/DustParticle")
+cam = NodePath("SpringArm3D/Camera3DPlayer")
+character = NodePath("GobotSkin")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-1, -5.01436e-08, 7.16125e-08, 0, 0.819152, 0.573576, -8.74228e-08, 0.573576, -0.819152, 0, 0.775352, 0)
+visible = false
+collision_mask = 0
+spring_length = 7.0
+margin = 3.0
+script = ExtResource("13_sqmhu")
+mouse_sensitivity = 0.2
+
+[node name="Camera3DPlayer" type="Camera3D" parent="SpringArm3D"]
+current = true
+fov = 60.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661148, 0)
+shape = SubResource("CapsuleShape3D_0s8le")
+
+[node name="GobotSkin" parent="." instance=ExtResource("12_3tvs5")]
+
+[node name="Skeleton3D" parent="GobotSkin/gobot/Armature" index="0"]
+bones/2/position = Vector3(0, 0.366522, 0)
+bones/2/rotation = Quaternion(0.0697305, -0.0272072, 0.00190251, 0.997193)
+bones/3/rotation = Quaternion(1, 1.97222e-10, -7.26989e-08, 7.46011e-09)
+bones/4/rotation = Quaternion(-0.376275, -0.193596, -0.0490978, 0.904725)
+bones/5/rotation = Quaternion(0.225012, 1.11485e-06, -7.68964e-06, 0.974356)
+bones/6/rotation = Quaternion(-0.20147, 0.506929, 0.16345, 0.82202)
+bones/7/rotation = Quaternion(0.399402, -1.05206e-06, 1.36783e-05, 0.916776)
+bones/8/rotation = Quaternion(-0.669957, -0.26351, -0.636169, 0.277505)
+bones/16/rotation = Quaternion(-0.645841, 0.273645, 0.660638, 0.267516)
+
+[node name="Gobot" parent="GobotSkin/gobot/Armature/Skeleton3D" index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_768o0")
+surface_material_override/2 = SubResource("StandardMaterial3D_ko1hr")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="GobotSkin/gobot/Armature/Skeleton3D" index="1"]
+transform = Transform3D(-0.513076, -0.79967, 0.3119, 0.401329, -0.544705, -0.736364, 0.758741, -0.252637, 0.600405, 0.303979, 0.275573, 0.178116)
+bone_name = "Finger_1_2.L"
+bone_idx = 13
+
+[editable path="GobotSkin"]
+[editable path="GobotSkin/gobot"]

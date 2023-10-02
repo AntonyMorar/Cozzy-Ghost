@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://blaobgak4eu57"]
+
+[resource]
+resource_local_to_scene = true
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 0.678431, 0.803922, 1)
+grow_amount = -0.106

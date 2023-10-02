@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="KappaModel" load_steps=2 format=3 uid="uid://df6r8qutpviyp"]
+
+[ext_resource type="Script" path="res://Resources/KappaModel.gd" id="1_pfd2s"]
+
+[resource]
+script = ExtResource("1_pfd2s")
+Titulo = "Titulo"
+ModelPath = ""
+TextoPath = ""

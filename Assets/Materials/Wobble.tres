@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bnldmlovy7kf4"]
+
+[ext_resource type="Shader" path="res://Assets/Materials/PlayerMainShader.gdshader" id="1_ax7na"]
+[ext_resource type="Texture2D" uid="uid://bt5o0sr6peltq" path="res://models/gobot/model/gobot_gobot_diffuse.png" id="2_5phbp"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ax7na")
+shader_parameter/outline_color = null
+shader_parameter/outline_width = 1.0
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_offset = 0.003
+shader_parameter/time_influence = 22.647
+shader_parameter/y_div = 30.0
+shader_parameter/texture_albedo = ExtResource("2_5phbp")

@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://o6uk5nswm21p"
+
+[deps]
+
+files=["res://Translations/hielera_dialog_translation.es.translation"]
+
+source_file="res://Translations/hielera_dialog_translation.csv"
+dest_files=["res://Translations/hielera_dialog_translation.es.translation"]
+
+[params]
+
+compress=true
+delimiter=0

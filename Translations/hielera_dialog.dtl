@@ -1,0 +1,5 @@
+[wait_input]
+una hielera con juguitos bien helados #id:12
+puedes tomar 1
+[signal arg="toma_juguitos"]
+[end_timeline]

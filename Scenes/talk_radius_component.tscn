@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhxqh7klxy3qr"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_62wtp"]
+height = 1.32513
+radius = 1.17883
+
+[node name="TalkRadiusComponent" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.663491, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_62wtp")

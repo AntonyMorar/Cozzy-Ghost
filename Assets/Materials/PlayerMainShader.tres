@@ -1,0 +1,11 @@
+[gd_resource type="VisualShader" format=3 uid="uid://bw1ixdwgufs76"]
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_sub;
+
+
+
+"
+graph_offset = Vector2(-1051, 71.4171)
+modes/blend = 2

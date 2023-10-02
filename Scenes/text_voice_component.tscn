@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0gn0fwf020ru"]
+
+[ext_resource type="Script" path="res://Scripts/TextVoiceComponent.gd" id="1_13xg6"]
+
+[node name="TextVoiceComponent" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_13xg6")
+timeline_name = "timeline_npc_01"

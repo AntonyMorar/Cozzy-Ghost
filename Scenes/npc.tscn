@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://csp4lmvjmbq0a"]
+
+[ext_resource type="Script" path="res://Scripts/npc.gd" id="1_67hwi"]
+[ext_resource type="PackedScene" uid="uid://2udx6k6yqkiw" path="res://models/gobot/gobot_skin.tscn" id="1_cd8ps"]
+[ext_resource type="PackedScene" uid="uid://bhxqh7klxy3qr" path="res://Scenes/talk_radius_component.tscn" id="1_ypupl"]
+[ext_resource type="PackedScene" uid="uid://b0gn0fwf020ru" path="res://Scenes/text_voice_component.tscn" id="2_mmd6p"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dxlhe"]
+radius = 0.609995
+height = 1.7018
+
+[node name="NPC" type="CharacterBody3D" node_paths=PackedStringArray("character")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_67hwi")
+character = NodePath("GobotSkin")
+
+[node name="GobotSkin" parent="." instance=ExtResource("1_cd8ps")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.715528, 0)
+shape = SubResource("CapsuleShape3D_dxlhe")
+
+[node name="TalkRadiusComponent" parent="." instance=ExtResource("1_ypupl")]
+
+[node name="TextVoiceComponent" parent="." instance=ExtResource("2_mmd6p")]
+
+[connection signal="body_entered" from="TalkRadiusComponent" to="TextVoiceComponent" method="_on_talk_radius_component_body_entered"]
+[connection signal="body_exited" from="TalkRadiusComponent" to="TextVoiceComponent" method="_on_talk_radius_component_body_exited"]

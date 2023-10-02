@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnyw03fq7nx5t"]
+
+[ext_resource type="PackedScene" uid="uid://2udx6k6yqkiw" path="res://models/gobot/gobot_skin.tscn" id="1_4kn70"]
+[ext_resource type="Script" path="res://Scripts/Ghost.gd" id="1_x0blo"]
+[ext_resource type="Texture2D" uid="uid://dq675fmt1rg8c" path="res://models/gobot/textures/open_eye.png" id="2_bl6e1"]
+[ext_resource type="Script" path="res://Scripts/PointMoveComponent.gd" id="3_herwb"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0s8le"]
+radius = 0.481102
+height = 1.31647
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_768o0"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("2_bl6e1")
+roughness = 0.6
+uv1_offset = Vector3(0.1, 0, 0)
+texture_repeat = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ko1hr"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("2_bl6e1")
+roughness = 0.6
+uv1_offset = Vector3(0.1, 0, 0)
+texture_repeat = false
+
+[node name="Ghost" type="CharacterBody3D" node_paths=PackedStringArray("navigationAgent", "pointNavi", "character")]
+collision_layer = 6
+collision_mask = 7
+script = ExtResource("1_x0blo")
+speed = 3.0
+navigationAgent = NodePath("NavigationAgent3D")
+pointNavi = NodePath("PointNavigationComponent")
+character = NodePath("GobotSkin")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661148, 0)
+shape = SubResource("CapsuleShape3D_0s8le")
+
+[node name="GobotSkin" parent="." instance=ExtResource("1_4kn70")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="GobotSkin/gobot/Armature" index="0"]
+bones/0/rotation = Quaternion(0.772549, 0.107691, -0.136221, 0.610749)
+bones/1/rotation = Quaternion(0.679368, -0.310085, 0.392234, 0.537083)
+bones/2/position = Vector3(0, 0.349595, 0)
+bones/2/rotation = Quaternion(0.0697404, 0.0214321, -0.00149868, 0.997334)
+bones/3/rotation = Quaternion(1, -5.80992e-11, -7.50306e-08, 3.72598e-09)
+bones/4/rotation = Quaternion(-0.501938, -0.139629, -0.0509271, 0.852038)
+bones/5/rotation = Quaternion(0.390933, 1.06082e-06, -1.33431e-05, 0.920419)
+bones/6/rotation = Quaternion(-0.227992, 0.541468, 0.2364, 0.773917)
+bones/7/rotation = Quaternion(0.528702, -9.93561e-07, 1.80866e-05, 0.848807)
+bones/8/rotation = Quaternion(-0.685521, -0.25655, -0.619366, 0.283951)
+bones/9/rotation = Quaternion(2.16937e-07, 5.35541e-07, -0.395029, 0.918669)
+bones/10/rotation = Quaternion(-0.289732, -0.637458, -0.217438, 0.680017)
+bones/11/rotation = Quaternion(0.487906, -0.0174399, 0.00854542, 0.87268)
+bones/12/rotation = Quaternion(-0.371224, -0.00197697, 0.00585366, 0.928523)
+bones/13/rotation = Quaternion(-0.502333, 1.50049e-05, -2.85054e-05, 0.864674)
+bones/14/rotation = Quaternion(-0.371224, -0.00197698, 0.00585369, 0.928523)
+bones/15/rotation = Quaternion(-0.502333, 1.49999e-05, -2.85068e-05, 0.864674)
+bones/16/rotation = Quaternion(-0.629267, 0.280193, 0.676444, 0.26065)
+bones/17/rotation = Quaternion(2.27203e-07, -5.84749e-07, 0.395029, 0.918669)
+bones/18/rotation = Quaternion(-0.289732, 0.637458, 0.217438, 0.680017)
+bones/19/rotation = Quaternion(0.487906, 0.0174399, -0.00854541, 0.87268)
+bones/20/rotation = Quaternion(-0.371224, 0.00197697, -0.00585365, 0.928523)
+bones/21/rotation = Quaternion(-0.502333, -1.4988e-05, 2.84986e-05, 0.864674)
+bones/22/rotation = Quaternion(-0.371224, 0.00197698, -0.00585368, 0.928523)
+bones/23/rotation = Quaternion(-0.502333, -1.50034e-05, 2.84914e-05, 0.864674)
+bones/24/rotation = Quaternion(-0.0697565, 4.58965e-08, 3.0345e-09, 0.997564)
+
+[node name="Gobot" parent="GobotSkin/gobot/Armature/Skeleton3D" index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_768o0")
+surface_material_override/2 = SubResource("StandardMaterial3D_ko1hr")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="GobotSkin/gobot/Armature/Skeleton3D" index="1"]
+transform = Transform3D(-0.399469, -0.82423, 0.401334, 0.398205, -0.55033, -0.733873, 0.825747, -0.133346, 0.548052, 0.327789, 0.259946, 0.138072)
+bone_name = "Finger_1_2.L"
+bone_idx = 13
+
+[node name="PointNavigationComponent" type="Node3D" parent="." node_paths=PackedStringArray("navigationAgent")]
+script = ExtResource("3_herwb")
+navigationAgent = NodePath("../NavigationAgent3D")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.5
+target_desired_distance = 0.5
+path_height_offset = 0.4
+path_max_distance = 10.01
+
+[editable path="GobotSkin"]
+[editable path="GobotSkin/gobot"]

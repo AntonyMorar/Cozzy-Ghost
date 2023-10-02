@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="KappaModel" load_steps=2 format=3 uid="uid://b7cn80g4of31m"]
+
+[ext_resource type="Script" path="res://Resources/KappaModel.gd" id="1_g3axp"]
+
+[resource]
+script = ExtResource("1_g3axp")
+Titulo = "Waterpark Mushroom"
+ModelPath = "res://Assets/3D/hongo_ejemplo/hongo.gltf"
+TextoPath = "res://Assets/3D/hongo_ejemplo/descripcion.md"

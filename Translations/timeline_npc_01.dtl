@@ -1,0 +1,10 @@
+Join character_npc_01 1
+[wait_input]
+character_npc_01: Holi...ggg #id:14
+character_npc_01: me gusta el olor de las rosas, a ti? #id:15
+- tambn me gusta #id:16
+	character_npc_01: ten, corté una #id:17
+- no... #id:18
+	character_npc_01: ok... #id:19
+Leave --All--
+[end_timeline]

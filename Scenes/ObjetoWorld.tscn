@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1gor8gy1l7a2"]
+
+[ext_resource type="Script" path="res://Scripts/ObjetoWorld.gd" id="1_4u5wv"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mx6jl"]
+height = 2.83861
+radius = 0.319652
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6tjis"]
+height = 1.39803
+radius = 0.825372
+
+[node name="ObjetoWorld" type="Node3D"]
+script = ExtResource("1_4u5wv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(0.623, 0, 0, 0, 0.623, 0, 0, 0, 0.623, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.40733, 0)
+shape = SubResource("CylinderShape3D_mx6jl")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86585, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.273739, 0)
+shape = SubResource("CylinderShape3D_6tjis")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

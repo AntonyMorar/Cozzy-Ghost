@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bl7s7lubh43t8"]
+
+[ext_resource type="Script" path="res://Scripts/generic_object.gd" id="1_lu4i3"]
+[ext_resource type="PackedScene" uid="uid://2vsykxgxp6v1" path="res://Assets/3D/hielera_chelas_mediavis/hielera_chelas.gltf" id="1_vbijp"]
+[ext_resource type="PackedScene" uid="uid://bhxqh7klxy3qr" path="res://Scenes/talk_radius_component.tscn" id="2_iut1w"]
+[ext_resource type="PackedScene" uid="uid://b0gn0fwf020ru" path="res://Scenes/text_voice_component.tscn" id="3_5e4bh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_akq6b"]
+size = Vector3(1.3019, 1, 1.00862)
+
+[node name="GenericObject" type="Node3D"]
+script = ExtResource("1_lu4i3")
+
+[node name="hielera_chelas" parent="." instance=ExtResource("1_vbijp")]
+
+[node name="TalkRadiusComponent" parent="." instance=ExtResource("2_iut1w")]
+
+[node name="TextVoiceComponent" parent="." instance=ExtResource("3_5e4bh")]
+timeline_name = "hielera_dialog"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58578, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_akq6b")
+
+[connection signal="body_entered" from="TalkRadiusComponent" to="TextVoiceComponent" method="_on_talk_radius_component_body_entered"]
+[connection signal="body_exited" from="TalkRadiusComponent" to="TextVoiceComponent" method="_on_talk_radius_component_body_exited"]

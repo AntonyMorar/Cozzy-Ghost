@@ -1,0 +1,4 @@
+[gd_resource type="SystemFont" format=3 uid="uid://tnc6b1g3wy2i"]
+
+[resource]
+font_names = PackedStringArray("FT88 Gothique")

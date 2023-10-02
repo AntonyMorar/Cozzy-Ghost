@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://l2e4lp0lb83q"
+
+[deps]
+
+files=["res://Translations/timeline_npc_01_translation.es.translation"]
+
+source_file="res://Translations/timeline_npc_01_translation.csv"
+dest_files=["res://Translations/timeline_npc_01_translation.es.translation"]
+
+[params]
+
+compress=true
+delimiter=0

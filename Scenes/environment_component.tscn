@@ -1,0 +1,245 @@
+[gd_scene load_steps=7 format=3 uid="uid://dt4d02xax8b27"]
+
+[ext_resource type="Environment" uid="uid://3nbbatxb2vn6" path="res://Illumination/showcase_environment.tres" id="1_vp8bn"]
+[ext_resource type="Script" path="res://Scripts/DayNightComponent.gd" id="2_deh63"]
+
+[sub_resource type="Animation" id="Animation_2qpct"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../DirectionalLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.708]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../WorldEnvironment:environment:background_energy_multiplier")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../DirectionalLight3D:light_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.984314, 0.87451, 0.733333, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../DirectionalLight3D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../DirectionalLight3D:quaternion")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Quaternion(-0.707107, 0, 0, 0.707107)]
+}
+
+[sub_resource type="Animation" id="Animation_xuuud"]
+resource_name = "day"
+length = 50.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../DirectionalLight3D:light_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 23.1, 39.4, 50),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.533333, 0.247059, 0.564706, 1), Color(0.533333, 0.247059, 0.564706, 1), Color(0.898039, 0.364706, 0.333333, 1), Color(0.984314, 0.87451, 0.733333, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../DirectionalLight3D:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 50),
+"transitions": PackedFloat32Array(4.43828, 1),
+"update": 0,
+"values": [0.019, 0.708]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../WorldEnvironment:environment:background_energy_multiplier")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 50),
+"transitions": PackedFloat32Array(3.24901, 1),
+"update": 0,
+"values": [0.05, 0.8]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(44.6, 50),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_day_starts"
+}, {
+"args": [],
+"method": &"_play_night"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../DirectionalLight3D:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../DirectionalLight3D:quaternion")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(-0.2, 50),
+"transitions": PackedFloat32Array(5.85634, 1),
+"update": 0,
+"values": [Quaternion(-0.270598, 0.653282, -0.653282, 0.270598), Quaternion(-0.707107, -1.54543e-08, -2.66925e-08, 0.707107)]
+}
+
+[sub_resource type="Animation" id="Animation_ml12l"]
+resource_name = "night"
+length = 50.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../DirectionalLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 50),
+"transitions": PackedFloat32Array(4.14106, 1),
+"update": 0,
+"values": [0.708, 0.019]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../WorldEnvironment:environment:background_energy_multiplier")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 50),
+"transitions": PackedFloat32Array(4.28709, 1),
+"update": 0,
+"values": [0.8, 0.05]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../DirectionalLight3D:light_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 24.5, 39.4, 50),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.984314, 0.87451, 0.733333, 1), Color(0.984314, 0.627451, 0.517647, 1), Color(0.996078, 0.545098, 0.262745, 1), Color(0.533333, 0.247059, 0.564706, 1)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(47.4, 50),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_night_starts"
+}, {
+"args": [],
+"method": &"_play_day"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../DirectionalLight3D:quaternion")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 50),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Quaternion(-0.707107, 0, 0, 0.707107), Quaternion(0.5, 0.5, -0.5, -0.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xrbgi"]
+_data = {
+"RESET": SubResource("Animation_2qpct"),
+"day": SubResource("Animation_xuuud"),
+"night": SubResource("Animation_ml12l")
+}
+
+[node name="EnvironmentComponent" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_vp8bn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 6.79022, 1.66312)
+rotation_edit_mode = 1
+light_color = Color(0.984314, 0.87451, 0.733333, 1)
+light_energy = 0.708
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="DayNightComponent" type="Node" parent="."]
+script = ExtResource("2_deh63")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DayNightComponent"]
+libraries = {
+"": SubResource("AnimationLibrary_xrbgi")
+}
