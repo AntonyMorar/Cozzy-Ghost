@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ggq0mjjxwi23"]
+
+[ext_resource type="Texture2D" uid="uid://rjc5fx1yb4vk" path="res://Assets/Characters/ghost.png" id="1_p20w3"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_p20w3")
+billboard_mode = 2
