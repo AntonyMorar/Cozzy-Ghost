@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="KappaModel" load_steps=2 format=3 uid="uid://cbbyuqn5jwbfn"]
 
-[ext_resource type="Script" path="res://Resources/KappaModel.gd" id="1_kkhim"]
+[ext_resource type="Script" path="res://Scripts/KappaModel.gd" id="1_kkhim"]
 
 [resource]
 script = ExtResource("1_kkhim")

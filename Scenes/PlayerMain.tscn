@@ -55,22 +55,39 @@ shape = SubResource("CapsuleShape3D_0s8le")
 [node name="GobotSkin" parent="." instance=ExtResource("12_3tvs5")]
 
 [node name="Skeleton3D" parent="GobotSkin/gobot/Armature" index="0"]
-bones/2/position = Vector3(0, 0.366522, 0)
-bones/2/rotation = Quaternion(0.0697305, -0.0272072, 0.00190251, 0.997193)
-bones/3/rotation = Quaternion(1, 1.97222e-10, -7.26989e-08, 7.46011e-09)
-bones/4/rotation = Quaternion(-0.376275, -0.193596, -0.0490978, 0.904725)
-bones/5/rotation = Quaternion(0.225012, 1.11485e-06, -7.68964e-06, 0.974356)
-bones/6/rotation = Quaternion(-0.20147, 0.506929, 0.16345, 0.82202)
-bones/7/rotation = Quaternion(0.399402, -1.05206e-06, 1.36783e-05, 0.916776)
-bones/8/rotation = Quaternion(-0.669957, -0.26351, -0.636169, 0.277505)
-bones/16/rotation = Quaternion(-0.645841, 0.273645, 0.660638, 0.267516)
+bones/0/rotation = Quaternion(0.772549, 0.107691, -0.136221, 0.610749)
+bones/1/rotation = Quaternion(0.679368, -0.310085, 0.392234, 0.537083)
+bones/2/position = Vector3(0, 0.350586, 0)
+bones/2/rotation = Quaternion(0.0697548, 0.00702376, -0.000491149, 0.997539)
+bones/3/rotation = Quaternion(1, -2.04124e-11, -7.566e-08, -6.36274e-09)
+bones/4/rotation = Quaternion(-0.495983, -0.153385, -0.0570312, 0.852773)
+bones/5/rotation = Quaternion(0.393766, 1.04297e-06, -1.34497e-05, 0.919211)
+bones/6/rotation = Quaternion(-0.238105, 0.527755, 0.228274, 0.782734)
+bones/7/rotation = Quaternion(0.525803, -9.82438e-07, 1.79882e-05, 0.850607)
+bones/8/rotation = Quaternion(-0.707903, -0.2459, -0.593656, 0.293222)
+bones/9/rotation = Quaternion(2.16937e-07, 5.35541e-07, -0.395029, 0.918669)
+bones/10/rotation = Quaternion(-0.289732, -0.637458, -0.217438, 0.680017)
+bones/11/rotation = Quaternion(0.487906, -0.0174399, 0.00854542, 0.87268)
+bones/12/rotation = Quaternion(-0.371224, -0.00197697, 0.00585366, 0.928523)
+bones/13/rotation = Quaternion(-0.502333, 1.50049e-05, -2.85054e-05, 0.864674)
+bones/14/rotation = Quaternion(-0.371224, -0.00197698, 0.00585369, 0.928523)
+bones/15/rotation = Quaternion(-0.502333, 1.49999e-05, -2.85068e-05, 0.864674)
+bones/16/rotation = Quaternion(-0.603885, 0.289617, 0.699197, 0.250137)
+bones/17/rotation = Quaternion(2.27203e-07, -5.84749e-07, 0.395029, 0.918669)
+bones/18/rotation = Quaternion(-0.289732, 0.637458, 0.217438, 0.680017)
+bones/19/rotation = Quaternion(0.487906, 0.0174399, -0.00854541, 0.87268)
+bones/20/rotation = Quaternion(-0.371224, 0.00197697, -0.00585365, 0.928523)
+bones/21/rotation = Quaternion(-0.502333, -1.4988e-05, 2.84986e-05, 0.864674)
+bones/22/rotation = Quaternion(-0.371224, 0.00197698, -0.00585368, 0.928523)
+bones/23/rotation = Quaternion(-0.502333, -1.50034e-05, 2.84914e-05, 0.864674)
+bones/24/rotation = Quaternion(-0.0697565, 4.58965e-08, 3.0345e-09, 0.997564)
 
 [node name="Gobot" parent="GobotSkin/gobot/Armature/Skeleton3D" index="0"]
 surface_material_override/1 = SubResource("StandardMaterial3D_768o0")
 surface_material_override/2 = SubResource("StandardMaterial3D_ko1hr")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="GobotSkin/gobot/Armature/Skeleton3D" index="1"]
-transform = Transform3D(-0.513076, -0.79967, 0.3119, 0.401329, -0.544705, -0.736364, 0.758741, -0.252637, 0.600405, 0.303979, 0.275573, 0.178116)
+transform = Transform3D(-0.366665, -0.82363, 0.432656, 0.394027, -0.558755, -0.729751, 0.842793, -0.0970958, 0.529408, 0.334955, 0.262973, 0.132828)
 bone_name = "Finger_1_2.L"
 bone_idx = 13
 

@@ -10,13 +10,14 @@ config_version=5
 
 [application]
 
-config/name="ghost cozy"
+config/name="Cozzy Ghost"
 config/tags=PackedStringArray("current")
 run/main_scene="res://Scenes/MainWorld.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="AAA"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://box-art.png"
+run/name="ghost cozy"
 
 [autoload]
 
