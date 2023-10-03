@@ -42,7 +42,10 @@ func _input(event):
 				
 			tween = get_tree().create_tween().set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
 			tween.tween_property(self, "position", targetPos, 2.0)
-#			direction = (targetPos - position).normalized()
+			tween = get_tree().create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+			tween.tween_property(self, "scale", Vector2(1.4,0.5), 0.1).from(Vector2(1,1))
+			tween.tween_property(self, "scale", Vector2(1,1), 0.2).from(Vector2(1.4,0.5))
+
 
 func _set_in_conv(_in_conv, conv_name):
 	if(_in_conv):
