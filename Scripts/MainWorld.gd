@@ -40,9 +40,6 @@ func _meteObjeto(_object_name):
 	$Objetos.add_child(instance)
 
 
-
-
-
 func _on_enviar_boton_pressed():
 	Events.emit_signal('sendText', $TextInput/TextEdit.text)
 	$TextInput/TextEdit.text = ''
