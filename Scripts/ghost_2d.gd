@@ -24,12 +24,6 @@ func _ready():
 	Events.connect("inMenu", _set_in_menu)
 	anim.play("hover_ghost")
 	
-#
-#func _process(delta):
-#	if position.distance_to(targetPos) >3:
-#		velocity = direction * speed
-#		move_and_slide()
-
 
 func _input(event):
 	if Input.is_action_just_pressed("LeftMouse") and estadoActual == estados.NORMAL:

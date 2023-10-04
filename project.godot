@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Cozzy Ghost"
 config/tags=PackedStringArray("current")
-run/main_scene="res://Scenes/MainWorld.tscn"
+run/main_scene="res://Scenes/Gameplay.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="AAA"
 config/features=PackedStringArray("4.1", "Forward Plus")
@@ -68,8 +68,8 @@ layout/default_style="Default"
 
 [display]
 
-window/size/viewport_width=800
-window/size/viewport_height=800
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/stretch/aspect="ignore"
 
 [editor_plugins]

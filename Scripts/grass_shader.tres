@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=46 format=3 uid="uid://bvgd02bugbo6j"]
+[gd_resource type="VisualShader" load_steps=46 format=3 uid="uid://paebtdo616rm"]
 
 [sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_6w20o"]
 default_input_values = [0, 0.0, 1, 1.0, 2, 0.0]
