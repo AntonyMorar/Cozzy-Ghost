@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://n5cchnvivbop"]
+[gd_scene load_steps=16 format=3 uid="uid://n5cchnvivbop"]
 
 [ext_resource type="Texture2D" uid="uid://b647rtjsw6xpi" path="res://Assets/Materials/autumn.png" id="1_88d4f"]
 [ext_resource type="Script" path="res://Scripts/animationStartManager.gd" id="2_mhwo8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b4cgpppr1dsmt" path="res://Assets/Icons/Ghost_Game.png" id="4_737t6"]
 [ext_resource type="Texture2D" uid="uid://ca0hagupjrkg0" path="res://Assets/Icons/start_button.png" id="5_3qmyq"]
 [ext_resource type="Texture2D" uid="uid://naua6pwj4jw4" path="res://Assets/Icons/quit_button.png" id="6_umds2"]
+[ext_resource type="PackedScene" uid="uid://bj4udttockbsa" path="res://Scenes/pause_component.tscn" id="8_kypw5"]
 
 [sub_resource type="Animation" id="Animation_51c75"]
 length = 0.001
@@ -73,7 +74,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.6, 3.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1029, 18), Vector2(312.5, 400), Vector2(-404, 500)]
+"values": [Vector2(2147, 22), Vector2(312.5, 400), Vector2(-404, 500)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -99,7 +100,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(1.1, 3.3, 4.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1075, 135), Vector2(577, 429), Vector2(227, 1108)]
+"values": [Vector2(2193, 205), Vector2(761, 623), Vector2(5, 1390)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -111,7 +112,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(2.3, 3.9, 5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(552, -232), Vector2(739.367, 586.932), Vector2(-85, 1023)]
+"values": [Vector2(1268, -240), Vector2(739.367, 586.932), Vector2(-133, 1401)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -120,10 +121,10 @@ tracks/4/path = NodePath("leaf4:position")
 tracks/4/interp = 2
 tracks/4/loop_wrap = false
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 3.1),
+"times": PackedFloat32Array(1.1, 4.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1114, 539), Vector2(-205, 1017)]
+"values": [Vector2(2212, 513), Vector2(-309, 1005)]
 }
 
 [sub_resource type="Animation" id="Animation_kt2og"]
@@ -188,10 +189,10 @@ tracks/0/path = NodePath("leafFront:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PackedFloat32Array(4.8, 5.9, 7),
+"times": PackedFloat32Array(3.1, 5.9, 7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1115, 503), Vector2(405, 643), Vector2(-228, 900)]
+"values": [Vector2(2177, 403), Vector2(617, 989), Vector2(-228, 900)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -203,7 +204,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0.7, 2.4, 4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1121, 777), Vector2(344, 737), Vector2(-288, 650)]
+"values": [Vector2(2209, 869), Vector2(344, 737), Vector2(-312, 1100)]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -259,17 +260,28 @@ texture = ExtResource("1_88d4f")
 
 [node name="StartMenu" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 800.0
-offset_bottom = 800.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("3_lblhe")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="StartMenu"]
-layout_mode = 2
-offset_left = 110.5
-offset_top = 299.5
-offset_right = 689.5
-offset_bottom = 500.5
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -289.5
+offset_top = -118.5
+offset_right = 289.5
+offset_bottom = 118.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="StartMenu/VBoxContainer"]
 layout_mode = 2
@@ -305,6 +317,14 @@ texture = ExtResource("4_8dqpf")
 [node name="leafFront2" type="Sprite2D" parent="."]
 position = Vector2(1049, 83)
 texture = ExtResource("4_8dqpf")
+
+[node name="PauseComponent" parent="." instance=ExtResource("8_kypw5")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="StartMenu/VBoxContainer/VBoxContainer/start_button" to="StartMenu" method="_on_start_button_pressed"]
 [connection signal="pressed" from="StartMenu/VBoxContainer/VBoxContainer/quit_button" to="StartMenu" method="_on_quit_button_pressed"]
