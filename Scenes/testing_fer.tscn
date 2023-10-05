@@ -1,0 +1,454 @@
+[gd_scene load_steps=47 format=3 uid="uid://y7svisqly4t6"]
+
+[ext_resource type="PackedScene" uid="uid://dt4d02xax8b27" path="res://Scenes/environment_component.tscn" id="1_j3u77"]
+[ext_resource type="PackedScene" uid="uid://rk0es55332gf" path="res://Assets/3D/hongo_ejemplo/hongo.gltf" id="1_moshr"]
+[ext_resource type="PackedScene" uid="uid://kod0awm1ha4o" path="res://models/gobot/model/gobot.glb" id="2_rvkvk"]
+[ext_resource type="PackedScene" uid="uid://b7touecbmwlf2" path="res://Scenes/Prefabs/BaseObject.tscn" id="4_0ad5w"]
+[ext_resource type="PackedScene" uid="uid://d0uhwavrs66p5" path="res://Assets/Blockouts-godot/floor/64x1-floor.glb" id="6_ftpo5"]
+[ext_resource type="PackedScene" uid="uid://c872n1tvrdhfg" path="res://Assets/Blockouts-godot/x-rects/8x4-x-rect.glb" id="7_jq7dh"]
+[ext_resource type="PackedScene" uid="uid://kvv47i7x5btv" path="res://Assets/Blockouts-godot/columns/2x6-column.glb" id="8_3ksyj"]
+[ext_resource type="PackedScene" uid="uid://b2qtjd00dy3xc" path="res://Assets/Blockouts-godot/walls/4x5-wall.glb" id="9_l1lr2"]
+[ext_resource type="PackedScene" uid="uid://cmke4slc3inry" path="res://Assets/Blockouts-godot/floor/100x1-floor.glb" id="10_0xp8l"]
+[ext_resource type="PackedScene" uid="uid://cdpsrnga0glls" path="res://Assets/Blockouts-godot/ramps/2x4x1-ramp.glb" id="11_rdqg7"]
+[ext_resource type="PackedScene" uid="uid://n1up60oeujer" path="res://Assets/Blockouts-godot/floor/16x1-floor.glb" id="12_uwu43"]
+[ext_resource type="PackedScene" uid="uid://dpucwnj7md5w8" path="res://Assets/Blockouts-godot/columns/2x3-column.glb" id="13_8y320"]
+[ext_resource type="PackedScene" uid="uid://dv3568dixxh6l" path="res://Assets/Blockouts-godot/x-rects/2x3-x-rect.glb" id="14_ttc5t"]
+[ext_resource type="PackedScene" uid="uid://bqej760uqlpmg" path="res://Scenes/ghost_2d.tscn" id="15_pkg3u"]
+[ext_resource type="PackedScene" uid="uid://cobsb4a1gpwvo" path="res://Assets/Blockouts-godot/blocks/2x2-block.glb" id="16_wbfle"]
+[ext_resource type="Script" path="res://Scripts/2x2-block.gd" id="17_gycgw"]
+[ext_resource type="Script" path="res://Scripts/PathOrderComponent.gd" id="18_1avik"]
+[ext_resource type="PackedScene" uid="uid://c6sta6a7o2a4n" path="res://Scenes/clickable_element.tscn" id="18_4f8ad"]
+[ext_resource type="PackedScene" uid="uid://b8c6ofd73e0x6" path="res://Assets/3D/cocina/Cocina_Completo.glb" id="19_di7jn"]
+[ext_resource type="Script" path="res://Scripts/Cocina_Sartenes01.gd" id="20_42njr"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n31la"]
+points = PackedVector3Array(-4, -1, -4, -4, 0, -4, 4, -1, -4, -4, -1, 4, -4, 0, 4, 4, 0, -4, 4, -1, 4, 4, 0, 4)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hrwrn"]
+points = PackedVector3Array(4, 4, 0.5, 4, 4, -0.5, -4, 4, 0.5, 4, 0, 0.5, 4, 0, -0.5, -4, 4, -0.5, -4, 0, 0.5, -4, 0, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_btnhv"]
+points = PackedVector3Array(-1, 0, -1, -1, 0, 1, -1, 6, -1, 1, 0, -1, 1, 0, 1, -1, 6, 1, 1, 6, -1, 1, 6, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_o4uh0"]
+points = PackedVector3Array(2.00792, 5.03968, 0.571429, -1.89513, 0.141724, -0.5, -2.03968, -0.0396824, 0.571429, 2.00792, -0.0396824, 0.571429, -2.03968, 5.03968, 0.571429, 1.86336, 4.85828, -0.5, 1.86336, 0.141724, -0.5, -1.89513, 4.85828, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nqcwt"]
+points = PackedVector3Array(-5, -1, -5, -5, 0, -5, 5, -1, -5, -5, -1, 5, -5, 0, 5, 5, 0, -5, 5, -1, 5, 5, 0, 5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4a48x"]
+points = PackedVector3Array(-2, 0, -1, -2, 1, -1, 2, 0, -1, -2, 0, 1, 2, 1, -1, 2, 0, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1gixu"]
+points = PackedVector3Array(-2, -1, -2, -2, 0, -2, 2, -1, -2, -2, -1, 2, -2, 0, 2, 2, 0, -2, 2, -1, 2, 2, 0, 2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_k60pc"]
+points = PackedVector3Array(-1, 0, -1, -1, 0, 1, -1, 3, -1, 1, 0, -1, 1, 0, 1, -1, 3, 1, 1, 3, -1, 1, 3, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wln1p"]
+points = PackedVector3Array(-1, 0, -0.5, -1, 0, 0.5, -1, 3, -0.5, 1, 0, -0.5, 1, 0, 0.5, -1, 3, 0.5, 1, 3, -0.5, 1, 3, 0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_d5sqn"]
+points = PackedVector3Array(-2, 0, -1, -2, 1, -1, 2, 0, -1, -2, 0, 1, 2, 1, -1, 2, 0, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8tvvn"]
+points = PackedVector3Array(-2, 0, -1, -2, 1, -1, 2, 0, -1, -2, 0, 1, 2, 1, -1, 2, 0, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f7lj2"]
+points = PackedVector3Array(-2, -1, -2, -2, 0, -2, 2, -1, -2, -2, -1, 2, -2, 0, 2, 2, 0, -2, 2, -1, 2, 2, 0, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a0k2f"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="Animation" id="Animation_ej3ja"]
+resource_name = "rotate_cube"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2.66512, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5m2ox"]
+_data = {
+"rotate_cube": SubResource("Animation_ej3ja")
+}
+
+[sub_resource type="Animation" id="Animation_osdfc"]
+resource_name = "path_0"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D_0/PathFollow3D:progress_ratio")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.95]
+}
+
+[sub_resource type="Animation" id="Animation_nnr4u"]
+resource_name = "path_1"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D_1/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.95]
+}
+
+[sub_resource type="Animation" id="Animation_pse4g"]
+resource_name = "path_2"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D_2/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.95]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g3c8q"]
+_data = {
+"path_0": SubResource("Animation_osdfc"),
+"path_1": SubResource("Animation_nnr4u"),
+"path_2": SubResource("Animation_pse4g")
+}
+
+[sub_resource type="Curve3D" id="Curve3D_lvdn4"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.0124267, 0, 0.14167, 0, 0, 0, 0, 0, 0, 4.54211, 0.0153073, 3.97343, 0, 0, 0, 0, 0, 0, 5.30103, 0.537528, 4.42916, 0, 0, 0, 0, 0, 0, 7.526, 2.91469, 8.44621, 0, 0, 0, 0, 0, 0, 7.94884, 3.06328, 10.4241, 0, 0, 0, 0, 0, 0, 6.9511, 3.02593, 11.7288, 0, 0, 0, 0, 0, 0, 5.41166, 3.00041, 11.7394),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[sub_resource type="Curve3D" id="Curve3D_pls2c"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 5.46677, 0, 11.7481, 0, 0, 0, 0, 0, 0, 2.40182, 0, 9.79118, 0, 0, 0, 0, 0, 0, 1.64228, 0, 8.70996, 0, 0, 0, 0, 0, 0, 0.337665, 0, 8.65634, 0, 0, 0, 0, 0, 0, -1.7124, 0.994732, 8.65308, 0, 0, 0, 0, 0, 0, -3.91952, 0.994748, 8.83182),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[sub_resource type="Curve3D" id="Curve3D_58ovd"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 5.43266, 0, 11.7401, 0, 0, 0, 0, 0, 0, 2.70726, 0, 12.4103, 0, 0, 0, 0, 0, 0, 2.466, 0, 13.4111, 0, 0, 0, 0, 0, 0, 0.348233, 0, 13.4557, 0, 0, 0, 0, 0, 0, -1.80881, 0.995052, 13.7041, 0, 0, 0, 0, 0, 0, -3.71212, 0.995065, 14.5262, 0, 0, 0, 0, 0, 0, -5.79415, 0.995065, 14.5262),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g2ue3"]
+size = Vector3(1.3671, 1, 1.68408)
+
+[sub_resource type="Animation" id="Animation_x2fti"]
+resource_name = "agitar_sartenes"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:quaternion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7, 1),
+"transitions": PackedFloat32Array(0.153893, 1, 1, 1),
+"update": 0,
+"values": [Quaternion(0.137032, 0.727257, 0.653823, -0.157592), Quaternion(-0.00847027, 0.740006, 0.610138, -0.282933), Quaternion(0.212572, 0.708868, 0.666748, -0.0881293), Quaternion(0.137032, 0.727257, 0.653823, -0.157592)]
+}
+
+[sub_resource type="Animation" id="Animation_68gv0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:quaternion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Quaternion(0.231411, 0.702944, 0.668862, -0.0703071)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pqgd2"]
+_data = {
+"RESET": SubResource("Animation_68gv0"),
+"agitar_sartenes": SubResource("Animation_x2fti")
+}
+
+[node name="TestingFer" type="Node3D"]
+
+[node name="EnvironmentComponent" parent="." instance=ExtResource("1_j3u77")]
+
+[node name="hongo" parent="." instance=ExtResource("1_moshr")]
+visible = false
+
+[node name="BaseObject" parent="." instance=ExtResource("4_0ad5w")]
+
+[node name="Blockout" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24325, 0, 0)
+
+[node name="64x1-floor2" parent="Blockout" instance=ExtResource("6_ftpo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 4, 12)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Blockout/64x1-floor2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockout/64x1-floor2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_n31la")
+
+[node name="8x4-x-rect" parent="Blockout" instance=ExtResource("7_jq7dh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 7.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Blockout/8x4-x-rect"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockout/8x4-x-rect/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_hrwrn")
+
+[node name="2x6-column2" parent="Blockout" instance=ExtResource("8_3ksyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 4, 8)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Blockout/2x6-column2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockout/2x6-column2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_btnhv")
+
+[node name="4x5-wall" parent="Blockout" instance=ExtResource("9_l1lr2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12.0036, 4, 12.9772)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Blockout/4x5-wall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockout/4x5-wall/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_o4uh0")
+
+[node name="64x1-floor" parent="Blockout" instance=ExtResource("6_ftpo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3, 12)
+
+[node name="100x1-floor" parent="Blockout" instance=ExtResource("10_0xp8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 3)
+
+[node name="100x1" parent="Blockout/100x1-floor" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036871, 0.0912142, -1.04568)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Blockout/100x1-floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockout/100x1-floor/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_nqcwt")
+
+[node name="2x4x1-ramp" parent="Blockout" instance=ExtResource("11_rdqg7")]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 1, 0, 5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Blockout/2x4x1-ramp"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockout/2x4x1-ramp/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_4a48x")
+
+[node name="16x1-floor" parent="Blockout" instance=ExtResource("12_uwu43")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Blockout/16x1-floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockout/16x1-floor/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_1gixu")
+
+[node name="16x1-floor2" parent="Blockout" instance=ExtResource("12_uwu43")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Blockout/16x1-floor2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockout/16x1-floor2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_1gixu")
+
+[node name="2x3-column" parent="Blockout" instance=ExtResource("13_8y320")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 7)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Blockout/2x3-column"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockout/2x3-column/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_k60pc")
+
+[node name="2x3-x-rect" parent="Blockout" instance=ExtResource("14_ttc5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 7.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Blockout/2x3-x-rect"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockout/2x3-x-rect/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_wln1p")
+
+[node name="2x4x1-ramp3" parent="Blockout" instance=ExtResource("11_rdqg7")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 3, 9)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Blockout/2x4x1-ramp3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockout/2x4x1-ramp3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_d5sqn")
+
+[node name="2x4x1-ramp2" parent="Blockout" instance=ExtResource("11_rdqg7")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 3, 14)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Blockout/2x4x1-ramp2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockout/2x4x1-ramp2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_8tvvn")
+
+[node name="16x1-floor3" parent="Blockout" instance=ExtResource("12_uwu43")]
+transform = Transform3D(0.99055, 0, 0.137151, 0, 1, 0, -0.137151, 0, 0.99055, 4, 3, 11.2724)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Blockout/16x1-floor3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockout/16x1-floor3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_f7lj2")
+
+[node name="2x4x1-ramp4" parent="Blockout" instance=ExtResource("11_rdqg7")]
+transform = Transform3D(-0.942723, 0, -0.333577, 0, 1, 0, 0.333577, 0, -0.942723, 2.9, 1, 6.2)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Blockout/2x4x1-ramp4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockout/2x4x1-ramp4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_d5sqn")
+
+[node name="2x4x1-ramp5" parent="Blockout" instance=ExtResource("11_rdqg7")]
+transform = Transform3D(-0.969565, 0, -0.244834, 0, 1, 0, 0.244834, 0, -0.969565, 3.66401, 2, 8.07895)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Blockout/2x4x1-ramp5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockout/2x4x1-ramp5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_d5sqn")
+
+[node name="Camera3D2" type="Camera3D" parent="."]
+transform = Transform3D(-1, 4.23834e-08, -7.64617e-08, 0, 0.87462, 0.48481, 8.74228e-08, 0.48481, -0.87462, 0, 15.055, -11)
+current = true
+fov = 35.0
+size = 13.0
+far = 209.23
+
+[node name="Ghost2D" parent="." instance=ExtResource("15_pkg3u")]
+
+[node name="getMouseComponent" parent="Ghost2D" index="0" node_paths=PackedStringArray("camera")]
+camera = NodePath("../../Camera3D2")
+
+[node name="2x2-block" parent="." instance=ExtResource("16_wbfle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.628095, 3, 10.5657)
+script = ExtResource("17_gycgw")
+
+[node name="Area3D" type="Area3D" parent="2x2-block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="2x2-block/Area3D"]
+shape = SubResource("BoxShape3D_a0k2f")
+
+[node name="clickableElement" parent="2x2-block" node_paths=PackedStringArray("click_area") instance=ExtResource("18_4f8ad")]
+click_area = NodePath("../Area3D")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="2x2-block"]
+libraries = {
+"": SubResource("AnimationLibrary_5m2ox")
+}
+
+[node name="Paths" type="Node3D" parent="."]
+
+[node name="PathOrderComponent" type="Node" parent="Paths" node_paths=PackedStringArray("ordered_list_of_paths", "character", "animation")]
+script = ExtResource("18_1avik")
+ordered_list_of_paths = [NodePath("../Path3D_0"), NodePath("../Path3D_1"), NodePath("../Path3D_2")]
+character = NodePath("../Path3D_0/PathFollow3D/gobot")
+animation = NodePath("../PathAnimationPlayer")
+
+[node name="PathAnimationPlayer" type="AnimationPlayer" parent="Paths"]
+libraries = {
+"": SubResource("AnimationLibrary_g3c8q")
+}
+
+[node name="Path3D_0" type="Path3D" parent="Paths"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.144971, 0)
+curve = SubResource("Curve3D_lvdn4")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Paths/Path3D_0"]
+transform = Transform3D(0.645835, 0, 0.763462, 0, 0.999972, 0, -0.763468, 0, 0.645829, 0.0124267, -0.185, 0.14167)
+v_offset = -0.185
+rotation_mode = 1
+use_model_front = true
+loop = false
+tilt_enabled = false
+
+[node name="gobot" parent="Paths/Path3D_0/PathFollow3D" instance=ExtResource("2_rvkvk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Path3D_1" type="Path3D" parent="Paths"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13404, 0)
+curve = SubResource("Curve3D_pls2c")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Paths/Path3D_1"]
+transform = Transform3D(-0.538147, 0, -0.842851, 0, 1, 0, 0.842851, 0, -0.538147, 5.46677, 0, 11.7481)
+rotation_mode = 1
+use_model_front = true
+loop = false
+tilt_enabled = false
+
+[node name="Path3D_2" type="Path3D" parent="Paths"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.15191, 0)
+curve = SubResource("Curve3D_58ovd")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Paths/Path3D_2"]
+transform = Transform3D(0.238788, 0, -0.97107, 0, 1, 0, 0.97107, 0, 0.238788, 5.43266, 0, 11.7401)
+rotation_mode = 1
+use_model_front = true
+loop = false
+tilt_enabled = false
+
+[node name="Cocina_Completo" parent="." instance=ExtResource("19_di7jn")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.33351, 4.2867, 11.0159)
+
+[node name="Cocina_Sartenes01" parent="Cocina_Completo" index="4"]
+transform = Transform3D(-0.883011, 0.419389, 0.21072, 0.231287, -0.0018543, 0.972884, 0.408408, 0.907804, -0.0953617, -2.52153, 3.94817, -3.36382)
+rotation_edit_mode = 1
+script = ExtResource("20_42njr")
+
+[node name="clickableElement" parent="Cocina_Completo/Cocina_Sartenes01" index="0" node_paths=PackedStringArray("click_area") instance=ExtResource("18_4f8ad")]
+click_area = NodePath("../Area3D")
+
+[node name="Area3D" type="Area3D" parent="Cocina_Completo/Cocina_Sartenes01" index="1"]
+transform = Transform3D(0.945518, 0.325568, 0, -0.325568, 0.945518, 0, 0, 0, 1, 0.0382998, -0.0956125, -0.746162)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cocina_Completo/Cocina_Sartenes01/Area3D"]
+shape = SubResource("BoxShape3D_g2ue3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cocina_Completo/Cocina_Sartenes01" index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_pqgd2")
+}
+
+[editable path="Blockout/64x1-floor2"]
+[editable path="Blockout/8x4-x-rect"]
+[editable path="Blockout/2x6-column2"]
+[editable path="Blockout/4x5-wall"]
+[editable path="Blockout/64x1-floor"]
+[editable path="Blockout/100x1-floor"]
+[editable path="Blockout/2x4x1-ramp"]
+[editable path="Blockout/16x1-floor"]
+[editable path="Blockout/16x1-floor2"]
+[editable path="Blockout/2x3-column"]
+[editable path="Blockout/2x3-x-rect"]
+[editable path="Blockout/2x4x1-ramp3"]
+[editable path="Blockout/2x4x1-ramp2"]
+[editable path="Blockout/16x1-floor3"]
+[editable path="Blockout/2x4x1-ramp4"]
+[editable path="Blockout/2x4x1-ramp5"]
+[editable path="Ghost2D"]
+[editable path="Cocina_Completo"]

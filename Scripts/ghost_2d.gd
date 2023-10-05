@@ -28,8 +28,10 @@ func _ready():
 func _input(event):
 	if Input.is_action_just_pressed("LeftMouse") and estadoActual == estados.NORMAL:
 		targetPos = pointNavi.get_mouse_position_point()
+		targetPos.y = targetPos.y + 70
+		targetPos.x = targetPos.x + 100
 		if(targetPos != null):
-			if(position > targetPos):
+			if(position.x + 100 > targetPos.x):
 				ghost_sprite.flip_h = false
 			else:
 				ghost_sprite.flip_h = true
