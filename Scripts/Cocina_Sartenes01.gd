@@ -7,7 +7,6 @@ func _clicked():
 		is_active = true
 		Globals.ya_clickeo_sarten = true
 		$AnimationPlayer.play("sarten_cae")
-		print('toy activoooo')
 		
 func _active_again():
 	is_active = false

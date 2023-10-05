@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://y7svisqly4t6"]
+[gd_scene load_steps=49 format=3 uid="uid://y7svisqly4t6"]
 
 [ext_resource type="PackedScene" uid="uid://dt4d02xax8b27" path="res://Scenes/environment_component.tscn" id="1_j3u77"]
 [ext_resource type="PackedScene" uid="uid://kod0awm1ha4o" path="res://models/gobot/model/gobot.glb" id="2_rvkvk"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://n1up60oeujer" path="res://Assets/Blockouts-godot/floor/16x1-floor.glb" id="12_uwu43"]
 [ext_resource type="PackedScene" uid="uid://dpucwnj7md5w8" path="res://Assets/Blockouts-godot/columns/2x3-column.glb" id="13_8y320"]
 [ext_resource type="PackedScene" uid="uid://dv3568dixxh6l" path="res://Assets/Blockouts-godot/x-rects/2x3-x-rect.glb" id="14_ttc5t"]
+[ext_resource type="Script" path="res://Scripts/spookZoneElement.gd" id="15_hili6"]
 [ext_resource type="PackedScene" uid="uid://bqej760uqlpmg" path="res://Scenes/ghost_2d.tscn" id="15_pkg3u"]
 [ext_resource type="PackedScene" uid="uid://cobsb4a1gpwvo" path="res://Assets/Blockouts-godot/blocks/2x2-block.glb" id="16_wbfle"]
 [ext_resource type="Script" path="res://Scripts/2x2-block.gd" id="17_gycgw"]
@@ -58,6 +59,9 @@ points = PackedVector3Array(-2, -1, -2, -2, 0, -2, 2, -1, -2, -2, -1, 2, -2, 0, 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a0k2f"]
 size = Vector3(2, 2, 2)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_7xqfb"]
+size = Vector3(3.83791, 1, 2.64374)
+
 [sub_resource type="Animation" id="Animation_ej3ja"]
 resource_name = "rotate_cube"
 tracks/0/type = "value"
@@ -77,6 +81,8 @@ tracks/0/keys = {
 _data = {
 "rotate_cube": SubResource("Animation_ej3ja")
 }
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_csvi6"]
 
 [sub_resource type="Animation" id="Animation_osdfc"]
 resource_name = "path_0"
@@ -398,14 +404,28 @@ camera = NodePath("../../Camera3D2")
 transform = Transform3D(-0.888618, 0, 0.458648, 0, 1, 0, -0.458648, 0, -0.888618, -0.628095, 3, 10.5657)
 script = ExtResource("17_gycgw")
 
-[node name="Area3D" type="Area3D" parent="2x2-block"]
+[node name="clickableElement" parent="2x2-block" node_paths=PackedStringArray("click_area") instance=ExtResource("18_4f8ad")]
+click_area = NodePath("../clickableArea")
+
+[node name="clickableArea" type="Area3D" parent="2x2-block"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="2x2-block/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="2x2-block/clickableArea"]
 shape = SubResource("BoxShape3D_a0k2f")
 
-[node name="clickableElement" parent="2x2-block" node_paths=PackedStringArray("click_area") instance=ExtResource("18_4f8ad")]
-click_area = NodePath("../Area3D")
+[node name="spookZoneElement" type="Node" parent="2x2-block" node_paths=PackedStringArray("spook_area")]
+script = ExtResource("15_hili6")
+spook_area = NodePath("../spookArea")
+spook_parent_logic_path = NodePath("..")
+
+[node name="spookArea" type="Area3D" parent="2x2-block"]
+transform = Transform3D(0.885207, 0, 0.465197, 0, 1, 0, -0.465197, 0, 0.885207, -0.00413275, 0.498667, 2.38182)
+collision_layer = 0
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="2x2-block/spookArea"]
+shape = SubResource("BoxShape3D_7xqfb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="2x2-block"]
 libraries = {
@@ -413,7 +433,15 @@ libraries = {
 }
 
 [node name="gobot" parent="." instance=ExtResource("2_rvkvk")]
-transform = Transform3D(-1.6292e-07, 0, -0.999998, 0, 1, 0, 0.999998, 0, -1.6292e-07, -5.17029, 4.14698, 14.5262)
+transform = Transform3D(0.0068855, 0, -0.999961, 0, 0.999972, 0, 0.999969, 0, 0.00688544, 0, 0, 0)
+
+[node name="spookCollider" type="Area3D" parent="gobot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gobot/spookCollider"]
+shape = SubResource("CapsuleShape3D_csvi6")
 
 [node name="Paths" type="Node3D" parent="."]
 
@@ -433,7 +461,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.144971, 0)
 curve = SubResource("Curve3D_lvdn4")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Paths/Path3D_0"]
-transform = Transform3D(0.0068855, 0, -0.999961, 0, 0.999972, 0, 0.999969, 0, 0.00688544, 6.27897, 2.82979, 11.7334)
+transform = Transform3D(0.0068855, 0, -0.999961, 0, 0.999972, 0, 0.999969, 0, 0.00688544, 6.27898, 2.82979, 11.7334)
 progress = 16.4752
 v_offset = -0.185
 rotation_mode = 1
@@ -449,7 +477,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13404, 0)
 curve = SubResource("Curve3D_pls2c")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Paths/Path3D_1"]
-transform = Transform3D(0.0807189, 0, -0.996736, 0, 1, 0, 0.996736, 0, 0.0807189, -3.38376, 0.994744, 8.78843)
+transform = Transform3D(0.0807187, 0, -0.996736, 0, 1, 0, 0.996736, 0, 0.0807187, -3.38372, 0.994744, 8.78843)
 progress = 10.2186
 rotation_mode = 1
 use_model_front = true
@@ -464,7 +492,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.15191, 0)
 curve = SubResource("Curve3D_58ovd")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Paths/Path3D_2"]
-transform = Transform3D(-1.6292e-07, 0, -0.999998, 0, 1, 0, 0.999998, 0, -1.6292e-07, -5.17029, 0.995065, 14.5262)
+transform = Transform3D(-4.37113e-08, 0, -0.999998, 0, 1, 0, 0.999998, 0, -4.37113e-08, -5.17025, 0.995065, 14.5262)
 progress = 11.8731
 rotation_mode = 1
 use_model_front = true
