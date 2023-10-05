@@ -24,5 +24,5 @@ func resize_leafs_front():
 		var r_rotation = randi_range(0, 10)
 		leaf.scale = Vector2(r_scale, r_scale)
 		tween = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
-		tween.tween_property(leaf, "rotation", r_rotation, 8.0)
+		tween.tween_property(leaf, "rotation", r_rotation, 7.0)
 		
