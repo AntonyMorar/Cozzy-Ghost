@@ -9,3 +9,4 @@ func _clicked():
 		clickeado = true
 		if spookable:
 			print('ME ESPANTOOOOO')
+			Events.emit_signal('spookeado')
