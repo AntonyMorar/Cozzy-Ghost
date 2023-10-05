@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://n5cchnvivbop"]
+[gd_scene load_steps=17 format=3 uid="uid://n5cchnvivbop"]
 
 [ext_resource type="Texture2D" uid="uid://b647rtjsw6xpi" path="res://Assets/Materials/autumn.png" id="1_88d4f"]
 [ext_resource type="Script" path="res://Scripts/animationStartManager.gd" id="2_mhwo8"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://b4cgpppr1dsmt" path="res://Assets/Icons/Ghost_Game.png" id="4_737t6"]
 [ext_resource type="Texture2D" uid="uid://ca0hagupjrkg0" path="res://Assets/Icons/start_button.png" id="5_3qmyq"]
 [ext_resource type="Texture2D" uid="uid://naua6pwj4jw4" path="res://Assets/Icons/quit_button.png" id="6_umds2"]
+[ext_resource type="AudioStream" uid="uid://dk5p05qqsar1p" path="res://Assets/Musik/intro_ghost.wav" id="8_bdtes"]
+[ext_resource type="Script" path="res://Scripts/AudioLooperComponent.gd" id="9_ksqdv"]
 
 [sub_resource type="Animation" id="Animation_51c75"]
 length = 0.001
@@ -316,6 +318,13 @@ texture = ExtResource("4_8dqpf")
 [node name="leafFront2" type="Sprite2D" parent="."]
 position = Vector2(1049, 83)
 texture = ExtResource("4_8dqpf")
+
+[node name="AudioLooperComponent" type="Node" parent="."]
+script = ExtResource("9_ksqdv")
+
+[node name="Intro_song" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_bdtes")
+autoplay = true
 
 [connection signal="pressed" from="StartMenu/VBoxContainer/VBoxContainer/start_button" to="StartMenu" method="_on_start_button_pressed"]
 [connection signal="pressed" from="StartMenu/VBoxContainer/VBoxContainer/quit_button" to="StartMenu" method="_on_quit_button_pressed"]
