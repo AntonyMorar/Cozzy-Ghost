@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cxopdklm5btcy"
+path="res://.godot/imported/Cocina_Sartenes02.obj-c292c26a8cbd1b479ed1c71b7007fe89.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Cocina_Sartenes02.obj-c292c26a8cbd1b479ed1c71b7007fe89.mesh"]
+
+source_file="res://Assets/3D/Cocina/Cocina_Sartenes02.obj"
+dest_files=["res://.godot/imported/Cocina_Sartenes02.obj-c292c26a8cbd1b479ed1c71b7007fe89.mesh", "res://.godot/imported/Cocina_Sartenes02.obj-c292c26a8cbd1b479ed1c71b7007fe89.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

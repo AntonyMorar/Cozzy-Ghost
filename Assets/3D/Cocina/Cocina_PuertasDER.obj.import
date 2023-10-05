@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b1fk0p5gx16tg"
+path="res://.godot/imported/Cocina_PuertasDER.obj-d23ceb61953a51f37aa3f941b87dce0b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Cocina_PuertasDER.obj-d23ceb61953a51f37aa3f941b87dce0b.mesh"]
+
+source_file="res://Assets/3D/Cocina/Cocina_PuertasDER.obj"
+dest_files=["res://.godot/imported/Cocina_PuertasDER.obj-d23ceb61953a51f37aa3f941b87dce0b.mesh", "res://.godot/imported/Cocina_PuertasDER.obj-d23ceb61953a51f37aa3f941b87dce0b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
