@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://dmddlhfy76o2f"
-path="res://.godot/imported/Cocina_Lampara.obj-830269a5f53cf4ce35ef9dd8d3794697.mesh"
+path="res://.godot/imported/Cocina_Lampara.obj-8db68a65d8e1883b7d0a6e3fae533a30.mesh"
 
 [deps]
 
-files=["res://.godot/imported/Cocina_Lampara.obj-830269a5f53cf4ce35ef9dd8d3794697.mesh"]
+files=["res://.godot/imported/Cocina_Lampara.obj-8db68a65d8e1883b7d0a6e3fae533a30.mesh"]
 
-source_file="res://Assets/3D/Cocina/Cocina_Lampara.obj"
-dest_files=["res://.godot/imported/Cocina_Lampara.obj-830269a5f53cf4ce35ef9dd8d3794697.mesh", "res://.godot/imported/Cocina_Lampara.obj-830269a5f53cf4ce35ef9dd8d3794697.mesh"]
+source_file="res://Assets/3D/cocina/Cocina_Lampara.obj"
+dest_files=["res://.godot/imported/Cocina_Lampara.obj-8db68a65d8e1883b7d0a6e3fae533a30.mesh", "res://.godot/imported/Cocina_Lampara.obj-8db68a65d8e1883b7d0a6e3fae533a30.mesh"]
 
 [params]
 

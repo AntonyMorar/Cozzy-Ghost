@@ -1,9 +1,7 @@
-[gd_scene load_steps=47 format=3 uid="uid://y7svisqly4t6"]
+[gd_scene load_steps=45 format=3 uid="uid://y7svisqly4t6"]
 
 [ext_resource type="PackedScene" uid="uid://dt4d02xax8b27" path="res://Scenes/environment_component.tscn" id="1_j3u77"]
-[ext_resource type="PackedScene" uid="uid://rk0es55332gf" path="res://Assets/3D/hongo_ejemplo/hongo.gltf" id="1_moshr"]
 [ext_resource type="PackedScene" uid="uid://kod0awm1ha4o" path="res://models/gobot/model/gobot.glb" id="2_rvkvk"]
-[ext_resource type="PackedScene" uid="uid://b7touecbmwlf2" path="res://Scenes/Prefabs/BaseObject.tscn" id="4_0ad5w"]
 [ext_resource type="PackedScene" uid="uid://d0uhwavrs66p5" path="res://Assets/Blockouts-godot/floor/64x1-floor.glb" id="6_ftpo5"]
 [ext_resource type="PackedScene" uid="uid://c872n1tvrdhfg" path="res://Assets/Blockouts-godot/x-rects/8x4-x-rect.glb" id="7_jq7dh"]
 [ext_resource type="PackedScene" uid="uid://kvv47i7x5btv" path="res://Assets/Blockouts-godot/columns/2x6-column.glb" id="8_3ksyj"]
@@ -159,21 +157,6 @@ point_count = 7
 [sub_resource type="BoxShape3D" id="BoxShape3D_g2ue3"]
 size = Vector3(1.3671, 1, 1.68408)
 
-[sub_resource type="Animation" id="Animation_x2fti"]
-resource_name = "agitar_sartenes"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:quaternion")
-tracks/0/interp = 1
-tracks/0/loop_wrap = false
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.7, 1),
-"transitions": PackedFloat32Array(0.153893, 1, 1, 1),
-"update": 0,
-"values": [Quaternion(0.137032, 0.727257, 0.653823, -0.157592), Quaternion(-0.00847027, 0.740006, 0.610138, -0.282933), Quaternion(0.212572, 0.708868, 0.666748, -0.0881293), Quaternion(0.137032, 0.727257, 0.653823, -0.157592)]
-}
-
 [sub_resource type="Animation" id="Animation_68gv0"]
 length = 0.001
 tracks/0/type = "value"
@@ -189,6 +172,35 @@ tracks/0/keys = {
 "values": [Quaternion(0.231411, 0.702944, 0.668862, -0.0703071)]
 }
 
+[sub_resource type="Animation" id="Animation_x2fti"]
+resource_name = "agitar_sartenes"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:quaternion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7, 1),
+"transitions": PackedFloat32Array(0.153893, 1, 1, 1),
+"update": 0,
+"values": [Quaternion(0.137032, 0.727257, 0.653823, -0.157592), Quaternion(-0.00847027, 0.740006, 0.610138, -0.282933), Quaternion(0.212572, 0.708868, 0.666748, -0.0881293), Quaternion(0.137032, 0.727257, 0.653823, -0.157592)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_active_again"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pqgd2"]
 _data = {
 "RESET": SubResource("Animation_68gv0"),
@@ -198,11 +210,6 @@ _data = {
 [node name="TestingFer" type="Node3D"]
 
 [node name="EnvironmentComponent" parent="." instance=ExtResource("1_j3u77")]
-
-[node name="hongo" parent="." instance=ExtResource("1_moshr")]
-visible = false
-
-[node name="BaseObject" parent="." instance=ExtResource("4_0ad5w")]
 
 [node name="Blockout" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24325, 0, 0)
@@ -388,14 +395,13 @@ loop = false
 tilt_enabled = false
 
 [node name="gobot" parent="Paths/Path3D_0/PathFollow3D" instance=ExtResource("2_rvkvk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Path3D_1" type="Path3D" parent="Paths"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13404, 0)
 curve = SubResource("Curve3D_pls2c")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Paths/Path3D_1"]
-transform = Transform3D(-0.538147, 0, -0.842851, 0, 1, 0, 0.842851, 0, -0.538147, 5.46677, 0, 11.7481)
+transform = Transform3D(-0.538146, 0, -0.842851, 0, 1, 0, 0.842851, 0, -0.538146, 5.46677, 0, 11.7481)
 rotation_mode = 1
 use_model_front = true
 loop = false
@@ -406,7 +412,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.15191, 0)
 curve = SubResource("Curve3D_58ovd")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Paths/Path3D_2"]
-transform = Transform3D(0.238788, 0, -0.97107, 0, 1, 0, 0.97107, 0, 0.238788, 5.43266, 0, 11.7401)
+transform = Transform3D(0.238794, 0, -0.971068, 0, 1, 0, 0.971068, 0, 0.238794, 5.43266, 0, 11.7401)
 rotation_mode = 1
 use_model_front = true
 loop = false
@@ -416,7 +422,7 @@ tilt_enabled = false
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.33351, 4.2867, 11.0159)
 
 [node name="Cocina_Sartenes01" parent="Cocina_Completo" index="4"]
-transform = Transform3D(-0.883011, 0.419389, 0.21072, 0.231287, -0.0018543, 0.972884, 0.408408, 0.907804, -0.0953617, -2.52153, 3.94817, -3.36382)
+transform = Transform3D(-0.883011, 0.419389, 0.21072, 0.231286, -0.00185394, 0.972884, 0.408407, 0.907804, -0.0953616, -2.52153, 3.94817, -3.36382)
 rotation_edit_mode = 1
 script = ExtResource("20_42njr")
 

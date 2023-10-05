@@ -3,8 +3,9 @@ extends Node
 @export var click_area:Area3D
 
 func _ready():
-	Events.connect('clickedObjeto', _clickeado)
+	click_area.connect('input_event', _clickeado)
 	
-func _clickeado(_name):
-	if(_name == get_parent().name):
-		get_parent()._clicked()
+func _clickeado(camera, event, position, normal, shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			get_parent()._clicked()

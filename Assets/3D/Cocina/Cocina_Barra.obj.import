@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://c5ol2svx4ul1l"
-path="res://.godot/imported/Cocina_Barra.obj-cd4445b2b88d94ad0268698a32f6bf66.mesh"
+path="res://.godot/imported/Cocina_Barra.obj-24a216ec832f226594932652551612c7.mesh"
 
 [deps]
 
-files=["res://.godot/imported/Cocina_Barra.obj-cd4445b2b88d94ad0268698a32f6bf66.mesh"]
+files=["res://.godot/imported/Cocina_Barra.obj-24a216ec832f226594932652551612c7.mesh"]
 
-source_file="res://Assets/3D/Cocina/Cocina_Barra.obj"
-dest_files=["res://.godot/imported/Cocina_Barra.obj-cd4445b2b88d94ad0268698a32f6bf66.mesh", "res://.godot/imported/Cocina_Barra.obj-cd4445b2b88d94ad0268698a32f6bf66.mesh"]
+source_file="res://Assets/3D/cocina/Cocina_Barra.obj"
+dest_files=["res://.godot/imported/Cocina_Barra.obj-24a216ec832f226594932652551612c7.mesh", "res://.godot/imported/Cocina_Barra.obj-24a216ec832f226594932652551612c7.mesh"]
 
 [params]
 

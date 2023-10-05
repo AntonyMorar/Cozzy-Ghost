@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://cnw62eghrg3kg"
-path="res://.godot/imported/Cocina_Sartenes01.obj-5945016167fd6a50fb64d4a4bb721604.mesh"
+path="res://.godot/imported/Cocina_Sartenes01.obj-994c8bdf7750e6018ff82f74cfe8b03d.mesh"
 
 [deps]
 
-files=["res://.godot/imported/Cocina_Sartenes01.obj-5945016167fd6a50fb64d4a4bb721604.mesh"]
+files=["res://.godot/imported/Cocina_Sartenes01.obj-994c8bdf7750e6018ff82f74cfe8b03d.mesh"]
 
-source_file="res://Assets/3D/Cocina/Cocina_Sartenes01.obj"
-dest_files=["res://.godot/imported/Cocina_Sartenes01.obj-5945016167fd6a50fb64d4a4bb721604.mesh", "res://.godot/imported/Cocina_Sartenes01.obj-5945016167fd6a50fb64d4a4bb721604.mesh"]
+source_file="res://Assets/3D/cocina/Cocina_Sartenes01.obj"
+dest_files=["res://.godot/imported/Cocina_Sartenes01.obj-994c8bdf7750e6018ff82f74cfe8b03d.mesh", "res://.godot/imported/Cocina_Sartenes01.obj-994c8bdf7750e6018ff82f74cfe8b03d.mesh"]
 
 [params]
 
