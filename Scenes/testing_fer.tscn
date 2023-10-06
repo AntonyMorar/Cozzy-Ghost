@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://kvv47i7x5btv" path="res://Assets/Blockouts-godot/columns/2x6-column.glb" id="8_3ksyj"]
 [ext_resource type="PackedScene" uid="uid://b2qtjd00dy3xc" path="res://Assets/Blockouts-godot/walls/4x5-wall.glb" id="9_l1lr2"]
 [ext_resource type="PackedScene" uid="uid://cmke4slc3inry" path="res://Assets/Blockouts-godot/floor/100x1-floor.glb" id="10_0xp8l"]
-[ext_resource type="PackedScene" uid="uid://b3vjd2fr72ece" path="res://Scenes/camera_shaker_component.tscn" id="11_307tg"]
+[ext_resource type="PackedScene" path="res://Scenes/camera_shaker_component.tscn" id="11_307tg"]
 [ext_resource type="PackedScene" uid="uid://cdpsrnga0glls" path="res://Assets/Blockouts-godot/ramps/2x4x1-ramp.glb" id="11_rdqg7"]
 [ext_resource type="PackedScene" uid="uid://n1up60oeujer" path="res://Assets/Blockouts-godot/floor/16x1-floor.glb" id="12_uwu43"]
 [ext_resource type="PackedScene" uid="uid://dpucwnj7md5w8" path="res://Assets/Blockouts-godot/columns/2x3-column.glb" id="13_8y320"]
@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://bxoxc1wu0uuj7" path="res://Assets/Icons/aranita_gauge_long.png" id="25_ypqe0"]
 [ext_resource type="Texture2D" uid="uid://d3akfd7v0ur6w" path="res://Assets/Icons/spider_icon.png" id="26_cc81r"]
 [ext_resource type="Texture2D" uid="uid://rbugrv1ewvq8" path="res://Assets/Icons/spiders_text.png" id="27_m4sh7"]
-[ext_resource type="PackedScene" uid="uid://cy24qsaufre4s" path="res://Scenes/aranita_spawner.tscn" id="29_t6kqb"]
+[ext_resource type="PackedScene" path="res://Scenes/aranita_spawner.tscn" id="29_t6kqb"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n31la"]
 points = PackedVector3Array(-4, -1, -4, -4, 0, -4, 4, -1, -4, -4, -1, 4, -4, 0, 4, 4, 0, -4, 4, -1, 4, 4, 0, 4)
@@ -529,7 +529,6 @@ script = ExtResource("21_7ptlg")
 click_area = NodePath("../Area3D")
 
 [node name="Area3D" type="Area3D" parent="Cocina_Completo/Cocina_Sartenes01" index="1"]
-transform = Transform3D(0.945518, 0.325568, 0, -0.325568, 0.945518, 0, 0, 0, 1, 0.0382998, -0.0956125, -0.746162)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cocina_Completo/Cocina_Sartenes01/Area3D"]
 shape = SubResource("BoxShape3D_g2ue3")

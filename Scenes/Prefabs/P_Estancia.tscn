@@ -3,3 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://cph3fpv5c4bfp" path="res://Assets/3D/estancia/Estancia_Completo.glb" id="1_2ns03"]
 
 [node name="Estancia_Completo" instance=ExtResource("1_2ns03")]
+
+[node name="Estancia_Paredes" parent="." index="0"]
+visible = false
