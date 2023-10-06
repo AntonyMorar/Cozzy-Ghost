@@ -1,0 +1,112 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcpnxr4nub15l"]
+
+[ext_resource type="PackedScene" uid="uid://dc3amnsujios2" path="res://Assets/Characters/aranita.glb" id="1_lvtkq"]
+[ext_resource type="PackedScene" uid="uid://c6sta6a7o2a4n" path="res://Scenes/clickable_element.tscn" id="2_xgn6g"]
+[ext_resource type="Script" path="res://Scripts/aranita.gd" id="2_ytbmc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qis0f"]
+size = Vector3(0.697057, 0.257921, 0.791784)
+
+[sub_resource type="Animation" id="Animation_frj3j"]
+resource_name = "hide_aranita"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cuerpo:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(0.0824693, 1.68179, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.313626, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cuerpo:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 0.6),
+"transitions": PackedFloat32Array(1.31951, 1),
+"update": 0,
+"values": [Vector3(0.0997787, 0.0351884, 0.0997787), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("cuerpo:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.15932, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.0826225, 2.50889, 3.02951)]
+}
+
+[sub_resource type="Animation" id="Animation_bhsas"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cuerpo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.154154, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cuerpo:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0997787, 0.0351884, 0.0997787)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("cuerpo:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ktkxu"]
+_data = {
+"RESET": SubResource("Animation_bhsas"),
+"hide_aranita": SubResource("Animation_frj3j")
+}
+
+[node name="aranita" instance=ExtResource("1_lvtkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("2_ytbmc")
+
+[node name="cuerpo" parent="." index="0"]
+transform = Transform3D(0.0997787, 0, 0, 0, 0.0351884, 0, 0, 0, 0.0997787, 0, 0.154154, 0)
+
+[node name="clickableElement" parent="." index="1" node_paths=PackedStringArray("click_area") instance=ExtResource("2_xgn6g")]
+click_area = NodePath("../Area3D")
+
+[node name="Area3D" type="Area3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+shape = SubResource("BoxShape3D_qis0f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_ktkxu")
+}

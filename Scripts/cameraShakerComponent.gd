@@ -25,7 +25,6 @@ func _shake_cam(_spookeado, _amount):
 func _process(delta):
 	time += delta
 	trauma = max(trauma - delta * trauma_reduction_rate, 0.0)
-	print(trauma)
 	cam.rotation_degrees.x = initial_rotation.x + max_x * get_shake_intensity() * get_noise_from_seed(0)
 	cam.rotation_degrees.y = initial_rotation.y + max_y * get_shake_intensity() * get_noise_from_seed(1)
 	cam.rotation_degrees.z = initial_rotation.z + max_z * get_shake_intensity() * get_noise_from_seed(2)
