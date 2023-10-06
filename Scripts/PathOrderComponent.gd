@@ -1,6 +1,7 @@
 extends Node
 
-@export var ordered_list_of_paths: Array[Path3D]
+@export var path_list: Node3D
+var ordered_list_of_paths
 @export var character: Node3D
 @export var animation: AnimationPlayer
 @export var pause_spook_time = 0.5
@@ -10,17 +11,33 @@ func _ready():
 	animation.connect('animation_finished', _anim_finished)
 	animation.play("path_"+str(anim_num))
 	Events.connect('spookeado', _pausa_movimiento)
+	ordered_list_of_paths = path_list.get_children()
+	for path in ordered_list_of_paths:
+		path.get_child(0).rotation_mode = 1
+		path.get_child(0).loop = false
+		path.get_child(0).use_model_front = true
+		path.get_child(0).tilt_enabled = false
 
 func _anim_finished(anim_name):
 	var anim_name_num = anim_name.trim_suffix('path_').to_int()
 	match  anim_name_num:
 		0:
-			anim_num = randi_range(1,2)
+#			anim_num = randi_range(1,2)
+			anim_num = 1
 			animation.play("path_"+str(anim_num))
 		1:
-			anim_num = 0
+			anim_num = randi_range(2,3)
 			animation.play("path_"+str(anim_num))
 		2:
+			anim_num = [4,5].pick_random()
+			animation.play("path_"+str(anim_num))
+		3:
+			anim_num = 0
+			animation.play("path_"+str(anim_num))
+		4:
+			anim_num = 0
+			animation.play("path_"+str(anim_num))
+		5:
 			anim_num = 0
 			animation.play("path_"+str(anim_num))
 

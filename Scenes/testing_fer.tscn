@@ -420,9 +420,8 @@ shape = SubResource("CapsuleShape3D_csvi6")
 
 [node name="Paths" type="Node3D" parent="."]
 
-[node name="PathOrderComponent" type="Node" parent="Paths" node_paths=PackedStringArray("ordered_list_of_paths", "character", "animation")]
+[node name="PathOrderComponent" type="Node" parent="Paths" node_paths=PackedStringArray("character", "animation")]
 script = ExtResource("18_1avik")
-ordered_list_of_paths = [NodePath("../Path3D_0"), NodePath("../Path3D_1"), NodePath("../Path3D_2")]
 character = NodePath("../../gobot")
 animation = NodePath("../PathAnimationPlayer")
 
