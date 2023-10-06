@@ -19,9 +19,9 @@ func _ready():
 	cam = get_parent()
 	initial_rotation = cam.rotation_degrees as Vector3
 
-func _shake_cam(_spookeado):
-	trauma = 1.0
-	pass
+func _shake_cam(_spookeado, _amount):
+	trauma = clamp(trauma + _amount, 0.0,1.0)
+	
 
 func _process(delta):
 	time += delta
