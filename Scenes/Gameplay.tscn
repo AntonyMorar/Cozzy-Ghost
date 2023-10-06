@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cmawrqxfpt44"]
+[gd_scene load_steps=41 format=3 uid="uid://cmawrqxfpt44"]
 
 [ext_resource type="PackedScene" uid="uid://dt4d02xax8b27" path="res://Scenes/environment_component.tscn" id="1_afnyq"]
 [ext_resource type="PackedScene" uid="uid://bqej760uqlpmg" path="res://Scenes/ghost_2d.tscn" id="3_kgxc5"]
@@ -42,6 +42,51 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("pathList/1_cruza_cocina/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_erlwh"]
+resource_name = "path_10"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pathList/10_sala_path_09/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_o3prk"]
+resource_name = "path_11"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pathList/11_sala_path_09/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_fnm4o"]
+resource_name = "path_12"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pathList/12_sala_path_10/PathFollow3D:progress_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -171,42 +216,12 @@ tracks/0/keys = {
 "values": [0.0, 1.0]
 }
 
-[sub_resource type="Animation" id="Animation_erlwh"]
-resource_name = "path_10"
+[sub_resource type="Animation" id="Animation_0gcn2"]
+resource_name = "path_13"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("pathList/10_sala_path_09/PathFollow3D:progress_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_o3prk"]
-resource_name = "path_11"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("pathList/11_sala_path_09/PathFollow3D:progress_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_fnm4o"]
-resource_name = "path_12"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("pathList/12_sala_path_10/PathFollow3D:progress_ratio")
+tracks/0/path = NodePath("pathList/13_sala_path_10/PathFollow3D:progress_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -223,6 +238,7 @@ _data = {
 "path_10": SubResource("Animation_erlwh"),
 "path_11": SubResource("Animation_o3prk"),
 "path_12": SubResource("Animation_fnm4o"),
+"path_13": SubResource("Animation_0gcn2"),
 "path_2": SubResource("Animation_uf4oe"),
 "path_3": SubResource("Animation_f6gw1"),
 "path_4": SubResource("Animation_slr1a"),
@@ -325,6 +341,11 @@ _data = {
 point_count = 5
 
 [sub_resource type="Curve3D" id="Curve3D_k6t3p"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.49404, 0, 0.264628, -0.188114, 0, 0.37623, 0.188114, 0, -0.37623, 7.90363, 0, -1.07569, 0.564344, 0, 0.446773, -0.564344, 0, -0.446773, 7.73902, 0, -2.60412, 0.564344, 0, -0.235144, -0.564344, 0, 0.235144, 5.9049, 0, -2.41601, 0, 0, 0, 0, 0, 0, 2.14261, 0, -0.0645737),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x5ywm"]
 
@@ -371,7 +392,6 @@ path_list = NodePath("../pathList")
 character = NodePath("../../gobot")
 speed_anim = 0.6
 animation = NodePath("../PathAnimationPlayer")
-testing = true
 
 [node name="PathAnimationPlayer" type="AnimationPlayer" parent="Paths"]
 libraries = {
@@ -384,7 +404,7 @@ libraries = {
 curve = SubResource("Curve3D_7n851")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Paths/pathList/0_cruza_sala"]
-transform = Transform3D(0.000745003, 0, 0.999985, 0, 1, 0, -0.999985, 0, 0.000745003, -3.24522, 0, 0.00034175)
+transform = Transform3D(-0.0124838, 0, 0.999907, 0, 1, 0, -0.999907, 0, -0.0124838, -3.24522, 0, 0.00034175)
 rotation_mode = 1
 use_model_front = true
 tilt_enabled = false
@@ -422,7 +442,7 @@ remote_path = NodePath("../../../../../gobot")
 curve = SubResource("Curve3D_ldqk3")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Paths/pathList/3_cocina_path_01"]
-transform = Transform3D(-0.984872, 0, -0.173265, 0, 1, 0, 0.173265, 0, -0.984872, -3.32692, 0, 0.0939053)
+transform = Transform3D(-0.984872, 0, -0.173264, 0, 1, 0, 0.173264, 0, -0.984872, -3.32692, 0, 0.0939053)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Paths/pathList/3_cocina_path_01/PathFollow3D"]
 remote_path = NodePath("../../../../../gobot")
@@ -440,7 +460,7 @@ remote_path = NodePath("../../../../../gobot")
 curve = SubResource("Curve3D_1ofe3")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Paths/pathList/5_cocina_path_02"]
-transform = Transform3D(-0.995792, 0, -0.0916373, 0, 1, 0, 0.0916373, 0, -0.995792, -7.19545, 0, -0.0673372)
+transform = Transform3D(-0.995792, 0, -0.0916375, 0, 1, 0, 0.0916375, 0, -0.995792, -7.19545, 0, -0.0673372)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Paths/pathList/5_cocina_path_02/PathFollow3D"]
 remote_path = NodePath("../../../../../gobot")
@@ -465,7 +485,7 @@ transform = Transform3D(0.523155, 0, 0.852237, 0, 1, 0, -0.852237, 0, 0.523155, 
 curve = SubResource("Curve3D_0d5q6")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Paths/pathList/8_cocina_path_07"]
-transform = Transform3D(-0.821588, 0, -0.570081, 0, 1, 0, 0.570081, 0, -0.821588, -5.02032, 0, 0.548508)
+transform = Transform3D(-0.821588, 0, -0.570082, 0, 1, 0, 0.570082, 0, -0.821588, -5.02032, 0, 0.548508)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Paths/pathList/8_cocina_path_07/PathFollow3D"]
 
@@ -481,7 +501,7 @@ transform = Transform3D(-0.538617, 0, -0.842551, 0, 1, 0, 0.842551, 0, -0.538617
 curve = SubResource("Curve3D_t7er0")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Paths/pathList/10_sala_path_09"]
-transform = Transform3D(-0.894424, 0, -0.44722, 0, 1, 0, 0.44722, 0, -0.894424, 6.92462, 0, 0.324449)
+transform = Transform3D(-0.894419, 0, -0.447231, 0, 1, 0, 0.447231, 0, -0.894419, 6.92462, 0, 0.324449)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Paths/pathList/10_sala_path_09/PathFollow3D"]
 
@@ -497,6 +517,7 @@ transform = Transform3D(0.398915, 0, 0.916988, 0, 1, 0, -0.916988, 0, 0.398915, 
 curve = SubResource("Curve3D_avg0s")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Paths/pathList/12_sala_path_10"]
+transform = Transform3D(-0.615375, 0, -0.788234, 0, 1, 0, 0.788234, 0, -0.615375, 4.56457, 0, 0.523251)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Paths/pathList/12_sala_path_10/PathFollow3D"]
 
@@ -508,7 +529,7 @@ curve = SubResource("Curve3D_k6t3p")
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Paths/pathList/13_sala_path_10/PathFollow3D"]
 
 [node name="gobot" parent="." instance=ExtResource("7_blwbe")]
-transform = Transform3D(0.000745003, 0, 0.999985, 0, 1, 0, -0.999985, 0, 0.000745003, -3.24522, 0, 0.00034175)
+transform = Transform3D(-0.0124838, 0, 0.999907, 0, 1, 0, -0.999907, 0, -0.0124838, -3.24522, 0, 0.00034175)
 
 [node name="spookCollider" type="Area3D" parent="gobot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

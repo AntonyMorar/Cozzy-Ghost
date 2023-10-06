@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b8c6ofd73e0x6"
-path="res://.godot/imported/Cocina_Completo.glb-14c1b828ea6dd8d64568bb03178dd991.scn"
+path="res://.godot/imported/Cocina_Completo.glb-6234a15a6203ebdad1c04a757266a463.scn"
 
 [deps]
 
-source_file="res://Assets/3D/Cocina/Cocina_Completo.glb"
-dest_files=["res://.godot/imported/Cocina_Completo.glb-14c1b828ea6dd8d64568bb03178dd991.scn"]
+source_file="res://Assets/3D/cocina/Cocina_Completo.glb"
+dest_files=["res://.godot/imported/Cocina_Completo.glb-6234a15a6203ebdad1c04a757266a463.scn"]
 
 [params]
 
