@@ -21,13 +21,13 @@
 [ext_resource type="PackedScene" uid="uid://c6sta6a7o2a4n" path="res://Scenes/clickable_element.tscn" id="18_4f8ad"]
 [ext_resource type="PackedScene" uid="uid://b8c6ofd73e0x6" path="res://Assets/3D/cocina/Cocina_Completo.glb" id="19_di7jn"]
 [ext_resource type="Script" path="res://Scripts/Cocina_Sartenes01.gd" id="20_42njr"]
-[ext_resource type="PackedScene" uid="uid://bcpnxr4nub15l" path="res://Scenes/aranita.tscn" id="22_b3mo8"]
 [ext_resource type="Script" path="res://Scripts/spidersContainer.gd" id="23_r0br1"]
 [ext_resource type="Texture2D" uid="uid://blapukhv742ev" path="res://Assets/Icons/aranita_gauge.png" id="23_rj3ph"]
 [ext_resource type="Texture2D" uid="uid://cq4w7e8pxwxha" path="res://Assets/Icons/aranita_gauge_short.png" id="24_j3cyy"]
 [ext_resource type="Texture2D" uid="uid://bxoxc1wu0uuj7" path="res://Assets/Icons/aranita_gauge_long.png" id="25_ypqe0"]
 [ext_resource type="Texture2D" uid="uid://d3akfd7v0ur6w" path="res://Assets/Icons/spider_icon.png" id="26_cc81r"]
 [ext_resource type="Texture2D" uid="uid://rbugrv1ewvq8" path="res://Assets/Icons/spiders_text.png" id="27_m4sh7"]
+[ext_resource type="PackedScene" uid="uid://cy24qsaufre4s" path="res://Scenes/aranita_spawner.tscn" id="29_t6kqb"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n31la"]
 points = PackedVector3Array(-4, -1, -4, -4, 0, -4, 4, -1, -4, -4, -1, 4, -4, 0, 4, 4, 0, -4, 4, -1, 4, 4, 0, 4)
@@ -443,7 +443,7 @@ libraries = {
 }
 
 [node name="gobot" parent="." instance=ExtResource("2_rvkvk")]
-transform = Transform3D(0.00688548, 0, -0.999959, 0, 0.999972, 0, 0.999967, 0, 0.00688543, 6.27898, 2.97476, 11.7334)
+transform = Transform3D(0.00688548, 0, -0.999958, 0, 0.999972, 0, 0.999966, 0, 0.00688542, 6.27898, 2.97476, 11.7334)
 
 [node name="spookCollider" type="Area3D" parent="gobot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -473,7 +473,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.144971, 0)
 curve = SubResource("Curve3D_lvdn4")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Paths/Path3D_0"]
-transform = Transform3D(0.00688548, 0, -0.999959, 0, 0.999972, 0, 0.999967, 0, 0.00688543, 6.27898, 2.82979, 11.7334)
+transform = Transform3D(0.00688548, 0, -0.999958, 0, 0.999972, 0, 0.999966, 0, 0.00688542, 6.27898, 2.82979, 11.7334)
 progress = 16.4752
 v_offset = -0.185
 rotation_mode = 1
@@ -538,18 +538,6 @@ shape = SubResource("BoxShape3D_g2ue3")
 libraries = {
 "": SubResource("AnimationLibrary_pqgd2")
 }
-
-[node name="aranita" parent="." instance=ExtResource("22_b3mo8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44524, 3, 6.56538)
-
-[node name="aranita2" parent="." instance=ExtResource("22_b3mo8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.775094, 3.50917, 8.23146)
-
-[node name="aranita3" parent="." instance=ExtResource("22_b3mo8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.28312, 4, 7.63988)
-
-[node name="aranita4" parent="." instance=ExtResource("22_b3mo8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.06629, 4, 9.50394)
 
 [node name="MainUI" type="Control" parent="."]
 layout_mode = 3
@@ -646,6 +634,18 @@ layout_mode = 2
 size_flags_vertical = 8
 texture_normal = ExtResource("27_m4sh7")
 stretch_mode = 3
+
+[node name="aranitaSpawner" parent="." node_paths=PackedStringArray("spawnerPoints") instance=ExtResource("29_t6kqb")]
+spawnerPoints = [NodePath("spawnPoint"), NodePath("spawnPoint2"), NodePath("spawnPoint3")]
+
+[node name="spawnPoint" type="Node3D" parent="aranitaSpawner"]
+transform = Transform3D(-0.149242, 0, 0.988801, 0, 1, 0, -0.988801, 0, -0.149242, -1.23052, 4.95274, 10.789)
+
+[node name="spawnPoint2" type="Node3D" parent="aranitaSpawner"]
+transform = Transform3D(-0.612411, 0, 0.79054, 0, 1, 0, -0.79054, 0, -0.612411, -7.76957, 9.04636, 12.1298)
+
+[node name="spawnPoint3" type="Node3D" parent="aranitaSpawner"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.51793, 6.27702, 15.1394)
 
 [editable path="Blockout/64x1-floor2"]
 [editable path="Blockout/8x4-x-rect"]
