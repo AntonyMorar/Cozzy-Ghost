@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://rslgv6kokw78"]
 
 [ext_resource type="PackedScene" uid="uid://b8c6ofd73e0x6" path="res://Assets/3D/Cocina/Cocina_Completo.glb" id="1_j8yey"]
-[ext_resource type="PackedScene" uid="uid://c6sta6a7o2a4n" path="res://Scenes/clickable_element.tscn" id="2_i7nvw"]
+[ext_resource type="PackedScene" uid="uid://c6sta6a7o2a4n" path="res://Scenes/Helpers/clickable_element.tscn" id="2_i7nvw"]
 [ext_resource type="Script" path="res://Scripts/Objects/FregaderoObject.gd" id="2_l7i1k"]
 [ext_resource type="Script" path="res://Scripts/Objects/SartenObject.gd" id="4_vj25b"]
 
@@ -173,9 +173,10 @@ size = Vector3(1.47124, 1, 0.370144)
 [node name="Cocina_Paredes" parent="." index="1"]
 visible = false
 
-[node name="Cocina_Fregadero" parent="." index="2"]
+[node name="Cocina_Fregadero" parent="." index="2" node_paths=PackedStringArray("waterParticles")]
 transform = Transform3D(1, 0, 0, 0, -3.61999e-06, -1, 0, 1, -3.61999e-06, -4.69006, 2.52995, 2.01)
 script = ExtResource("2_l7i1k")
+waterParticles = NodePath("WaterParticles")
 
 [node name="Area3D" type="Area3D" parent="Cocina_Fregadero" index="0"]
 
@@ -187,8 +188,7 @@ libraries = {
 "": SubResource("AnimationLibrary_se648")
 }
 
-[node name="clickableElement" parent="Cocina_Fregadero" index="2" node_paths=PackedStringArray("click_area") instance=ExtResource("2_i7nvw")]
-click_area = NodePath("../Area3D")
+[node name="clickableElement" parent="Cocina_Fregadero" index="2" instance=ExtResource("2_i7nvw")]
 
 [node name="WaterParticles" type="GPUParticles3D" parent="Cocina_Fregadero" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.381135, 0.0427256, 0.109908)
@@ -205,12 +205,14 @@ draw_pass_1 = SubResource("QuadMesh_tkhdy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.665824, 0)
 shape = SubResource("BoxShape3D_qnbt3")
 
-[node name="Cocina_Sartenes01" parent="." index="4"]
+[node name="clickableElement" parent="Cocina_Lampara" index="1" instance=ExtResource("2_i7nvw")]
+
+[node name="Cocina_Sartenes01" parent="." index="4" node_paths=PackedStringArray("animation")]
 transform = Transform3D(-0.883012, 0.419389, 0.21072, 0.231286, -0.00185394, 0.972884, 0.408408, 0.907805, -0.0953616, -2.52153, 3.94817, -3.36382)
 script = ExtResource("4_vj25b")
+animation = NodePath("AnimationPlayer")
 
-[node name="clickableElement" parent="Cocina_Sartenes01" index="0" node_paths=PackedStringArray("click_area") instance=ExtResource("2_i7nvw")]
-click_area = NodePath("../Area3D")
+[node name="clickableElement" parent="Cocina_Sartenes01" index="0" instance=ExtResource("2_i7nvw")]
 
 [node name="Area3D" type="Area3D" parent="Cocina_Sartenes01" index="1"]
 transform = Transform3D(0.945518, 0.325568, 0, -0.325568, 0.945518, 0, 0, 0, 1, 0.0382998, -0.0956125, -0.746162)
@@ -230,11 +232,15 @@ transform = Transform3D(0.913545, -0.406737, 0, 0.404434, 0.908373, -0.106264, 0
 transform = Transform3D(1, 3.72529e-09, 1.25729e-08, 3.72529e-09, 1, 3.72529e-09, -8.14907e-10, 0, 1, 0.489976, 0.0528932, -0.870883)
 shape = SubResource("BoxShape3D_yhf3i")
 
+[node name="clickableElement" parent="Cocina_Sartenes02" index="1" instance=ExtResource("2_i7nvw")]
+
 [node name="Area3D" type="Area3D" parent="Cocina_PuertasIZQ_01" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cocina_PuertasIZQ_01/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.704485, 0.016757, -0.00229645)
 shape = SubResource("BoxShape3D_2h0et")
+
+[node name="clickableElement" parent="Cocina_PuertasIZQ_01" index="1" instance=ExtResource("2_i7nvw")]
 
 [node name="Area3D" type="Area3D" parent="Cocina_PuertasDER" index="0"]
 
@@ -242,8 +248,12 @@ shape = SubResource("BoxShape3D_2h0et")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.996342, 0.0530696, 0)
 shape = SubResource("BoxShape3D_kchjn")
 
+[node name="clickableElement" parent="Cocina_PuertasDER" index="1" instance=ExtResource("2_i7nvw")]
+
 [node name="Area3D" type="Area3D" parent="Cocina_PuertasIZQ_02" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cocina_PuertasIZQ_02/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.651897, 0, 0)
 shape = SubResource("BoxShape3D_40fln")
+
+[node name="clickableElement" parent="Cocina_PuertasIZQ_02" index="1" instance=ExtResource("2_i7nvw")]

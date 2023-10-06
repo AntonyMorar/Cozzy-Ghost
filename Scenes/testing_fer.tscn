@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://7pcmqcbq48is" path="res://Scenes/scare_messages_component.tscn" id="17_1606e"]
 [ext_resource type="Script" path="res://Scripts/2x2-block.gd" id="17_gycgw"]
 [ext_resource type="Script" path="res://Scripts/PathOrderComponent.gd" id="18_1avik"]
-[ext_resource type="PackedScene" uid="uid://c6sta6a7o2a4n" path="res://Scenes/clickable_element.tscn" id="18_4f8ad"]
+[ext_resource type="PackedScene" uid="uid://c6sta6a7o2a4n" path="res://Scenes/Helpers/clickable_element.tscn" id="18_4f8ad"]
 [ext_resource type="PackedScene" uid="uid://b8c6ofd73e0x6" path="res://Assets/3D/Cocina/Cocina_Completo.glb" id="19_di7jn"]
 [ext_resource type="Script" path="res://Scripts/Objects/SartenObject.gd" id="21_7ptlg"]
 [ext_resource type="Script" path="res://Scripts/spidersContainer.gd" id="23_r0br1"]

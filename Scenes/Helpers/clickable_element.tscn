@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6sta6a7o2a4n"]
+
+[ext_resource type="Script" path="res://Scripts/clickableElement.gd" id="1_bnmb2"]
+[ext_resource type="AudioStream" uid="uid://c4tj0fyyx6ofj" path="res://Assets/Audio/Touch.mp3" id="2_flgqt"]
+
+[node name="clickableElement" type="Node" node_paths=PackedStringArray("audiosStream")]
+script = ExtResource("1_bnmb2")
+audiosStream = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_flgqt")

@@ -4,7 +4,6 @@ var is_active = false
 @export var animation:AnimationPlayer
 
 func _clicked():
-	print("Click sarten")
 	if !is_active:
 		is_active = true
 		Globals.ya_clickeo_sarten = true
