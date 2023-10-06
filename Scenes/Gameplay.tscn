@@ -153,22 +153,86 @@ tracks/0/keys = {
 "values": [0.0, 1.0]
 }
 
+[sub_resource type="Animation" id="Animation_mj086"]
+resource_name = "path_9"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pathList/9_sala_path_01/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_erlwh"]
+resource_name = "path_10"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pathList/10_sala_path_09/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_o3prk"]
+resource_name = "path_11"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pathList/11_sala_path_09/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_fnm4o"]
+resource_name = "path_12"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pathList/12_sala_path_10/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ow2c8"]
 _data = {
 "path_0": SubResource("Animation_0707p"),
 "path_1": SubResource("Animation_e7plo"),
+"path_10": SubResource("Animation_erlwh"),
+"path_11": SubResource("Animation_o3prk"),
+"path_12": SubResource("Animation_fnm4o"),
 "path_2": SubResource("Animation_uf4oe"),
 "path_3": SubResource("Animation_f6gw1"),
 "path_4": SubResource("Animation_slr1a"),
 "path_5": SubResource("Animation_436ov"),
 "path_6": SubResource("Animation_8pnlh"),
 "path_7": SubResource("Animation_vg3qs"),
-"path_8": SubResource("Animation_k3s1h")
+"path_8": SubResource("Animation_k3s1h"),
+"path_9": SubResource("Animation_mj086")
 }
 
 [sub_resource type="Curve3D" id="Curve3D_7n851"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -3.24522, 0, 0.00034175, 0, 0, 0, 0, 0, 0, 2.16795, 0, 0.00437508),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -3.24522, 0, 0.00034175, 0, 0, 0, 0, 0, 0, 1.61461, 0, -0.0603338),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -229,6 +293,36 @@ _data = {
 }
 point_count = 4
 
+[sub_resource type="Curve3D" id="Curve3D_0541i"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1.71302, 0, -0.0159643, -2.09661, 0, 0.483833, 2.09661, 0, -0.483833, 6.12799, 0, 2.80639, -0.403193, 0, 0.141118, 0.403193, 0, -0.141118, 7.23678, 0, 0.165473),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_t7er0"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 6.92462, 0, 0.324449, 0, 0, 0, 0, 0, 0, 6.94386, 0, 0.362927, 1.67381, 0, 0.192392, -1.67381, 0, -0.192392, 5.32777, 0, 3.22956, -0.654133, 0, 1.09663, 0.654133, 0, -1.09663, 4.48125, 0, 0.459124),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_lyd44"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 6.70437, 0, 0.07648, 0.0470276, 0, 0.634886, -0.0470276, 0, -0.634886, 2.54234, 0, -1.73412, -1.19923, 0, -0.446772, 1.19923, 0, 0.446772, 4.09428, 0, -2.43955, 1.45789, 0, 0, -1.45789, 0, 0, 4.04725, 0, 0.781908, 0.399745, 0, 0.540828, -0.399745, 0, -0.540828, 2.09557, 0, 0.00593737),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_avg0s"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.56457, 0, 0.523251, 0.446772, 0, -0.423257, -0.446772, 0, 0.423257, 7.2452, 0, 2.61602, 1.26977, 0, 0.728943, -1.26977, 0, -0.728943, 3.2948, 0, 3.01576, -0.6584, 0, 0.376229, 0.6584, 0, -0.376229, 2.33071, 0, -2.06332, 0, 0, 0, 0, 0, 0, 4.56457, 0, 0.499737),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_k6t3p"]
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x5ywm"]
 
 [node name="Gameplay" type="Node3D"]
@@ -262,6 +356,7 @@ script = ExtResource("6_xd4i0")
 path_list = NodePath("../pathList")
 character = NodePath("../../gobot")
 animation = NodePath("../PathAnimationPlayer")
+testing = true
 
 [node name="PathAnimationPlayer" type="AnimationPlayer" parent="Paths"]
 libraries = {
@@ -358,6 +453,44 @@ curve = SubResource("Curve3D_0d5q6")
 transform = Transform3D(-0.821588, 0, -0.570082, 0, 1, 0, 0.570082, 0, -0.821588, -5.02032, 0, 0.548508)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Paths/pathList/8_cocina_path_07/PathFollow3D"]
+
+[node name="9_sala_path_01" type="Path3D" parent="Paths/pathList"]
+curve = SubResource("Curve3D_0541i")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Paths/pathList/9_sala_path_01"]
+transform = Transform3D(-0.538617, 0, -0.842551, 0, 1, 0, 0.842551, 0, -0.538617, 1.71302, 0, -0.0159643)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Paths/pathList/9_sala_path_01/PathFollow3D"]
+
+[node name="10_sala_path_09" type="Path3D" parent="Paths/pathList"]
+curve = SubResource("Curve3D_t7er0")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Paths/pathList/10_sala_path_09"]
+transform = Transform3D(-0.894424, 0, -0.44722, 0, 1, 0, 0.44722, 0, -0.894424, 6.92462, 0, 0.324449)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Paths/pathList/10_sala_path_09/PathFollow3D"]
+
+[node name="11_sala_path_09" type="Path3D" parent="Paths/pathList"]
+curve = SubResource("Curve3D_lyd44")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Paths/pathList/11_sala_path_09"]
+transform = Transform3D(0.398915, 0, 0.916988, 0, 1, 0, -0.916988, 0, 0.398915, 6.70437, 0, 0.07648)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Paths/pathList/11_sala_path_09/PathFollow3D"]
+
+[node name="12_sala_path_10" type="Path3D" parent="Paths/pathList"]
+curve = SubResource("Curve3D_avg0s")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Paths/pathList/12_sala_path_10"]
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Paths/pathList/12_sala_path_10/PathFollow3D"]
+
+[node name="13_sala_path_10" type="Path3D" parent="Paths/pathList"]
+curve = SubResource("Curve3D_k6t3p")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Paths/pathList/13_sala_path_10"]
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Paths/pathList/13_sala_path_10/PathFollow3D"]
 
 [node name="gobot" parent="." instance=ExtResource("7_blwbe")]
 transform = Transform3D(0.000745003, 0, 0.999984, 0, 1, 0, -0.999984, 0, 0.000745003, -3.24522, 0, 0.00034175)

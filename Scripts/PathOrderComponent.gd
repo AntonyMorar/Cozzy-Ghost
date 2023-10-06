@@ -6,12 +6,12 @@ var ordered_list_of_paths
 @export var speed_anim:=1.0
 @export var animation: AnimationPlayer
 @export var pause_spook_time = 0.5
+@export var testing = false
 var anim_num = 0
 
 func _ready():
 	animation.connect('animation_finished', _anim_finished)
 	animation.play("path_"+str(anim_num))
-	animation.speed_scale = speed_anim
 	Events.connect('spookeado', _pausa_movimiento)
 	ordered_list_of_paths = path_list.get_children()
 	for path in ordered_list_of_paths:
@@ -23,10 +23,14 @@ func _ready():
 
 func _anim_finished(anim_name):
 	var anim_name_num = anim_name.trim_suffix('path_').to_int()
-	animation.speed_scale = randf_range(0.3,0.7)
+	if testing:
+		animation.speed_scale = 3
+	else:
+		animation.speed_scale = randf_range(0.3,0.7)
+
 	match  anim_name_num:
 		0:
-			anim_num = 1
+			anim_num = [1,9].pick_random()
 			animation.play("path_"+str(anim_num))
 		1:
 			anim_num = [2,3,7].pick_random()
@@ -52,6 +56,22 @@ func _anim_finished(anim_name):
 		8:
 			anim_num = 0
 			animation.play("path_"+str(anim_num))
+		9:
+			anim_num = [10,11]
+			animation.play("path_"+str(anim_num))
+		10:
+			anim_num = [12,13]
+			animation.play("path_"+str(anim_num))
+		11:
+			anim_num = 1
+			animation.play("path_"+str(anim_num))
+		12:
+			anim_num = 10
+			animation.play("path_"+str(anim_num))
+		13:
+			anim_num = 10
+			animation.play("path_"+str(anim_num))
+
 
 func _pausa_movimiento(_spookeado, _amount):
 	animation.pause()
