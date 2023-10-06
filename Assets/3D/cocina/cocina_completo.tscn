@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyup2s0x73ka0"]
-
-[ext_resource type="PackedScene" uid="uid://b8c6ofd73e0x6" path="res://Assets/3D/cocina/Cocina_Completo.glb" id="1_6ngpy"]
-
-[node name="Cocina_Completo" instance=ExtResource("1_6ngpy")]

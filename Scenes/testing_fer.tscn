@@ -521,7 +521,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.333
 visible = false
 
 [node name="Cocina_Sartenes01" parent="Cocina_Completo" index="4"]
-transform = Transform3D(-0.88301, 0.419389, 0.21072, 0.231286, -0.00185394, 0.972884, 0.408407, 0.907804, -0.0953616, -2.52153, 3.94817, -3.36382)
+transform = Transform3D(-0.883009, 0.419389, 0.21072, 0.231286, -0.00185394, 0.972884, 0.408407, 0.907804, -0.0953616, -2.52153, 3.94817, -3.36382)
 rotation_edit_mode = 1
 script = ExtResource("20_42njr")
 

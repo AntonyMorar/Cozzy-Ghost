@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="KappaModel" load_steps=2 format=3 uid="uid://cbbyuqn5jwbfn"]
-
-[ext_resource type="Script" path="res://Scripts/KappaModel.gd" id="1_kkhim"]
-
-[resource]
-script = ExtResource("1_kkhim")
-Titulo = "Hielera Chelas"
-ModelPath = "res://Assets/3D/hielera_chelas_mediavis/hielera_chelas.gltf"
-TextoPath = "res://Assets/3D/hielera_chelas_mediavis/descripcion.md"
