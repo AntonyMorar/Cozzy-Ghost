@@ -21,7 +21,6 @@ func _ready():
 
 func _shake_cam(_spookeado, _amount):
 	trauma = clamp(trauma + _amount, 0.0,1.0)
-	
 
 func _process(delta):
 	time += delta
