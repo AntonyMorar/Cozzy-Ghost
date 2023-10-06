@@ -1,13 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://n5cchnvivbop"]
+[gd_scene load_steps=19 format=3 uid="uid://n5cchnvivbop"]
 
 [ext_resource type="Texture2D" uid="uid://b647rtjsw6xpi" path="res://Assets/Materials/autumn.png" id="1_88d4f"]
 [ext_resource type="Script" path="res://Scripts/animationStartManager.gd" id="2_mhwo8"]
+[ext_resource type="Texture2D" uid="uid://c8oqp58eoouq2" path="res://Assets/Materials/intro_card_title.png" id="2_t3b0h"]
 [ext_resource type="Script" path="res://Scripts/StartMenu.gd" id="3_lblhe"]
 [ext_resource type="Texture2D" uid="uid://bieh8ny6d5gum" path="res://Assets/Materials/autumn_blur.png" id="4_8dqpf"]
-[ext_resource type="Texture2D" uid="uid://b4cgpppr1dsmt" path="res://Assets/Icons/Ghost_Game.png" id="4_737t6"]
 [ext_resource type="Texture2D" uid="uid://ca0hagupjrkg0" path="res://Assets/Icons/start_button.png" id="5_3qmyq"]
+[ext_resource type="Texture2D" uid="uid://ogwk1bsfn3ms" path="res://Assets/Materials/unwanted_company_text.png" id="5_rwtqy"]
 [ext_resource type="Texture2D" uid="uid://naua6pwj4jw4" path="res://Assets/Icons/quit_button.png" id="6_umds2"]
+[ext_resource type="Texture2D" uid="uid://dobykh6f80ehv" path="res://Assets/Icons/start_button_hover.png" id="7_f5pp8"]
 [ext_resource type="AudioStream" uid="uid://dk5p05qqsar1p" path="res://Assets/Musik/intro_ghost.wav" id="8_bdtes"]
+[ext_resource type="Texture2D" uid="uid://cgyn50kdstfw5" path="res://Assets/Icons/quit_button_hover.png" id="9_ketfx"]
 
 [sub_resource type="Animation" id="Animation_51c75"]
 length = 0.001
@@ -242,6 +245,11 @@ libraries = {
 "": SubResource("AnimationLibrary_bm20j")
 }
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_t3b0h")
+
 [node name="leaf" type="Sprite2D" parent="."]
 position = Vector2(-201, 704)
 texture = ExtResource("1_88d4f")
@@ -271,24 +279,22 @@ script = ExtResource("3_lblhe")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="StartMenu"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -289.5
-offset_top = -118.5
-offset_right = 289.5
-offset_bottom = 118.5
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -955.0
+offset_top = 104.0
+offset_right = -80.0
+offset_bottom = 550.0
+grow_horizontal = 0
 
 [node name="TextureRect" type="TextureRect" parent="StartMenu/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("4_737t6")
+texture = ExtResource("5_rwtqy")
+stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="StartMenu/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="StartMenu/VBoxContainer"]
@@ -299,11 +305,19 @@ size_flags_horizontal = 4
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("5_3qmyq")
+texture_hover = ExtResource("7_f5pp8")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="StartMenu/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
 
 [node name="quit_button" type="TextureButton" parent="StartMenu/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("6_umds2")
+texture_hover = ExtResource("9_ketfx")
+stretch_mode = 3
 
 [node name="AnimationPlayerFront" type="AnimationPlayer" parent="."]
 libraries = {
