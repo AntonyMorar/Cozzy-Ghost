@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://y7svisqly4t6"]
+[gd_scene load_steps=51 format=3 uid="uid://y7svisqly4t6"]
 
 [ext_resource type="PackedScene" uid="uid://dt4d02xax8b27" path="res://Scenes/environment_component.tscn" id="1_j3u77"]
 [ext_resource type="PackedScene" uid="uid://kod0awm1ha4o" path="res://models/gobot/model/gobot.glb" id="2_rvkvk"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://kvv47i7x5btv" path="res://Assets/Blockouts-godot/columns/2x6-column.glb" id="8_3ksyj"]
 [ext_resource type="PackedScene" uid="uid://b2qtjd00dy3xc" path="res://Assets/Blockouts-godot/walls/4x5-wall.glb" id="9_l1lr2"]
 [ext_resource type="PackedScene" uid="uid://cmke4slc3inry" path="res://Assets/Blockouts-godot/floor/100x1-floor.glb" id="10_0xp8l"]
+[ext_resource type="PackedScene" uid="uid://b3vjd2fr72ece" path="res://Scenes/camera_shaker_component.tscn" id="11_307tg"]
 [ext_resource type="PackedScene" uid="uid://cdpsrnga0glls" path="res://Assets/Blockouts-godot/ramps/2x4x1-ramp.glb" id="11_rdqg7"]
 [ext_resource type="PackedScene" uid="uid://n1up60oeujer" path="res://Assets/Blockouts-godot/floor/16x1-floor.glb" id="12_uwu43"]
 [ext_resource type="PackedScene" uid="uid://dpucwnj7md5w8" path="res://Assets/Blockouts-godot/columns/2x3-column.glb" id="13_8y320"]
@@ -396,6 +397,8 @@ fov = 35.0
 size = 13.0
 far = 209.23
 
+[node name="cameraShakerComponent" parent="Camera3D2" instance=ExtResource("11_307tg")]
+
 [node name="Ghost2D" parent="." instance=ExtResource("15_pkg3u")]
 
 [node name="getMouseComponent" parent="Ghost2D" index="0" node_paths=PackedStringArray("camera")]
@@ -419,7 +422,7 @@ spook_area = NodePath("../spookArea")
 spook_parent_logic_path = NodePath("..")
 
 [node name="spookArea" type="Area3D" parent="2x2-block"]
-transform = Transform3D(0.885207, 0, 0.465197, 0, 1, 0, -0.465197, 0, 0.885207, -0.00413275, 0.498667, 2.38182)
+transform = Transform3D(0.885207, 0, 0.465197, 0, 1, 0, -0.465197, 0, 0.885207, -4.84362, 0.498667, 1.3161)
 collision_layer = 0
 collision_mask = 2
 input_ray_pickable = false
@@ -506,6 +509,9 @@ remote_path = NodePath("../../../../gobot")
 
 [node name="Cocina_Completo" parent="." instance=ExtResource("19_di7jn")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.33351, 4.2867, 11.0159)
+
+[node name="Cocina_Paredes" parent="Cocina_Completo" index="1"]
+visible = false
 
 [node name="Cocina_Sartenes01" parent="Cocina_Completo" index="4"]
 transform = Transform3D(-0.88301, 0.419389, 0.21072, 0.231286, -0.00185394, 0.972884, 0.408407, 0.907804, -0.0953616, -2.52153, 3.94817, -3.36382)
