@@ -532,7 +532,8 @@ bored_messages = [null, null, null]
 [node name="Depa_Completo" parent="." instance=ExtResource("7_d46uw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02163, 0, 0)
 
-[node name="aranitaSpawner" parent="." instance=ExtResource("7_frjo2")]
+[node name="aranitaSpawner" parent="." node_paths=PackedStringArray("spawnerPoints") instance=ExtResource("7_frjo2")]
+spawnerPoints = [NodePath("../spawnerPoints/Node3D")]
 
 [node name="spawnerPoints" type="Node3D" parent="."]
 
