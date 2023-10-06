@@ -57,10 +57,10 @@ func _anim_finished(anim_name):
 			anim_num = 0
 			animation.play("path_"+str(anim_num))
 		9:
-			anim_num = [10,11]
+			anim_num = [10,11].pick_random()
 			animation.play("path_"+str(anim_num))
 		10:
-			anim_num = [12,13]
+			anim_num = [12,13].pick_random()
 			animation.play("path_"+str(anim_num))
 		11:
 			anim_num = 1
@@ -69,7 +69,7 @@ func _anim_finished(anim_name):
 			anim_num = 10
 			animation.play("path_"+str(anim_num))
 		13:
-			anim_num = 10
+			anim_num = 1
 			animation.play("path_"+str(anim_num))
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cmawrqxfpt44"]
+[gd_scene load_steps=38 format=3 uid="uid://cmawrqxfpt44"]
 
 [ext_resource type="PackedScene" uid="uid://dt4d02xax8b27" path="res://Scenes/environment_component.tscn" id="1_afnyq"]
 [ext_resource type="PackedScene" uid="uid://bqej760uqlpmg" path="res://Scenes/ghost_2d.tscn" id="3_kgxc5"]
@@ -84,6 +84,21 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("pathList/12_sala_path_10/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_0gcn2"]
+resource_name = "path_13"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pathList/13_sala_path_10/PathFollow3D:progress_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -220,6 +235,7 @@ _data = {
 "path_10": SubResource("Animation_erlwh"),
 "path_11": SubResource("Animation_o3prk"),
 "path_12": SubResource("Animation_fnm4o"),
+"path_13": SubResource("Animation_0gcn2"),
 "path_2": SubResource("Animation_uf4oe"),
 "path_3": SubResource("Animation_f6gw1"),
 "path_4": SubResource("Animation_slr1a"),
@@ -322,6 +338,11 @@ _data = {
 point_count = 5
 
 [sub_resource type="Curve3D" id="Curve3D_k6t3p"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.49404, 0, 0.264628, -0.188114, 0, 0.37623, 0.188114, 0, -0.37623, 7.90363, 0, -1.07569, 0.564344, 0, 0.446773, -0.564344, 0, -0.446773, 7.73902, 0, -2.60412, 0.564344, 0, -0.235144, -0.564344, 0, 0.235144, 5.9049, 0, -2.41601, 0, 0, 0, 0, 0, 0, 2.14261, 0, -0.0645737),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x5ywm"]
 
@@ -489,11 +510,12 @@ transform = Transform3D(-0.615375, 0, -0.788234, 0, 1, 0, 0.788234, 0, -0.615375
 curve = SubResource("Curve3D_k6t3p")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Paths/pathList/13_sala_path_10"]
+transform = Transform3D(0.36585, 0, -0.930674, 0, 1, 0, 0.930674, 0, 0.36585, 4.49404, 0, 0.264628)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Paths/pathList/13_sala_path_10/PathFollow3D"]
 
 [node name="gobot" parent="." instance=ExtResource("7_blwbe")]
-transform = Transform3D(0.000745003, 0, 0.999984, 0, 1, 0, -0.999984, 0, 0.000745003, -3.24522, 0, 0.00034175)
+transform = Transform3D(-0.0124838, 0, 0.999906, 0, 1, 0, -0.999906, 0, -0.0124838, -3.24522, 0, 0.00034175)
 
 [node name="spookCollider" type="Area3D" parent="gobot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -508,5 +530,6 @@ scary_messages = [null, null, null]
 bored_messages = [null, null, null]
 
 [node name="Depa_Completo" parent="." instance=ExtResource("7_d46uw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8023, 0, 0)
 
 [editable path="Ghost2D"]
