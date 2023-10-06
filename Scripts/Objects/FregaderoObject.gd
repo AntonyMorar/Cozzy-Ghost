@@ -1,8 +1,13 @@
 extends MeshInstance3D
 
-func _ready():
-	pass # Replace with function body.
+var is_active = false
+@export var waterParticles:GPUParticles3D
 
-
-func _process(delta):
-	pass
+func _clicked():
+	if !is_active:
+		is_active = true
+		$AnimationPlayer.play("Move")
+		waterParticles.emitting = true
+		
+func _active_again():
+	is_active = false
