@@ -9,6 +9,7 @@ var is_active = false
 @export var effect:GPUParticles3D
 
 func _clicked():
+	print("Clicked")
 	if is_active and autolock: return
 	if autolock:
 		is_active = true

@@ -1,12 +1,11 @@
 extends Node
 
-#Public
-@export var audiosStream:AudioStreamPlayer
-
 #Private
 var area3D:Area3D
+var audiosStream:AudioStreamPlayer
 
 func _ready():
+	audiosStream = get_node("AudioStreamPlayer")
 	area3D = get_parent().get_node("Area3D")
 	area3D.connect('input_event', _clickeado)
 	
