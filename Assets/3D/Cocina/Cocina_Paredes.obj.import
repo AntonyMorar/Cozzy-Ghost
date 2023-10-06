@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://o8n45ox1w56v"
-path="res://.godot/imported/Cocina_Paredes.obj-b12cf1d33e8e35fee3a78d1a859e6f70.mesh"
+path="res://.godot/imported/Cocina_Paredes.obj-48880c65d9fb02d990d8e53c4ca87059.mesh"
 
 [deps]
 
-files=["res://.godot/imported/Cocina_Paredes.obj-b12cf1d33e8e35fee3a78d1a859e6f70.mesh"]
+files=["res://.godot/imported/Cocina_Paredes.obj-48880c65d9fb02d990d8e53c4ca87059.mesh"]
 
-source_file="res://Assets/3D/cocina/Cocina_Paredes.obj"
-dest_files=["res://.godot/imported/Cocina_Paredes.obj-b12cf1d33e8e35fee3a78d1a859e6f70.mesh", "res://.godot/imported/Cocina_Paredes.obj-b12cf1d33e8e35fee3a78d1a859e6f70.mesh"]
+source_file="res://Assets/3D/Cocina/Cocina_Paredes.obj"
+dest_files=["res://.godot/imported/Cocina_Paredes.obj-48880c65d9fb02d990d8e53c4ca87059.mesh", "res://.godot/imported/Cocina_Paredes.obj-48880c65d9fb02d990d8e53c4ca87059.mesh"]
 
 [params]
 

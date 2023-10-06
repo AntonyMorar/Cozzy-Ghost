@@ -18,7 +18,7 @@
 [ext_resource type="Script" path="res://Scripts/2x2-block.gd" id="17_gycgw"]
 [ext_resource type="Script" path="res://Scripts/PathOrderComponent.gd" id="18_1avik"]
 [ext_resource type="PackedScene" uid="uid://c6sta6a7o2a4n" path="res://Scenes/clickable_element.tscn" id="18_4f8ad"]
-[ext_resource type="PackedScene" uid="uid://b8c6ofd73e0x6" path="res://Assets/3D/cocina/Cocina_Completo.glb" id="19_di7jn"]
+[ext_resource type="PackedScene" uid="uid://b8c6ofd73e0x6" path="res://Assets/3D/Cocina/Cocina_Completo.glb" id="19_di7jn"]
 [ext_resource type="Script" path="res://Scripts/Cocina_Sartenes01.gd" id="20_42njr"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n31la"]

@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://dkcyrxexpcomb"
-path="res://.godot/imported/Cocina_PuertasIZQ_02.obj-1e2d7bc08bc7699abfede630835c4b6a.mesh"
+path="res://.godot/imported/Cocina_PuertasIZQ_02.obj-80eaec0cc8cb9cf845b2399fc1fc2f09.mesh"
 
 [deps]
 
-files=["res://.godot/imported/Cocina_PuertasIZQ_02.obj-1e2d7bc08bc7699abfede630835c4b6a.mesh"]
+files=["res://.godot/imported/Cocina_PuertasIZQ_02.obj-80eaec0cc8cb9cf845b2399fc1fc2f09.mesh"]
 
-source_file="res://Assets/3D/cocina/Cocina_PuertasIZQ_02.obj"
-dest_files=["res://.godot/imported/Cocina_PuertasIZQ_02.obj-1e2d7bc08bc7699abfede630835c4b6a.mesh", "res://.godot/imported/Cocina_PuertasIZQ_02.obj-1e2d7bc08bc7699abfede630835c4b6a.mesh"]
+source_file="res://Assets/3D/Cocina/Cocina_PuertasIZQ_02.obj"
+dest_files=["res://.godot/imported/Cocina_PuertasIZQ_02.obj-80eaec0cc8cb9cf845b2399fc1fc2f09.mesh", "res://.godot/imported/Cocina_PuertasIZQ_02.obj-80eaec0cc8cb9cf845b2399fc1fc2f09.mesh"]
 
 [params]
 
