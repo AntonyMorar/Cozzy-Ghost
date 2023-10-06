@@ -257,7 +257,7 @@ remote_path = NodePath("../../../../../gobot")
 curve = SubResource("Curve3D_ldqk3")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Paths/pathList/3_cocina_path_02"]
-transform = Transform3D(-0.984872, 0, -0.173265, 0, 1, 0, 0.173265, 0, -0.984872, -3.32692, 0, 0.0939053)
+transform = Transform3D(-0.984872, 0, -0.173264, 0, 1, 0, 0.173264, 0, -0.984872, -3.32692, 0, 0.0939053)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Paths/pathList/3_cocina_path_02/PathFollow3D"]
 remote_path = NodePath("../../../../../gobot")
@@ -275,7 +275,7 @@ remote_path = NodePath("../../../../../gobot")
 curve = SubResource("Curve3D_1ofe3")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Paths/pathList/5_cocina_path_04"]
-transform = Transform3D(-0.995792, 0, -0.0916373, 0, 1, 0, 0.0916373, 0, -0.995792, -7.19545, 0, -0.0673372)
+transform = Transform3D(-0.995792, 0, -0.0916375, 0, 1, 0, 0.0916375, 0, -0.995792, -7.19545, 0, -0.0673372)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Paths/pathList/5_cocina_path_04/PathFollow3D"]
 remote_path = NodePath("../../../../../gobot")
@@ -292,8 +292,8 @@ collision_mask = 0
 shape = SubResource("CapsuleShape3D_x5ywm")
 
 [node name="scareMessagesComponent" parent="gobot" node_paths=PackedStringArray("scary_messages", "bored_messages") instance=ExtResource("8_62mtr")]
-scary_messages = [NodePath(""), NodePath(""), NodePath("")]
-bored_messages = [NodePath(""), NodePath(""), NodePath("")]
+scary_messages = [null, null, null]
+bored_messages = [null, null, null]
 
 [node name="Depa_Completo" parent="." instance=ExtResource("9_phixl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.947, 0, 0)
