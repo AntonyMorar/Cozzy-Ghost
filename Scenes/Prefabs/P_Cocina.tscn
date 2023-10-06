@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://rslgv6kokw78"]
+[gd_scene load_steps=17 format=3 uid="uid://rslgv6kokw78"]
 
 [ext_resource type="PackedScene" uid="uid://b8c6ofd73e0x6" path="res://Assets/3D/Cocina/Cocina_Completo.glb" id="1_j8yey"]
 [ext_resource type="PackedScene" uid="uid://c6sta6a7o2a4n" path="res://Scenes/clickable_element.tscn" id="2_i7nvw"]
 [ext_resource type="Script" path="res://Scripts/Objects/FregaderoObject.gd" id="2_l7i1k"]
+[ext_resource type="Script" path="res://Scripts/Objects/SartenObject.gd" id="4_vj25b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4dlmb"]
 
@@ -56,6 +57,102 @@ billboard_mode = 2
 material = SubResource("StandardMaterial3D_qyr6u")
 size = Vector2(0.1, 0.1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_l64me"]
+size = Vector3(1.3671, 1, 1.68408)
+
+[sub_resource type="Animation" id="Animation_68gv0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:quaternion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Quaternion(0.231411, 0.702944, 0.668862, -0.0703071)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.52153, 3.94817, -3.36382)]
+}
+
+[sub_resource type="Animation" id="Animation_x2fti"]
+resource_name = "agitar_sartenes"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:quaternion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7, 1),
+"transitions": PackedFloat32Array(0.153893, 1, 1, 1),
+"update": 0,
+"values": [Quaternion(0.137032, 0.727257, 0.653823, -0.157592), Quaternion(-0.00847027, 0.740006, 0.610138, -0.282933), Quaternion(0.212572, 0.708868, 0.666748, -0.0881293), Quaternion(0.137032, 0.727257, 0.653823, -0.157592)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_active_again"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_qghyn"]
+resource_name = "sarten_cae"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2.52153, 3.94817, -3.36382), Vector3(-2.52153, 1.93849, -3.36382)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_active_again"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pqgd2"]
+_data = {
+"RESET": SubResource("Animation_68gv0"),
+"agitar_sartenes": SubResource("Animation_x2fti"),
+"sarten_cae": SubResource("Animation_qghyn")
+}
+
 [node name="Cocina_Completo" instance=ExtResource("1_j8yey")]
 
 [node name="Cocina_Fregadero" parent="." index="2" node_paths=PackedStringArray("waterParticles")]
@@ -84,3 +181,22 @@ lifetime = 2.0
 one_shot = true
 process_material = SubResource("ParticleProcessMaterial_r2eu0")
 draw_pass_1 = SubResource("QuadMesh_tkhdy")
+
+[node name="Cocina_Sartenes01" parent="." index="4" node_paths=PackedStringArray("animation")]
+transform = Transform3D(-0.883012, 0.419389, 0.21072, 0.231286, -0.00185394, 0.972884, 0.408408, 0.907805, -0.0953616, -2.52153, 3.94817, -3.36382)
+script = ExtResource("4_vj25b")
+animation = NodePath("AnimationPlayer")
+
+[node name="clickableElement" parent="Cocina_Sartenes01" index="0" node_paths=PackedStringArray("click_area") instance=ExtResource("2_i7nvw")]
+click_area = NodePath("../Area3D")
+
+[node name="Area3D" type="Area3D" parent="Cocina_Sartenes01" index="1"]
+transform = Transform3D(0.945518, 0.325568, 0, -0.325568, 0.945518, 0, 0, 0, 1, 0.0382998, -0.0956125, -0.746162)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cocina_Sartenes01/Area3D" index="0"]
+shape = SubResource("BoxShape3D_l64me")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cocina_Sartenes01" index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_pqgd2")
+}
