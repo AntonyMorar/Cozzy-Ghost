@@ -9,4 +9,5 @@ func _clicked():
 		clickeado = true
 		if spookable:
 			print('ME ESPANTOOOOO')
-			Events.emit_signal('spookeado')
+			#puedes mandar true o false si el espanto es efectivo contra el
+			Events.emit_signal('spookeado', true)

@@ -24,7 +24,7 @@ func _anim_finished(anim_name):
 			anim_num = 0
 			animation.play("path_"+str(anim_num))
 
-func _pausa_movimiento():
+func _pausa_movimiento(_spookeado):
 	animation.pause()
 	await get_tree().create_timer(pause_spook_time).timeout
 	animation.play()

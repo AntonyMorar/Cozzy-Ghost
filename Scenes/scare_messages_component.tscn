@@ -1,0 +1,104 @@
+[gd_scene load_steps=20 format=3 uid="uid://7pcmqcbq48is"]
+
+[ext_resource type="Script" path="res://Scripts/scareMessagesComponent.gd" id="1_q55yu"]
+[ext_resource type="Texture2D" uid="uid://c65j6mjwid6tw" path="res://Assets/Icons/scared_aaaah.png" id="2_7ymj5"]
+[ext_resource type="Texture2D" uid="uid://dssycvbf8htsh" path="res://Assets/Icons/scared_what.png" id="3_ctu0l"]
+[ext_resource type="Texture2D" uid="uid://dncddje2oq1kc" path="res://Assets/Icons/scared_yaaah.png" id="4_di2uv"]
+[ext_resource type="Texture2D" uid="uid://bq62uux3gam4v" path="res://Assets/Icons/not_scared_zzz.png" id="5_s1ruq"]
+[ext_resource type="Texture2D" uid="uid://cedr8iyggovsg" path="res://Assets/Icons/not_scared_meh.png" id="6_tmmht"]
+[ext_resource type="Texture2D" uid="uid://dffouo18p5tey" path="res://Assets/Icons/not_scared_boring.png" id="7_d6upa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntsgq"]
+transparency = 1
+albedo_texture = ExtResource("2_7ymj5")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_bp0or"]
+material = SubResource("StandardMaterial3D_ntsgq")
+size = Vector2(6, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_50hg8"]
+transparency = 1
+albedo_texture = ExtResource("3_ctu0l")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_gxdk2"]
+material = SubResource("StandardMaterial3D_50hg8")
+size = Vector2(6, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxhen"]
+transparency = 1
+albedo_texture = ExtResource("4_di2uv")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_p3x28"]
+material = SubResource("StandardMaterial3D_kxhen")
+size = Vector2(6, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npqfo"]
+transparency = 1
+albedo_texture = ExtResource("5_s1ruq")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_tovow"]
+material = SubResource("StandardMaterial3D_npqfo")
+size = Vector2(4, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5quuv"]
+transparency = 1
+albedo_texture = ExtResource("6_tmmht")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_qlqk8"]
+material = SubResource("StandardMaterial3D_5quuv")
+size = Vector2(4, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c24u7"]
+transparency = 1
+albedo_texture = ExtResource("7_d6upa")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_ap6xw"]
+material = SubResource("StandardMaterial3D_c24u7")
+size = Vector2(4, 2)
+
+[node name="scareMessagesComponent" type="Node3D" node_paths=PackedStringArray("scary_messages", "bored_messages")]
+transform = Transform3D(1, 0, -1.86265e-09, 0, 1, 0, 2.32831e-09, 0, 1, -0.00221062, 2.55885, 0.32103)
+script = ExtResource("1_q55yu")
+scary_messages = [NodePath("scared_aaaah"), NodePath("scared_what"), NodePath("scared_yaaah")]
+bored_messages = [NodePath("bored_zzz"), NodePath("bored_meh"), NodePath("bored_boring")]
+
+[node name="scared_aaaah" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+visible = false
+mesh = SubResource("QuadMesh_bp0or")
+skeleton = NodePath("../..")
+
+[node name="scared_what" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 4.65661e-10, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+mesh = SubResource("QuadMesh_gxdk2")
+
+[node name="scared_yaaah" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 4.65661e-10, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+mesh = SubResource("QuadMesh_p3x28")
+
+[node name="bored_zzz" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0)
+visible = false
+mesh = SubResource("QuadMesh_tovow")
+
+[node name="bored_meh" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("QuadMesh_qlqk8")
+
+[node name="bored_boring" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("QuadMesh_ap6xw")
