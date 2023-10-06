@@ -89,35 +89,6 @@ tracks/1/keys = {
 "values": [Vector3(-2.52153, 3.94817, -3.36382)]
 }
 
-[sub_resource type="Animation" id="Animation_x2fti"]
-resource_name = "agitar_sartenes"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:quaternion")
-tracks/0/interp = 1
-tracks/0/loop_wrap = false
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.7, 1),
-"transitions": PackedFloat32Array(0.153893, 1, 1, 1),
-"update": 0,
-"values": [Quaternion(0.137032, 0.727257, 0.653823, -0.157592), Quaternion(-0.00847027, 0.740006, 0.610138, -0.282933), Quaternion(0.212572, 0.708868, 0.666748, -0.0881293), Quaternion(0.137032, 0.727257, 0.653823, -0.157592)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"_active_again"
-}]
-}
-
 [sub_resource type="Animation" id="Animation_qghyn"]
 resource_name = "sarten_cae"
 length = 5.0
@@ -148,10 +119,39 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_x2fti"]
+resource_name = "Move"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:quaternion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7, 1),
+"transitions": PackedFloat32Array(0.153893, 1, 1, 1),
+"update": 0,
+"values": [Quaternion(0.137032, 0.727257, 0.653823, -0.157592), Quaternion(-0.00847027, 0.740006, 0.610138, -0.282933), Quaternion(0.212572, 0.708868, 0.666748, -0.0881293), Quaternion(0.137032, 0.727257, 0.653823, -0.157592)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_active_again"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pqgd2"]
 _data = {
+"Move": SubResource("Animation_x2fti"),
 "RESET": SubResource("Animation_68gv0"),
-"agitar_sartenes": SubResource("Animation_x2fti"),
 "sarten_cae": SubResource("Animation_qghyn")
 }
 
