@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy24qsaufre4s"]
+
+[ext_resource type="Script" path="res://Scripts/aranitaSpawner.gd" id="1_oydt6"]
+[ext_resource type="PackedScene" uid="uid://bcpnxr4nub15l" path="res://Scenes/aranita.tscn" id="2_76kxu"]
+[ext_resource type="Script" path="res://Scripts/spawnItemElement.gd" id="3_yjkbf"]
+
+[node name="aranitaSpawner" type="Node3D" node_paths=PackedStringArray("spawner")]
+script = ExtResource("1_oydt6")
+spawner = NodePath("spawnItemElement")
+aranita = ExtResource("2_76kxu")
+spawner_time = 10.0
+
+[node name="spawnItemElement" type="Node" parent="."]
+script = ExtResource("3_yjkbf")

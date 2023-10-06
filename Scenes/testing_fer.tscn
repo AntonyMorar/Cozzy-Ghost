@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://y7svisqly4t6"]
+[gd_scene load_steps=58 format=3 uid="uid://y7svisqly4t6"]
 
 [ext_resource type="PackedScene" uid="uid://dt4d02xax8b27" path="res://Scenes/environment_component.tscn" id="1_j3u77"]
 [ext_resource type="PackedScene" uid="uid://kod0awm1ha4o" path="res://models/gobot/model/gobot.glb" id="2_rvkvk"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://kvv47i7x5btv" path="res://Assets/Blockouts-godot/columns/2x6-column.glb" id="8_3ksyj"]
 [ext_resource type="PackedScene" uid="uid://b2qtjd00dy3xc" path="res://Assets/Blockouts-godot/walls/4x5-wall.glb" id="9_l1lr2"]
 [ext_resource type="PackedScene" uid="uid://cmke4slc3inry" path="res://Assets/Blockouts-godot/floor/100x1-floor.glb" id="10_0xp8l"]
+[ext_resource type="PackedScene" uid="uid://b3vjd2fr72ece" path="res://Scenes/camera_shaker_component.tscn" id="11_307tg"]
 [ext_resource type="PackedScene" uid="uid://cdpsrnga0glls" path="res://Assets/Blockouts-godot/ramps/2x4x1-ramp.glb" id="11_rdqg7"]
 [ext_resource type="PackedScene" uid="uid://n1up60oeujer" path="res://Assets/Blockouts-godot/floor/16x1-floor.glb" id="12_uwu43"]
 [ext_resource type="PackedScene" uid="uid://dpucwnj7md5w8" path="res://Assets/Blockouts-godot/columns/2x3-column.glb" id="13_8y320"]
@@ -20,6 +21,13 @@
 [ext_resource type="PackedScene" uid="uid://c6sta6a7o2a4n" path="res://Scenes/clickable_element.tscn" id="18_4f8ad"]
 [ext_resource type="PackedScene" uid="uid://b8c6ofd73e0x6" path="res://Assets/3D/Cocina/Cocina_Completo.glb" id="19_di7jn"]
 [ext_resource type="Script" path="res://Scripts/Cocina_Sartenes01.gd" id="20_42njr"]
+[ext_resource type="Script" path="res://Scripts/spidersContainer.gd" id="23_r0br1"]
+[ext_resource type="Texture2D" uid="uid://blapukhv742ev" path="res://Assets/Icons/aranita_gauge.png" id="23_rj3ph"]
+[ext_resource type="Texture2D" uid="uid://cq4w7e8pxwxha" path="res://Assets/Icons/aranita_gauge_short.png" id="24_j3cyy"]
+[ext_resource type="Texture2D" uid="uid://bxoxc1wu0uuj7" path="res://Assets/Icons/aranita_gauge_long.png" id="25_ypqe0"]
+[ext_resource type="Texture2D" uid="uid://d3akfd7v0ur6w" path="res://Assets/Icons/spider_icon.png" id="26_cc81r"]
+[ext_resource type="Texture2D" uid="uid://rbugrv1ewvq8" path="res://Assets/Icons/spiders_text.png" id="27_m4sh7"]
+[ext_resource type="PackedScene" uid="uid://cy24qsaufre4s" path="res://Scenes/aranita_spawner.tscn" id="29_t6kqb"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n31la"]
 points = PackedVector3Array(-4, -1, -4, -4, 0, -4, 4, -1, -4, -4, -1, 4, -4, 0, 4, 4, 0, -4, 4, -1, 4, 4, 0, 4)
@@ -396,6 +404,8 @@ fov = 35.0
 size = 13.0
 far = 209.23
 
+[node name="cameraShakerComponent" parent="Camera3D2" instance=ExtResource("11_307tg")]
+
 [node name="Ghost2D" parent="." instance=ExtResource("15_pkg3u")]
 
 [node name="getMouseComponent" parent="Ghost2D" index="0" node_paths=PackedStringArray("camera")]
@@ -419,7 +429,7 @@ spook_area = NodePath("../spookArea")
 spook_parent_logic_path = NodePath("..")
 
 [node name="spookArea" type="Area3D" parent="2x2-block"]
-transform = Transform3D(0.885207, 0, 0.465197, 0, 1, 0, -0.465197, 0, 0.885207, -0.00413275, 0.498667, 2.38182)
+transform = Transform3D(0.885207, 0, 0.465197, 0, 1, 0, -0.465197, 0, 0.885207, -4.84362, 0.498667, 1.3161)
 collision_layer = 0
 collision_mask = 2
 input_ray_pickable = false
@@ -433,7 +443,7 @@ libraries = {
 }
 
 [node name="gobot" parent="." instance=ExtResource("2_rvkvk")]
-transform = Transform3D(0.0068855, 0, -0.999961, 0, 0.999972, 0, 0.999969, 0, 0.00688544, 6.27898, 2.97476, 11.7334)
+transform = Transform3D(0.00688548, 0, -0.999958, 0, 0.999972, 0, 0.999966, 0, 0.00688542, 6.27898, 2.97476, 11.7334)
 
 [node name="spookCollider" type="Area3D" parent="gobot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -463,7 +473,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.144971, 0)
 curve = SubResource("Curve3D_lvdn4")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Paths/Path3D_0"]
-transform = Transform3D(0.0068855, 0, -0.999961, 0, 0.999972, 0, 0.999969, 0, 0.00688544, 6.27898, 2.82979, 11.7334)
+transform = Transform3D(0.00688548, 0, -0.999958, 0, 0.999972, 0, 0.999966, 0, 0.00688542, 6.27898, 2.82979, 11.7334)
 progress = 16.4752
 v_offset = -0.185
 rotation_mode = 1
@@ -507,6 +517,9 @@ remote_path = NodePath("../../../../gobot")
 [node name="Cocina_Completo" parent="." instance=ExtResource("19_di7jn")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.33351, 4.2867, 11.0159)
 
+[node name="Cocina_Paredes" parent="Cocina_Completo" index="1"]
+visible = false
+
 [node name="Cocina_Sartenes01" parent="Cocina_Completo" index="4"]
 transform = Transform3D(-0.88301, 0.419389, 0.21072, 0.231286, -0.00185394, 0.972884, 0.408407, 0.907804, -0.0953616, -2.52153, 3.94817, -3.36382)
 rotation_edit_mode = 1
@@ -525,6 +538,114 @@ shape = SubResource("BoxShape3D_g2ue3")
 libraries = {
 "": SubResource("AnimationLibrary_pqgd2")
 }
+
+[node name="MainUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="spidersContainer" type="AspectRatioContainer" parent="MainUI" node_paths=PackedStringArray("long_gauge_01", "gauge_02", "gauge_03", "spider_button")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -290.0
+offset_top = -381.0
+offset_right = -30.0
+offset_bottom = -98.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment_vertical = 2
+script = ExtResource("23_r0br1")
+long_gauge_01 = NodePath("VBoxContainer2/AspectRatioContainer2/VBoxContainer/long_gauge_01")
+gauge_02 = NodePath("VBoxContainer2/AspectRatioContainer2/VBoxContainer/gauge_02")
+gauge_03 = NodePath("VBoxContainer2/AspectRatioContainer2/VBoxContainer/gauge_03")
+spider_button = NodePath("spiderButton")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MainUI/spidersContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="MainUI/spidersContainer/VBoxContainer2"]
+layout_mode = 2
+alignment_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MainUI/spidersContainer/VBoxContainer2/AspectRatioContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("23_rj3ph")
+stretch_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainUI/spidersContainer/VBoxContainer2/AspectRatioContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="gauge_03" type="TextureRect" parent="MainUI/spidersContainer/VBoxContainer2/AspectRatioContainer2/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("24_j3cyy")
+stretch_mode = 2
+
+[node name="gauge_02" type="TextureRect" parent="MainUI/spidersContainer/VBoxContainer2/AspectRatioContainer2/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("24_j3cyy")
+stretch_mode = 2
+
+[node name="long_gauge_01" type="TextureRect" parent="MainUI/spidersContainer/VBoxContainer2/AspectRatioContainer2/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("25_ypqe0")
+stretch_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MainUI/spidersContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainUI/spidersContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="TextureRect2" type="TextureRect" parent="MainUI/spidersContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("26_cc81r")
+stretch_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MainUI/spidersContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="spiderButton" type="TextureButton" parent="MainUI/spidersContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+texture_normal = ExtResource("27_m4sh7")
+stretch_mode = 3
+
+[node name="aranitaSpawner" parent="." node_paths=PackedStringArray("spawnerPoints") instance=ExtResource("29_t6kqb")]
+spawnerPoints = [NodePath("spawnPoint"), NodePath("spawnPoint2"), NodePath("spawnPoint3")]
+
+[node name="spawnPoint" type="Node3D" parent="aranitaSpawner"]
+transform = Transform3D(-0.149242, 0, 0.988801, 0, 1, 0, -0.988801, 0, -0.149242, -1.23052, 4.95274, 10.789)
+
+[node name="spawnPoint2" type="Node3D" parent="aranitaSpawner"]
+transform = Transform3D(-0.612411, 0, 0.79054, 0, 1, 0, -0.79054, 0, -0.612411, -7.76957, 9.04636, 12.1298)
+
+[node name="spawnPoint3" type="Node3D" parent="aranitaSpawner"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.51793, 6.27702, 15.1394)
 
 [editable path="Blockout/64x1-floor2"]
 [editable path="Blockout/8x4-x-rect"]

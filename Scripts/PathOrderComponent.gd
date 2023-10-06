@@ -3,7 +3,7 @@ extends Node
 @export var ordered_list_of_paths: Array[Path3D]
 @export var character: Node3D
 @export var animation: AnimationPlayer
-@export var pause_spook_time = 1.5
+@export var pause_spook_time = 0.5
 var anim_num = 0
 
 func _ready():
@@ -24,7 +24,8 @@ func _anim_finished(anim_name):
 			anim_num = 0
 			animation.play("path_"+str(anim_num))
 
-func _pausa_movimiento(_spookeado):
+func _pausa_movimiento(_spookeado, _amount):
 	animation.pause()
-	await get_tree().create_timer(pause_spook_time).timeout
+	var time_paused = _amount  + pause_spook_time
+	await get_tree().create_timer(time_paused).timeout
 	animation.play()

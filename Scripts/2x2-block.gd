@@ -10,4 +10,6 @@ func _clicked():
 		if spookable:
 			print('ME ESPANTOOOOO')
 			#puedes mandar true o false si el espanto es efectivo contra el
-			Events.emit_signal('spookeado', true)
+			# el 1.0 es un scale de susto y va de 0.0 a 1.0, valores chidos son
+			# 0.33 | 0.66 | 1
+			Events.emit_signal('spookeado', true, 1.0)
