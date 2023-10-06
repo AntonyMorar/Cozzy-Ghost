@@ -62,6 +62,35 @@ size = Vector3(0.641453, 1.4218, 0.647673)
 [sub_resource type="BoxShape3D" id="BoxShape3D_rxi7q"]
 size = Vector3(1.3671, 1, 1.68408)
 
+[sub_resource type="Animation" id="Animation_x2fti"]
+resource_name = "Move"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:quaternion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7, 1),
+"transitions": PackedFloat32Array(0.153893, 1, 1, 1),
+"update": 0,
+"values": [Quaternion(0.137032, 0.727257, 0.653823, -0.157592), Quaternion(-0.00847027, 0.740006, 0.610138, -0.282933), Quaternion(0.212572, 0.708868, 0.666748, -0.0881293), Quaternion(0.137032, 0.727257, 0.653823, -0.157592)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_active_again"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_68gv0"]
 length = 0.001
 tracks/0/type = "value"
@@ -112,35 +141,6 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"_active_again"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_x2fti"]
-resource_name = "Move"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:quaternion")
-tracks/0/interp = 1
-tracks/0/loop_wrap = false
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.7, 1),
-"transitions": PackedFloat32Array(0.153893, 1, 1, 1),
-"update": 0,
-"values": [Quaternion(0.137032, 0.727257, 0.653823, -0.157592), Quaternion(-0.00847027, 0.740006, 0.610138, -0.282933), Quaternion(0.212572, 0.708868, 0.666748, -0.0881293), Quaternion(0.137032, 0.727257, 0.653823, -0.157592)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -218,8 +218,10 @@ visibility_aabb = AABB(-1.16726, -1.49637, -2.034, 2.33452, 2.99273, 4.068)
 process_material = SubResource("ParticleProcessMaterial_37mun")
 draw_pass_1 = SubResource("QuadMesh_d4dtm")
 
-[node name="Cocina_Lampara" parent="." index="3"]
+[node name="Cocina_Lampara" parent="." index="3" node_paths=PackedStringArray("light")]
+cast_shadow = 0
 script = ExtResource("2_ll005")
+light = NodePath("SpotLight3D")
 
 [node name="Area3D" type="Area3D" parent="Cocina_Lampara" index="0"]
 
@@ -237,7 +239,7 @@ light_size = 0.005
 spot_angle = 39.55
 
 [node name="Cocina_Sartenes01" parent="." index="4" node_paths=PackedStringArray("animation")]
-transform = Transform3D(-0.883011, 0.419389, 0.21072, 0.231286, -0.00185394, 0.972884, 0.408408, 0.907804, -0.0953616, -2.52153, 3.94817, -3.36382)
+transform = Transform3D(-0.883011, 0.419389, 0.21072, 0.231286, -0.00185394, 0.972884, 0.408407, 0.907804, -0.0953616, -2.52153, 3.94817, -3.36382)
 script = ExtResource("2_ll005")
 animation = NodePath("AnimationPlayer")
 
@@ -299,10 +301,10 @@ shape = SubResource("BoxShape3D_ynrh1")
 
 [node name="clickableElement" parent="Cocina_PuertasIZQ_02" index="1" instance=ExtResource("3_t4wlt")]
 
-[node name="Estancia_Paredes" parent="." index="9"]
+[node name="Estancia_Paredes" parent="." index="19"]
 script = ExtResource("2_ll005")
 
-[node name="Estancia_Piano" parent="." index="10"]
+[node name="Estancia_Piano" parent="." index="20"]
 script = ExtResource("2_ll005")
 
 [node name="Area3D" type="Area3D" parent="Estancia_Piano" index="0"]
@@ -313,7 +315,7 @@ shape = SubResource("BoxShape3D_64f23")
 
 [node name="clickableElement" parent="Estancia_Piano" index="1" instance=ExtResource("3_t4wlt")]
 
-[node name="Estancia_Tele" parent="." index="11"]
+[node name="Estancia_Tele" parent="." index="21"]
 script = ExtResource("2_ll005")
 
 [node name="Area3D" type="Area3D" parent="Estancia_Tele" index="0"]
@@ -324,10 +326,10 @@ shape = SubResource("BoxShape3D_eh4kn")
 
 [node name="clickableElement" parent="Estancia_Tele" index="1" instance=ExtResource("3_t4wlt")]
 
-[node name="Estancia_Base" parent="." index="12"]
+[node name="Estancia_Base" parent="." index="22"]
 script = ExtResource("2_ll005")
 
-[node name="Estancia_Luz" parent="." index="13"]
+[node name="Estancia_Luz" parent="." index="23"]
 script = ExtResource("2_ll005")
 
 [node name="Area3D" type="Area3D" parent="Estancia_Luz" index="0"]
@@ -338,7 +340,7 @@ shape = SubResource("BoxShape3D_n8su0")
 
 [node name="clickableElement" parent="Estancia_Luz" index="1" instance=ExtResource("3_t4wlt")]
 
-[node name="Estancia_Radio" parent="." index="14"]
+[node name="Estancia_Radio" parent="." index="24"]
 script = ExtResource("2_ll005")
 
 [node name="Area3D" type="Area3D" parent="Estancia_Radio" index="0"]
@@ -349,7 +351,7 @@ shape = SubResource("BoxShape3D_bx8lu")
 
 [node name="clickableElement" parent="Estancia_Radio" index="1" instance=ExtResource("3_t4wlt")]
 
-[node name="Estancia_Cajon" parent="." index="15"]
+[node name="Estancia_Cajon" parent="." index="25"]
 script = ExtResource("2_ll005")
 
 [node name="Area3D" type="Area3D" parent="Estancia_Cajon" index="0"]
@@ -360,7 +362,7 @@ shape = SubResource("BoxShape3D_5vmoq")
 
 [node name="clickableElement" parent="Estancia_Cajon" index="1" instance=ExtResource("3_t4wlt")]
 
-[node name="Estancia_Puerta02" parent="." index="16"]
+[node name="Estancia_Puerta02" parent="." index="26"]
 script = ExtResource("2_ll005")
 
 [node name="Area3D" type="Area3D" parent="Estancia_Puerta02" index="0"]
@@ -371,7 +373,7 @@ shape = SubResource("BoxShape3D_3cqut")
 
 [node name="clickableElement" parent="Estancia_Puerta02" index="1" instance=ExtResource("3_t4wlt")]
 
-[node name="Estancia_Puerta01" parent="." index="17"]
+[node name="Estancia_Puerta01" parent="." index="27"]
 script = ExtResource("2_ll005")
 
 [node name="Area3D" type="Area3D" parent="Estancia_Puerta01" index="0"]
