@@ -1,0 +1,383 @@
+[gd_scene load_steps=28 format=3 uid="uid://bxaamkus7b5b1"]
+
+[ext_resource type="PackedScene" uid="uid://ylscbk3xhern" path="res://Assets/3D/depacompleto/Depa_Completo.glb" id="1_1pofx"]
+[ext_resource type="Script" path="res://Scripts/Objects/BaseObject.gd" id="2_ll005"]
+[ext_resource type="PackedScene" uid="uid://c6sta6a7o2a4n" path="res://Scenes/Helpers/clickable_element.tscn" id="3_t4wlt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oktdp"]
+
+[sub_resource type="Animation" id="Animation_7siqv"]
+resource_name = "Move"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.5708, 0, 0), Vector3(1.5708, -0.516617, 0), Vector3(1.5708, 0, 0), Vector3(1.5708, 0.172788, 0), Vector3(1.5708, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_od6ms"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5708, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_se648"]
+_data = {
+"Move": SubResource("Animation_7siqv"),
+"RESET": SubResource("Animation_od6ms")
+}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_37mun"]
+direction = Vector3(0, 0, 0)
+spread = 77.24
+flatness = 0.03
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qyr6u"]
+albedo_color = Color(0.0980392, 0.705882, 0.878431, 1)
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_d4dtm"]
+material = SubResource("StandardMaterial3D_qyr6u")
+size = Vector2(0.1, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0py0r"]
+size = Vector3(0.641453, 1.4218, 0.647673)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rxi7q"]
+size = Vector3(1.3671, 1, 1.68408)
+
+[sub_resource type="Animation" id="Animation_68gv0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:quaternion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Quaternion(0.231411, 0.702944, 0.668862, -0.0703071)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.52153, 3.94817, -3.36382)]
+}
+
+[sub_resource type="Animation" id="Animation_qghyn"]
+resource_name = "sarten_cae"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2.52153, 3.94817, -3.36382), Vector3(-2.52153, 1.93849, -3.36382)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_active_again"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_x2fti"]
+resource_name = "Move"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:quaternion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7, 1),
+"transitions": PackedFloat32Array(0.153893, 1, 1, 1),
+"update": 0,
+"values": [Quaternion(0.137032, 0.727257, 0.653823, -0.157592), Quaternion(-0.00847027, 0.740006, 0.610138, -0.282933), Quaternion(0.212572, 0.708868, 0.666748, -0.0881293), Quaternion(0.137032, 0.727257, 0.653823, -0.157592)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_active_again"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pqgd2"]
+_data = {
+"Move": SubResource("Animation_x2fti"),
+"RESET": SubResource("Animation_68gv0"),
+"sarten_cae": SubResource("Animation_qghyn")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3rll2"]
+size = Vector3(1.94444, 1.31991, 1.21152)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w7vp0"]
+size = Vector3(1.44416, 1, 0.383317)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_737eb"]
+size = Vector3(1.95252, 2.14076, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ynrh1"]
+size = Vector3(1.47124, 1, 0.370144)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_64f23"]
+size = Vector3(1.70789, 2.6082, 3.88012)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eh4kn"]
+size = Vector3(2.27331, 2.18876, 1.31751)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n8su0"]
+size = Vector3(1, 0.330514, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bx8lu"]
+size = Vector3(1.05691, 0.548779, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5vmoq"]
+size = Vector3(1.61429, 1, 0.725391)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3cqut"]
+size = Vector3(2.39947, 1.25656, 0.642361)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d1mhe"]
+size = Vector3(1.94611, 1.41793, 1)
+
+[node name="Depa_Completo" instance=ExtResource("1_1pofx")]
+
+[node name="Cocina_Fregadero" parent="." index="2" node_paths=PackedStringArray("animation", "effect")]
+transform = Transform3D(1, 0, 0, 0, -3.61999e-06, -1, 0, 1, -3.61999e-06, -4.69006, 2.52995, 2.01)
+script = ExtResource("2_ll005")
+animation = NodePath("AnimationPlayer")
+effect = NodePath("WaterParticles")
+
+[node name="Area3D" type="Area3D" parent="Cocina_Fregadero" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cocina_Fregadero/Area3D" index="0"]
+shape = SubResource("BoxShape3D_oktdp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cocina_Fregadero" index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_se648")
+}
+
+[node name="clickableElement" parent="Cocina_Fregadero" index="2" instance=ExtResource("3_t4wlt")]
+
+[node name="WaterParticles" type="GPUParticles3D" parent="Cocina_Fregadero" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.381135, 0.0427256, 0.109908)
+emitting = false
+amount = 20
+lifetime = 2.0
+one_shot = true
+visibility_aabb = AABB(-1.16726, -1.49637, -2.034, 2.33452, 2.99273, 4.068)
+process_material = SubResource("ParticleProcessMaterial_37mun")
+draw_pass_1 = SubResource("QuadMesh_d4dtm")
+
+[node name="Cocina_Lampara" parent="." index="3"]
+script = ExtResource("2_ll005")
+
+[node name="Area3D" type="Area3D" parent="Cocina_Lampara" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cocina_Lampara/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.665824, 0)
+shape = SubResource("BoxShape3D_0py0r")
+
+[node name="clickableElement" parent="Cocina_Lampara" index="1" instance=ExtResource("3_t4wlt")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Cocina_Lampara" index="2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -1.61268, 0)
+light_color = Color(0.984314, 1, 0.898039, 1)
+light_energy = 2.0
+light_size = 0.005
+spot_angle = 39.55
+
+[node name="Cocina_Sartenes01" parent="." index="4" node_paths=PackedStringArray("animation")]
+transform = Transform3D(-0.883011, 0.419389, 0.21072, 0.231286, -0.00185394, 0.972884, 0.408408, 0.907804, -0.0953616, -2.52153, 3.94817, -3.36382)
+script = ExtResource("2_ll005")
+animation = NodePath("AnimationPlayer")
+
+[node name="clickableElement" parent="Cocina_Sartenes01" index="0" instance=ExtResource("3_t4wlt")]
+
+[node name="Area3D" type="Area3D" parent="Cocina_Sartenes01" index="1"]
+transform = Transform3D(0.945518, 0.325568, 0, -0.325568, 0.945518, 0, 0, 0, 1, 0.0382998, -0.0956125, -0.746162)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cocina_Sartenes01/Area3D" index="0"]
+shape = SubResource("BoxShape3D_rxi7q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cocina_Sartenes01" index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_pqgd2")
+}
+
+[node name="Cocina_Sartenes02" parent="." index="5"]
+script = ExtResource("2_ll005")
+
+[node name="Area3D" type="Area3D" parent="Cocina_Sartenes02" index="0"]
+transform = Transform3D(0.913545, -0.406737, 0, 0.404434, 0.908373, -0.106264, 0.0432215, 0.0970771, 0.994338, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cocina_Sartenes02/Area3D" index="0"]
+transform = Transform3D(1, 3.72529e-09, 1.25729e-08, 3.72529e-09, 1, 3.72529e-09, -8.14907e-10, 0, 1, 0.489976, 0.0528932, -0.870883)
+shape = SubResource("BoxShape3D_3rll2")
+
+[node name="clickableElement" parent="Cocina_Sartenes02" index="1" instance=ExtResource("3_t4wlt")]
+
+[node name="Cocina_PuertasIZQ_01" parent="." index="6"]
+script = ExtResource("2_ll005")
+
+[node name="Area3D" type="Area3D" parent="Cocina_PuertasIZQ_01" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cocina_PuertasIZQ_01/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.704485, 0.016757, -0.00229645)
+shape = SubResource("BoxShape3D_w7vp0")
+
+[node name="clickableElement" parent="Cocina_PuertasIZQ_01" index="1" instance=ExtResource("3_t4wlt")]
+
+[node name="Cocina_PuertasDER" parent="." index="7"]
+script = ExtResource("2_ll005")
+
+[node name="Area3D" type="Area3D" parent="Cocina_PuertasDER" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cocina_PuertasDER/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.996342, 0.0530696, 0)
+shape = SubResource("BoxShape3D_737eb")
+
+[node name="clickableElement" parent="Cocina_PuertasDER" index="1" instance=ExtResource("3_t4wlt")]
+
+[node name="Cocina_PuertasIZQ_02" parent="." index="8"]
+script = ExtResource("2_ll005")
+
+[node name="Area3D" type="Area3D" parent="Cocina_PuertasIZQ_02" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cocina_PuertasIZQ_02/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.651897, 0, 0)
+shape = SubResource("BoxShape3D_ynrh1")
+
+[node name="clickableElement" parent="Cocina_PuertasIZQ_02" index="1" instance=ExtResource("3_t4wlt")]
+
+[node name="Estancia_Paredes" parent="." index="9"]
+script = ExtResource("2_ll005")
+
+[node name="Estancia_Piano" parent="." index="10"]
+script = ExtResource("2_ll005")
+
+[node name="Area3D" type="Area3D" parent="Estancia_Piano" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Estancia_Piano/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.105896, -0.130462, -0.0444025)
+shape = SubResource("BoxShape3D_64f23")
+
+[node name="clickableElement" parent="Estancia_Piano" index="1" instance=ExtResource("3_t4wlt")]
+
+[node name="Estancia_Tele" parent="." index="11"]
+script = ExtResource("2_ll005")
+
+[node name="Area3D" type="Area3D" parent="Estancia_Tele" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Estancia_Tele/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.470158)
+shape = SubResource("BoxShape3D_eh4kn")
+
+[node name="clickableElement" parent="Estancia_Tele" index="1" instance=ExtResource("3_t4wlt")]
+
+[node name="Estancia_Base" parent="." index="12"]
+script = ExtResource("2_ll005")
+
+[node name="Estancia_Luz" parent="." index="13"]
+script = ExtResource("2_ll005")
+
+[node name="Area3D" type="Area3D" parent="Estancia_Luz" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Estancia_Luz/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18287, 0)
+shape = SubResource("BoxShape3D_n8su0")
+
+[node name="clickableElement" parent="Estancia_Luz" index="1" instance=ExtResource("3_t4wlt")]
+
+[node name="Estancia_Radio" parent="." index="14"]
+script = ExtResource("2_ll005")
+
+[node name="Area3D" type="Area3D" parent="Estancia_Radio" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Estancia_Radio/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0512321, 0)
+shape = SubResource("BoxShape3D_bx8lu")
+
+[node name="clickableElement" parent="Estancia_Radio" index="1" instance=ExtResource("3_t4wlt")]
+
+[node name="Estancia_Cajon" parent="." index="15"]
+script = ExtResource("2_ll005")
+
+[node name="Area3D" type="Area3D" parent="Estancia_Cajon" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Estancia_Cajon/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0432441, 0, 0)
+shape = SubResource("BoxShape3D_5vmoq")
+
+[node name="clickableElement" parent="Estancia_Cajon" index="1" instance=ExtResource("3_t4wlt")]
+
+[node name="Estancia_Puerta02" parent="." index="16"]
+script = ExtResource("2_ll005")
+
+[node name="Area3D" type="Area3D" parent="Estancia_Puerta02" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Estancia_Puerta02/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09027, 0.541599, 0)
+shape = SubResource("BoxShape3D_3cqut")
+
+[node name="clickableElement" parent="Estancia_Puerta02" index="1" instance=ExtResource("3_t4wlt")]
+
+[node name="Estancia_Puerta01" parent="." index="17"]
+script = ExtResource("2_ll005")
+
+[node name="Area3D" type="Area3D" parent="Estancia_Puerta01" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Estancia_Puerta01/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.40702, 0.713785, -0.0608451)
+shape = SubResource("BoxShape3D_d1mhe")
+
+[node name="clickableElement" parent="Estancia_Puerta01" index="1" instance=ExtResource("3_t4wlt")]

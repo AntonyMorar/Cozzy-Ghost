@@ -2,13 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://dt4d02xax8b27" path="res://Scenes/environment_component.tscn" id="1_afnyq"]
 [ext_resource type="PackedScene" uid="uid://bqej760uqlpmg" path="res://Scenes/ghost_2d.tscn" id="3_kgxc5"]
-[ext_resource type="PackedScene" uid="uid://0akn7k8nbo8r" path="res://Scenes/Prefabs/P_Estancia.tscn" id="4_npe4a"]
-[ext_resource type="PackedScene" uid="uid://bei5m47fncwrj" path="res://Scenes/Estancia.glb" id="5_obsmv"]
 [ext_resource type="Script" path="res://Scripts/PathOrderComponent.gd" id="6_xd4i0"]
 [ext_resource type="PackedScene" uid="uid://kod0awm1ha4o" path="res://models/gobot/model/gobot.glb" id="7_blwbe"]
+[ext_resource type="PackedScene" uid="uid://bxaamkus7b5b1" path="res://Scenes/Prefabs/P_Depa.tscn" id="7_d46uw"]
 [ext_resource type="PackedScene" uid="uid://7pcmqcbq48is" path="res://Scenes/scare_messages_component.tscn" id="8_62mtr"]
-[ext_resource type="PackedScene" uid="uid://rslgv6kokw78" path="res://Scenes/Prefabs/P_Cocina.tscn" id="8_blodv"]
-[ext_resource type="PackedScene" uid="uid://ylscbk3xhern" path="res://Assets/3D/depacompleto/Depa_Completo.glb" id="9_phixl"]
 
 [sub_resource type="VoxelGIData" id="VoxelGIData_q7uqe"]
 _data = {
@@ -367,22 +364,11 @@ near = 0.01
 far = 482.52
 
 [node name="Ghost2D" parent="." instance=ExtResource("3_kgxc5")]
+visible = false
 position = Vector2(405, 253)
 
 [node name="getMouseComponent" parent="Ghost2D" index="0" node_paths=PackedStringArray("camera")]
 camera = NodePath("../../Camera3D")
-
-[node name="Cocina_Completo" parent="." instance=ExtResource("8_blodv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.914, 0, 0)
-visible = false
-
-[node name="Estancia_Completo" parent="." instance=ExtResource("4_npe4a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.096, 0, 0)
-visible = false
-
-[node name="VaASerCuarto" parent="." instance=ExtResource("5_obsmv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.923, 1.2037, -6.768)
-visible = false
 
 [node name="Paths" type="Node3D" parent="."]
 
@@ -390,7 +376,6 @@ visible = false
 script = ExtResource("6_xd4i0")
 path_list = NodePath("../pathList")
 character = NodePath("../../gobot")
-speed_anim = 0.6
 animation = NodePath("../PathAnimationPlayer")
 
 [node name="PathAnimationPlayer" type="AnimationPlayer" parent="Paths"]
@@ -404,7 +389,7 @@ libraries = {
 curve = SubResource("Curve3D_7n851")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Paths/pathList/0_cruza_sala"]
-transform = Transform3D(-0.0124838, 0, 0.999907, 0, 1, 0, -0.999907, 0, -0.0124838, -3.24522, 0, 0.00034175)
+transform = Transform3D(0.000745003, 0, 0.999984, 0, 1, 0, -0.999984, 0, 0.000745003, -3.24522, 0, 0.00034175)
 rotation_mode = 1
 use_model_front = true
 tilt_enabled = false
@@ -543,7 +528,6 @@ shape = SubResource("CapsuleShape3D_x5ywm")
 scary_messages = [null, null, null]
 bored_messages = [null, null, null]
 
-[node name="Depa_Completo" parent="." instance=ExtResource("9_phixl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.947, 0, 0)
+[node name="Depa_Completo" parent="." instance=ExtResource("7_d46uw")]
 
 [editable path="Ghost2D"]
