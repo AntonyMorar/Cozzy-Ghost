@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cmawrqxfpt44"]
+[gd_scene load_steps=40 format=3 uid="uid://cmawrqxfpt44"]
 
 [ext_resource type="PackedScene" uid="uid://dt4d02xax8b27" path="res://Scenes/environment_component.tscn" id="1_afnyq"]
 [ext_resource type="PackedScene" uid="uid://bqej760uqlpmg" path="res://Scenes/ghost_2d.tscn" id="3_kgxc5"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bxaamkus7b5b1" path="res://Scenes/Prefabs/P_Depa.tscn" id="7_d46uw"]
 [ext_resource type="PackedScene" path="res://Scenes/aranita_spawner.tscn" id="7_frjo2"]
 [ext_resource type="PackedScene" uid="uid://7pcmqcbq48is" path="res://Scenes/scare_messages_component.tscn" id="8_62mtr"]
+[ext_resource type="PackedScene" uid="uid://cf2lag7y88hng" path="res://Scenes/spider_ui_component.tscn" id="8_ydd5n"]
 
 [sub_resource type="VoxelGIData" id="VoxelGIData_q7uqe"]
 _data = {
@@ -333,7 +334,7 @@ point_count = 5
 
 [sub_resource type="Curve3D" id="Curve3D_avg0s"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.56457, 0, 0.523251, 0.446772, 0, -0.423257, -0.446772, 0, 0.423257, 7.2452, 0, 2.61602, 1.26977, 0, 0.728943, -1.26977, 0, -0.728943, 3.2948, 0, 3.01576, -0.6584, 0, 0.376229, 0.6584, 0, -0.376229, 2.33071, 0, -2.06332, 0, 0, 0, 0, 0, 0, 4.56457, 0, 0.499737),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.62219, 0, 0.646253, 0.446772, 0, -0.423257, -0.446772, 0, 0.423257, 7.2452, 0, 2.61602, 1.26977, 0, 0.728943, -1.26977, 0, -0.728943, 3.2948, 0, 3.01576, -0.6584, 0, 0.376229, 0.6584, 0, -0.376229, 2.33071, 0, -2.06332, 0, 0, 0, 0, 0, 0, 7.20286, 0, 0.53405),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
@@ -378,6 +379,7 @@ script = ExtResource("6_xd4i0")
 path_list = NodePath("../pathList")
 character = NodePath("../../gobot")
 animation = NodePath("../PathAnimationPlayer")
+testing = true
 
 [node name="PathAnimationPlayer" type="AnimationPlayer" parent="Paths"]
 libraries = {
@@ -503,7 +505,7 @@ transform = Transform3D(0.398915, 0, 0.916988, 0, 1, 0, -0.916988, 0, 0.398915, 
 curve = SubResource("Curve3D_avg0s")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Paths/pathList/12_sala_path_10"]
-transform = Transform3D(-0.615375, 0, -0.788234, 0, 1, 0, 0.788234, 0, -0.615375, 4.56457, 0, 0.523251)
+transform = Transform3D(-0.600489, 0, -0.799632, 0, 1, 0, 0.799632, 0, -0.600489, 4.62219, 0, 0.646253)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Paths/pathList/12_sala_path_10/PathFollow3D"]
 
@@ -534,11 +536,55 @@ bored_messages = [null, null, null]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02163, 0, 0)
 
 [node name="aranitaSpawner" parent="." node_paths=PackedStringArray("spawnerPoints") instance=ExtResource("7_frjo2")]
-spawnerPoints = [NodePath("../spawnerPoints/Node3D")]
+spawnerPoints = NodePath("../spawnerPoints")
 
 [node name="spawnerPoints" type="Node3D" parent="."]
 
 [node name="Node3D" type="Node3D" parent="spawnerPoints"]
-transform = Transform3D(0.973002, 0, -0.230797, 0, 1, 0, 0.230797, 0, 0.973002, -5.2121, 2.1103, -4.36522)
+transform = Transform3D(0.973002, 0, -0.230797, 0, 1, 0, 0.230797, 0, 0.973002, -5.60055, 1.98357, -4.36522)
+
+[node name="Node3D2" type="Node3D" parent="spawnerPoints"]
+transform = Transform3D(0.225954, 0, 0.974138, 0, 1, 0, -0.974138, 0, 0.225954, 2.37191, 2.11278, -4.5613)
+
+[node name="Node3D3" type="Node3D" parent="spawnerPoints"]
+transform = Transform3D(-0.986158, -0.0154402, 0.165085, 0.00634554, 0.991411, 0.130632, -0.165684, 0.129871, -0.97759, -9.10974, 1.49024, 2.18384)
+
+[node name="Node3D4" type="Node3D" parent="spawnerPoints"]
+transform = Transform3D(0.289032, 0, -0.957319, 0, 1, 0, 0.957319, 0, 0.289032, -2.05431, 1.93908, 2.97364)
+
+[node name="Node3D5" type="Node3D" parent="spawnerPoints"]
+transform = Transform3D(0.95131, 0, -0.308237, 0, 1, 0, 0.308237, 0, 0.95131, 9.7582, 0, 2.8259)
+
+[node name="Node3D6" type="Node3D" parent="spawnerPoints"]
+transform = Transform3D(0.330811, 0, -0.943697, 0, 1, 0, 0.943697, 0, 0.330811, 8.024, 0, -2.51246)
+
+[node name="Node3D7" type="Node3D" parent="spawnerPoints"]
+transform = Transform3D(0.926745, 0, -0.375691, 0, 1, 0, 0.375691, 0, 0.926745, 3.41887, 1.19209e-07, -4.8755)
+
+[node name="Node3D8" type="Node3D" parent="spawnerPoints"]
+transform = Transform3D(0.304548, 0, -0.952497, 0, 1, 0, 0.952497, 0, 0.304548, 4.10231, 2, -4.65887)
+
+[node name="MainUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="SpiderUIComponent" parent="MainUI" instance=ExtResource("8_ydd5n")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -370.0
+offset_top = -312.0
+offset_right = -78.0
+offset_bottom = -42.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [editable path="Ghost2D"]

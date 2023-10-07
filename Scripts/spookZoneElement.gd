@@ -22,10 +22,10 @@ func _spookable(area):
 	if "spookable" in spook_parent:
 		spook_parent.spookable = true
 	else:
-		printerr('Tu spook parent no tiene la variable spookable')
+		printerr('Tu spook parent:', spook_parent.get_parent().name, ' no tiene la variable spookable')
 	
 func _not_spookable(area):
 	if "spookable" in spook_parent:
 		spook_parent.spookable = false
 	else:
-		printerr('Tu spook parent no tiene la variable spookable')
+		printerr('Tu spook parent:', spook_parent.get_parent().name, ' no tiene la variable spookable')
