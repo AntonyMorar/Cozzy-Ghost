@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/PathOrderComponent.gd" id="6_xd4i0"]
 [ext_resource type="PackedScene" uid="uid://kod0awm1ha4o" path="res://models/gobot/model/gobot.glb" id="7_blwbe"]
 [ext_resource type="PackedScene" uid="uid://bxaamkus7b5b1" path="res://Scenes/Prefabs/P_Depa.tscn" id="7_d46uw"]
-[ext_resource type="PackedScene" uid="uid://cy24qsaufre4s" path="res://Scenes/aranita_spawner.tscn" id="7_frjo2"]
+[ext_resource type="PackedScene" path="res://Scenes/aranita_spawner.tscn" id="7_frjo2"]
 [ext_resource type="PackedScene" uid="uid://7pcmqcbq48is" path="res://Scenes/scare_messages_component.tscn" id="8_62mtr"]
 
 [sub_resource type="VoxelGIData" id="VoxelGIData_q7uqe"]
