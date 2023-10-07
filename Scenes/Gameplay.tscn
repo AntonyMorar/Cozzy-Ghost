@@ -334,7 +334,7 @@ point_count = 5
 
 [sub_resource type="Curve3D" id="Curve3D_avg0s"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.56457, 0, 0.523251, 0.446772, 0, -0.423257, -0.446772, 0, 0.423257, 7.2452, 0, 2.61602, 1.26977, 0, 0.728943, -1.26977, 0, -0.728943, 3.2948, 0, 3.01576, -0.6584, 0, 0.376229, 0.6584, 0, -0.376229, 2.33071, 0, -2.06332, 0, 0, 0, 0, 0, 0, 4.56457, 0, 0.499737),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.62219, 0, 0.646253, 0.446772, 0, -0.423257, -0.446772, 0, 0.423257, 7.2452, 0, 2.61602, 1.26977, 0, 0.728943, -1.26977, 0, -0.728943, 3.2948, 0, 3.01576, -0.6584, 0, 0.376229, 0.6584, 0, -0.376229, 2.33071, 0, -2.06332, 0, 0, 0, 0, 0, 0, 7.20286, 0, 0.53405),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
@@ -379,6 +379,7 @@ script = ExtResource("6_xd4i0")
 path_list = NodePath("../pathList")
 character = NodePath("../../gobot")
 animation = NodePath("../PathAnimationPlayer")
+testing = true
 
 [node name="PathAnimationPlayer" type="AnimationPlayer" parent="Paths"]
 libraries = {
