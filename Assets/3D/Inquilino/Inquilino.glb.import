@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bei5m47fncwrj"
-path="res://.godot/imported/Estancia.glb-ac5a30cb31598bc9b5c776c2a76fe625.scn"
+uid="uid://cx22ut42ciy1s"
+path="res://.godot/imported/Inquilino.glb-b2e3d9bb5e0ad332edcb8f71dee81af4.scn"
 
 [deps]
 
-source_file="res://Scenes/Estancia.glb"
-dest_files=["res://.godot/imported/Estancia.glb-ac5a30cb31598bc9b5c776c2a76fe625.scn"]
+source_file="res://Assets/3D/Inquilino/Inquilino.glb"
+dest_files=["res://.godot/imported/Inquilino.glb-b2e3d9bb5e0ad332edcb8f71dee81af4.scn"]
 
 [params]
 
@@ -28,5 +28,12 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"GobotMat": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/3D/Inquilino/GobotMat.tres"
+}
+}
+}
 gltf/embedded_image_handling=1
