@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://cf2lag7y88hng"]
+
+[ext_resource type="Script" path="res://Scripts/spider_ui_component.gd" id="1_bbufi"]
+[ext_resource type="Texture2D" uid="uid://blapukhv742ev" path="res://Assets/Icons/aranita_gauge.png" id="1_xwgl7"]
+[ext_resource type="Texture2D" uid="uid://cq4w7e8pxwxha" path="res://Assets/Icons/aranita_gauge_short.png" id="2_tmseu"]
+[ext_resource type="Texture2D" uid="uid://bxoxc1wu0uuj7" path="res://Assets/Icons/aranita_gauge_long.png" id="3_r3fac"]
+[ext_resource type="Texture2D" uid="uid://d3akfd7v0ur6w" path="res://Assets/Icons/spider_icon.png" id="4_d2tve"]
+[ext_resource type="Texture2D" uid="uid://rbugrv1ewvq8" path="res://Assets/Icons/spiders_text.png" id="5_lcgfj"]
+
+[node name="SpiderUIComponent" type="AspectRatioContainer" node_paths=PackedStringArray("gauge_01", "gauge_02", "gauge_03", "boton_01")]
+offset_left = 1628.0
+offset_top = 808.0
+offset_right = 1920.0
+offset_bottom = 1018.0
+alignment_vertical = 2
+script = ExtResource("1_bbufi")
+gauge_01 = NodePath("VBoxContainer2/AspectRatioContainer/VBoxContainer/gauge_long_01")
+gauge_02 = NodePath("VBoxContainer2/AspectRatioContainer/VBoxContainer/gauge_02")
+gauge_03 = NodePath("VBoxContainer2/AspectRatioContainer/VBoxContainer/gauge_03")
+boton_01 = NodePath("VBoxContainer/TextureRect")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer2/AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("1_xwgl7")
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/AspectRatioContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="gauge_03" type="TextureRect" parent="VBoxContainer2/AspectRatioContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_tmseu")
+stretch_mode = 3
+
+[node name="gauge_02" type="TextureRect" parent="VBoxContainer2/AspectRatioContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_tmseu")
+stretch_mode = 3
+
+[node name="gauge_long_01" type="TextureRect" parent="VBoxContainer2/AspectRatioContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("3_r3fac")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(0, 115)
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("4_d2tve")
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 2
+
+[node name="TextureRect" type="TextureButton" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("5_lcgfj")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
