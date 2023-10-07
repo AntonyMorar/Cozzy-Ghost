@@ -1,8 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://bxaamkus7b5b1"]
+[gd_scene load_steps=42 format=3 uid="uid://bxaamkus7b5b1"]
 
 [ext_resource type="PackedScene" uid="uid://ylscbk3xhern" path="res://Assets/3D/depacompleto/Depa_Completo.glb" id="1_1pofx"]
 [ext_resource type="Script" path="res://Scripts/Objects/BaseObject.gd" id="2_ll005"]
 [ext_resource type="PackedScene" uid="uid://c6sta6a7o2a4n" path="res://Scenes/Helpers/clickable_element.tscn" id="3_t4wlt"]
+[ext_resource type="PackedScene" uid="uid://dwkcgqukwfgrx" path="res://Scenes/spook_zone_element.tscn" id="4_xdkw1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oktdp"]
 
@@ -56,8 +57,14 @@ billboard_mode = 2
 material = SubResource("StandardMaterial3D_qyr6u")
 size = Vector2(0.1, 0.1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_rvkv1"]
+size = Vector3(1.57947, 4.17268, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_0py0r"]
 size = Vector3(0.641453, 1.4218, 0.647673)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_denb5"]
+size = Vector3(5.36198, 1.8824, 6.80457)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rxi7q"]
 size = Vector3(1.3671, 1, 1.68408)
@@ -155,14 +162,29 @@ _data = {
 "sarten_cae": SubResource("Animation_qghyn")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_bpiy7"]
+size = Vector3(2.9096, 4.28057, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_3rll2"]
 size = Vector3(1.94444, 1.31991, 1.21152)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4cxgi"]
+size = Vector3(4.86139, 5.1549, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w7vp0"]
 size = Vector3(1.44416, 1, 0.383317)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_as8eh"]
+size = Vector3(2.14239, 1, 3.8316)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_737eb"]
 size = Vector3(1.95252, 2.14076, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_87v0p"]
+size = Vector3(2.47782, 1, 3.58723)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yrwx7"]
+size = Vector3(2.8559, 1, 3.77875)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ynrh1"]
 size = Vector3(1.47124, 1, 0.370144)
@@ -170,23 +192,41 @@ size = Vector3(1.47124, 1, 0.370144)
 [sub_resource type="BoxShape3D" id="BoxShape3D_64f23"]
 size = Vector3(1.70789, 2.6082, 3.88012)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2w1ho"]
+size = Vector3(4.59029, 1, 6.37205)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_eh4kn"]
 size = Vector3(2.27331, 2.18876, 1.31751)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0vgtk"]
+size = Vector3(3.15291, 1, 1.86666)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n8su0"]
 size = Vector3(1, 0.330514, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_xkt0i"]
+size = Vector3(8.42166, 1, 8.24733)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_bx8lu"]
 size = Vector3(1.05691, 0.548779, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_r0kf4"]
+size = Vector3(3.69221, 1, 2.44902)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_5vmoq"]
 size = Vector3(1.61429, 1, 0.725391)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dqa3l"]
+size = Vector3(2.74674, 1, 2.98547)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3cqut"]
 size = Vector3(2.39947, 1.25656, 0.642361)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d1mhe"]
 size = Vector3(1.94611, 1.41793, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_es2mh"]
+size = Vector3(3.52554, 1, 2.52094)
 
 [node name="Depa_Completo" instance=ExtResource("1_1pofx")]
 
@@ -218,6 +258,16 @@ visibility_aabb = AABB(-1.16726, -1.49637, -2.034, 2.33452, 2.99273, 4.068)
 process_material = SubResource("ParticleProcessMaterial_37mun")
 draw_pass_1 = SubResource("QuadMesh_d4dtm")
 
+[node name="spookZoneElement" parent="Cocina_Fregadero" index="4" node_paths=PackedStringArray("spook_area") instance=ExtResource("4_xdkw1")]
+spook_area = NodePath("../spookZone")
+spook_parent_logic_path = NodePath("..")
+
+[node name="spookZone" type="Area3D" parent="Cocina_Fregadero" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51312, 0, 2.35376)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cocina_Fregadero/spookZone" index="0"]
+shape = SubResource("BoxShape3D_rvkv1")
+
 [node name="Cocina_Lampara" parent="." index="3" node_paths=PackedStringArray("light")]
 cast_shadow = 0
 script = ExtResource("2_ll005")
@@ -239,6 +289,16 @@ light_size = 0.005
 spot_range = 5.55958
 spot_angle = 45.2936
 
+[node name="spookZoneElement" parent="Cocina_Lampara" index="3" node_paths=PackedStringArray("spook_area") instance=ExtResource("4_xdkw1")]
+spook_area = NodePath("../spookZone")
+spook_parent_logic_path = NodePath("..")
+
+[node name="spookZone" type="Area3D" parent="Cocina_Lampara" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.04663, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cocina_Lampara/spookZone" index="0"]
+shape = SubResource("BoxShape3D_denb5")
+
 [node name="Cocina_Sartenes01" parent="." index="4" node_paths=PackedStringArray("animation")]
 transform = Transform3D(-0.883011, 0.419389, 0.21072, 0.231286, -0.00185394, 0.972884, 0.408407, 0.907804, -0.0953616, -2.52153, 3.94817, -3.36382)
 script = ExtResource("2_ll005")
@@ -257,17 +317,38 @@ libraries = {
 "": SubResource("AnimationLibrary_pqgd2")
 }
 
+[node name="spookZone" type="Area3D" parent="Cocina_Sartenes01" index="3"]
+transform = Transform3D(1, 7.45058e-08, 4.85452e-08, 2.98023e-08, 1, -6.51926e-09, 6.98492e-10, -9.31323e-10, 1, -0.0265212, 1.70927, -3.62039)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cocina_Sartenes01/spookZone" index="0"]
+transform = Transform3D(1, 5.96046e-08, 4.10364e-09, -2.98023e-08, 1, 2.32831e-10, 8.14907e-10, -4.65661e-10, 1, 0.00071466, -4.76837e-07, -5.96046e-08)
+shape = SubResource("BoxShape3D_bpiy7")
+
+[node name="spookZoneElement" parent="Cocina_Sartenes01" index="4" node_paths=PackedStringArray("spook_area") instance=ExtResource("4_xdkw1")]
+spook_area = NodePath("../spookZone")
+spook_parent_logic_path = NodePath("..")
+
 [node name="Cocina_Sartenes02" parent="." index="5"]
 script = ExtResource("2_ll005")
 
-[node name="Area3D" type="Area3D" parent="Cocina_Sartenes02" index="0"]
+[node name="spookZoneElement" parent="Cocina_Sartenes02" index="0" node_paths=PackedStringArray("spook_area") instance=ExtResource("4_xdkw1")]
+spook_area = NodePath("../spookZone")
+spook_parent_logic_path = NodePath("..")
+
+[node name="Area3D" type="Area3D" parent="Cocina_Sartenes02" index="1"]
 transform = Transform3D(0.913545, -0.406737, 0, 0.404434, 0.908373, -0.106264, 0.0432215, 0.0970771, 0.994338, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cocina_Sartenes02/Area3D" index="0"]
 transform = Transform3D(1, 3.72529e-09, 1.25729e-08, 3.72529e-09, 1, 3.72529e-09, -8.14907e-10, 0, 1, 0.489976, 0.0528932, -0.870883)
 shape = SubResource("BoxShape3D_3rll2")
 
-[node name="clickableElement" parent="Cocina_Sartenes02" index="1" instance=ExtResource("3_t4wlt")]
+[node name="clickableElement" parent="Cocina_Sartenes02" index="2" instance=ExtResource("3_t4wlt")]
+
+[node name="spookZone" type="Area3D" parent="Cocina_Sartenes02" index="3"]
+transform = Transform3D(1, 2.98023e-08, 0, 0, 1, 0, 3.72529e-09, 0, 1, -2.39508, -4.76837e-07, -4.47787)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cocina_Sartenes02/spookZone" index="0"]
+shape = SubResource("BoxShape3D_4cxgi")
 
 [node name="Cocina_PuertasIZQ_01" parent="." index="6"]
 script = ExtResource("2_ll005")
@@ -280,6 +361,17 @@ shape = SubResource("BoxShape3D_w7vp0")
 
 [node name="clickableElement" parent="Cocina_PuertasIZQ_01" index="1" instance=ExtResource("3_t4wlt")]
 
+[node name="spookZoneElement" parent="Cocina_PuertasIZQ_01" index="2" node_paths=PackedStringArray("spook_area") instance=ExtResource("4_xdkw1")]
+spook_area = NodePath("../spookZone")
+spook_parent_logic_path = NodePath("..")
+
+[node name="spookZone" type="Area3D" parent="Cocina_PuertasIZQ_01" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53316, -4.19489, 1.01978)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cocina_PuertasIZQ_01/spookZone" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.290024, 0, 0.0629883)
+shape = SubResource("BoxShape3D_as8eh")
+
 [node name="Cocina_PuertasDER" parent="." index="7"]
 script = ExtResource("2_ll005")
 
@@ -291,16 +383,38 @@ shape = SubResource("BoxShape3D_737eb")
 
 [node name="clickableElement" parent="Cocina_PuertasDER" index="1" instance=ExtResource("3_t4wlt")]
 
+[node name="spookZoneElement" parent="Cocina_PuertasDER" index="2" node_paths=PackedStringArray("spook_area") instance=ExtResource("4_xdkw1")]
+spook_area = NodePath("../spookZone")
+spook_parent_logic_path = NodePath("..")
+
+[node name="spookZone" type="Area3D" parent="Cocina_PuertasDER" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45055, -3.58551, 0.521606)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cocina_PuertasDER/spookZone" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0504456, -0.00769043, -0.16272)
+shape = SubResource("BoxShape3D_87v0p")
+
 [node name="Cocina_PuertasIZQ_02" parent="." index="8"]
 script = ExtResource("2_ll005")
 
-[node name="Area3D" type="Area3D" parent="Cocina_PuertasIZQ_02" index="0"]
+[node name="spookZoneElement" parent="Cocina_PuertasIZQ_02" index="0" node_paths=PackedStringArray("spook_area") instance=ExtResource("4_xdkw1")]
+spook_area = NodePath("../spookZone")
+spook_parent_logic_path = NodePath("..")
+
+[node name="spookZone" type="Area3D" parent="Cocina_PuertasIZQ_02" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.313374, -4.09256, 0.429077)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cocina_PuertasIZQ_02/spookZone" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.137329, 0, 0.303101)
+shape = SubResource("BoxShape3D_yrwx7")
+
+[node name="Area3D" type="Area3D" parent="Cocina_PuertasIZQ_02" index="2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cocina_PuertasIZQ_02/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.651897, 0, 0)
 shape = SubResource("BoxShape3D_ynrh1")
 
-[node name="clickableElement" parent="Cocina_PuertasIZQ_02" index="1" instance=ExtResource("3_t4wlt")]
+[node name="clickableElement" parent="Cocina_PuertasIZQ_02" index="3" instance=ExtResource("3_t4wlt")]
 
 [node name="Estancia_Paredes" parent="." index="19"]
 script = ExtResource("2_ll005")
@@ -316,6 +430,16 @@ shape = SubResource("BoxShape3D_64f23")
 
 [node name="clickableElement" parent="Estancia_Piano" index="1" instance=ExtResource("3_t4wlt")]
 
+[node name="spookZoneElement" parent="Estancia_Piano" index="2" node_paths=PackedStringArray("spook_area") instance=ExtResource("4_xdkw1")]
+spook_area = NodePath("../spookZone")
+spook_parent_logic_path = NodePath("..")
+
+[node name="spookZone" type="Area3D" parent="Estancia_Piano" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82898, -1.22192, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Estancia_Piano/spookZone" index="0"]
+shape = SubResource("BoxShape3D_2w1ho")
+
 [node name="Estancia_Tele" parent="." index="21"]
 script = ExtResource("2_ll005")
 
@@ -326,6 +450,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.470158)
 shape = SubResource("BoxShape3D_eh4kn")
 
 [node name="clickableElement" parent="Estancia_Tele" index="1" instance=ExtResource("3_t4wlt")]
+
+[node name="spookZoneElement" parent="Estancia_Tele" index="2" node_paths=PackedStringArray("spook_area") instance=ExtResource("4_xdkw1")]
+spook_area = NodePath("../spookZone")
+spook_parent_logic_path = NodePath("..")
+
+[node name="spookZone" type="Area3D" parent="Estancia_Tele" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.178684, -2.67505, 1.79126)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Estancia_Tele/spookZone" index="0"]
+shape = SubResource("BoxShape3D_0vgtk")
 
 [node name="Estancia_Base" parent="." index="22"]
 script = ExtResource("2_ll005")
@@ -350,6 +484,16 @@ light_size = 0.005
 spot_range = 7.08319
 spot_angle = 42.8932
 
+[node name="spookZoneElement" parent="Estancia_Luz" index="3" node_paths=PackedStringArray("spook_area") instance=ExtResource("4_xdkw1")]
+spook_area = NodePath("../spookZone")
+spook_parent_logic_path = NodePath("..")
+
+[node name="spookZone" type="Area3D" parent="Estancia_Luz" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.7, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Estancia_Luz/spookZone" index="0"]
+shape = SubResource("BoxShape3D_xkt0i")
+
 [node name="Estancia_Radio" parent="." index="24"]
 script = ExtResource("2_ll005")
 
@@ -361,6 +505,16 @@ shape = SubResource("BoxShape3D_bx8lu")
 
 [node name="clickableElement" parent="Estancia_Radio" index="1" instance=ExtResource("3_t4wlt")]
 
+[node name="spookZoneElement" parent="Estancia_Radio" index="2" node_paths=PackedStringArray("spook_area") instance=ExtResource("4_xdkw1")]
+spook_area = NodePath("../spookZone")
+spook_parent_logic_path = NodePath("..")
+
+[node name="spookZone" type="Area3D" parent="Estancia_Radio" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.20264, 1.67676)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Estancia_Radio/spookZone" index="0"]
+shape = SubResource("BoxShape3D_r0kf4")
+
 [node name="Estancia_Cajon" parent="." index="25"]
 script = ExtResource("2_ll005")
 
@@ -371,6 +525,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0432441, 0, 0)
 shape = SubResource("BoxShape3D_5vmoq")
 
 [node name="clickableElement" parent="Estancia_Cajon" index="1" instance=ExtResource("3_t4wlt")]
+
+[node name="spookZoneElement" parent="Estancia_Cajon" index="2" node_paths=PackedStringArray("spook_area") instance=ExtResource("4_xdkw1")]
+spook_area = NodePath("../spookZone")
+spook_parent_logic_path = NodePath("..")
+
+[node name="spookZone" type="Area3D" parent="Estancia_Cajon" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.318848, 0.910889)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Estancia_Cajon/spookZone" index="0"]
+shape = SubResource("BoxShape3D_dqa3l")
 
 [node name="Estancia_Puerta02" parent="." index="26"]
 script = ExtResource("2_ll005")
@@ -393,3 +557,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.40702, 0.713785, -0.0608451
 shape = SubResource("BoxShape3D_d1mhe")
 
 [node name="clickableElement" parent="Estancia_Puerta01" index="1" instance=ExtResource("3_t4wlt")]
+
+[node name="spookZoneElement" parent="Estancia_Puerta01" index="2" node_paths=PackedStringArray("spook_area") instance=ExtResource("4_xdkw1")]
+spook_area = NodePath("../spookZone")
+spook_parent_logic_path = NodePath("..")
+
+[node name="spookZone" type="Area3D" parent="Estancia_Puerta01" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0846, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Estancia_Puerta01/spookZone" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.428833, 0)
+shape = SubResource("BoxShape3D_es2mh")

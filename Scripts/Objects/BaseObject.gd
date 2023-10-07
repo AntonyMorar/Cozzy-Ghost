@@ -11,6 +11,7 @@ extends MeshInstance3D
 
 var is_active = false
 var actualCooldown;
+var spookable = false
 
 func _ready():
 	actualCooldown = cooldown

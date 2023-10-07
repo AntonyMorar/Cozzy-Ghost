@@ -505,7 +505,7 @@ transform = Transform3D(0.398915, 0, 0.916988, 0, 1, 0, -0.916988, 0, 0.398915, 
 curve = SubResource("Curve3D_avg0s")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Paths/pathList/12_sala_path_10"]
-transform = Transform3D(-0.615375, 0, -0.788234, 0, 1, 0, 0.788234, 0, -0.615375, 4.56457, 0, 0.523251)
+transform = Transform3D(-0.600489, 0, -0.799632, 0, 1, 0, 0.799632, 0, -0.600489, 4.62219, 0, 0.646253)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Paths/pathList/12_sala_path_10/PathFollow3D"]
 
