@@ -1,10 +1,11 @@
-[gd_scene load_steps=38 format=3 uid="uid://cmawrqxfpt44"]
+[gd_scene load_steps=39 format=3 uid="uid://cmawrqxfpt44"]
 
 [ext_resource type="PackedScene" uid="uid://dt4d02xax8b27" path="res://Scenes/environment_component.tscn" id="1_afnyq"]
 [ext_resource type="PackedScene" uid="uid://bqej760uqlpmg" path="res://Scenes/ghost_2d.tscn" id="3_kgxc5"]
 [ext_resource type="Script" path="res://Scripts/PathOrderComponent.gd" id="6_xd4i0"]
 [ext_resource type="PackedScene" uid="uid://kod0awm1ha4o" path="res://models/gobot/model/gobot.glb" id="7_blwbe"]
 [ext_resource type="PackedScene" uid="uid://bxaamkus7b5b1" path="res://Scenes/Prefabs/P_Depa.tscn" id="7_d46uw"]
+[ext_resource type="PackedScene" uid="uid://cy24qsaufre4s" path="res://Scenes/aranita_spawner.tscn" id="7_frjo2"]
 [ext_resource type="PackedScene" uid="uid://7pcmqcbq48is" path="res://Scenes/scare_messages_component.tscn" id="8_62mtr"]
 
 [sub_resource type="VoxelGIData" id="VoxelGIData_q7uqe"]
@@ -365,7 +366,6 @@ near = 0.01
 far = 482.52
 
 [node name="Ghost2D" parent="." instance=ExtResource("3_kgxc5")]
-visible = false
 position = Vector2(405, 253)
 
 [node name="getMouseComponent" parent="Ghost2D" index="0" node_paths=PackedStringArray("camera")]
@@ -531,6 +531,14 @@ scary_messages = [null, null, null]
 bored_messages = [null, null, null]
 
 [node name="Depa_Completo" parent="." instance=ExtResource("7_d46uw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8023, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02163, 0, 0)
+
+[node name="aranitaSpawner" parent="." node_paths=PackedStringArray("spawnerPoints") instance=ExtResource("7_frjo2")]
+spawnerPoints = [NodePath("../spawnerPoints/Node3D")]
+
+[node name="spawnerPoints" type="Node3D" parent="."]
+
+[node name="Node3D" type="Node3D" parent="spawnerPoints"]
+transform = Transform3D(0.973002, 0, -0.230797, 0, 1, 0, 0.230797, 0, 0.973002, -5.2121, 2.1103, -4.36522)
 
 [editable path="Ghost2D"]
