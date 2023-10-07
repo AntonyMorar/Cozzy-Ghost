@@ -236,7 +236,8 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -1.
 light_color = Color(0.984314, 1, 0.898039, 1)
 light_energy = 2.0
 light_size = 0.005
-spot_angle = 39.55
+spot_range = 5.55958
+spot_angle = 45.2936
 
 [node name="Cocina_Sartenes01" parent="." index="4" node_paths=PackedStringArray("animation")]
 transform = Transform3D(-0.883011, 0.419389, 0.21072, 0.231286, -0.00185394, 0.972884, 0.408407, 0.907804, -0.0953616, -2.52153, 3.94817, -3.36382)
@@ -329,8 +330,9 @@ shape = SubResource("BoxShape3D_eh4kn")
 [node name="Estancia_Base" parent="." index="22"]
 script = ExtResource("2_ll005")
 
-[node name="Estancia_Luz" parent="." index="23"]
+[node name="Estancia_Luz" parent="." index="23" node_paths=PackedStringArray("light")]
 script = ExtResource("2_ll005")
+light = NodePath("SpotLight3D")
 
 [node name="Area3D" type="Area3D" parent="Estancia_Luz" index="0"]
 
@@ -339,6 +341,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18287, 0)
 shape = SubResource("BoxShape3D_n8su0")
 
 [node name="clickableElement" parent="Estancia_Luz" index="1" instance=ExtResource("3_t4wlt")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Estancia_Luz" index="2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.0557055, 0)
+light_color = Color(0.984314, 1, 0.898039, 1)
+light_energy = 2.0
+light_size = 0.005
+spot_range = 7.08319
+spot_angle = 42.8932
 
 [node name="Estancia_Radio" parent="." index="24"]
 script = ExtResource("2_ll005")
